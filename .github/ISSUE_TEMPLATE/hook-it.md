@@ -7,4 +7,4 @@ assignees: ''
 
 ---
 
-As a user I can buy patterns
+As a User, I can purchase the pattern, so that I can make my project.
