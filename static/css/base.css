@@ -51,9 +51,10 @@ body {
 .navbar-brand{
   font-weight:bold;
   color:#a7a0a4;
+  margin-left: 10px;
  
 }
 
-
-
-
+.navbar-collapse{
+    background-color: #e2cbcb;
+}
