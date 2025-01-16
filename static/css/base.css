@@ -107,6 +107,23 @@ body {
           border-radius:50%;
   
     }
+
+    /* css for about page */
+
+    #about-content{
+ 
+      margin-top:200px;
+      margin-bottom:200px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e2cbcb;;
+       
+    }
+
+    .about-section-container img{
+      height:500px;
+      
+      
+    }
   
 
   
@@ -159,6 +176,13 @@ body {
     #content {
         padding: 15px; 
         width: 90%; 
+      }
+
+      /* about page */
+
+      #about-content {
+        width: 90%; 
+        padding: 10px; 
       }
   }
   
