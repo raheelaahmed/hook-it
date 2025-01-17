@@ -124,6 +124,35 @@ body {
       
       
     }
+
+    /* css for patterns page */
+
+    #patterns{
+      margin-top:200px;
+      margin-bottom:200px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e2cbcb;;
+      text-align: center;
+      padding:20px;
+    }
+
+    #pattern-heading{
+      text-align:center;
+      padding:40px;
+    }
+
+    #images {
+      text-align: center;  
+      padding: 10px;
+  }
+  
+  
+  #images img {
+      margin-bottom: 10px;
+      max-width: 100%;  
+  }
+         
+
   
 
   
@@ -139,12 +168,18 @@ body {
     #content p {
       font-size: 1.3em; 
     }
-  }
-  /* home page container div */
+      /* home page container div */
   #content {
     padding: 25px; 
     width: 80%; 
   }
+
+ 
+ 
+  }
+
+
+  
    /* Media-quries for medium Screens max-width 786px */
   @media (max-width: 768px) {
      /* tagline heading */
@@ -161,6 +196,18 @@ body {
         padding: 20px; 
         width: 85%; 
       }
+      #patterns{
+
+        padding:15px;
+        width:95%
+
+      }
+
+      #images {
+        padding: 5px;  
+    }
+
+
   }
   /* Media-quries for smaller Screens max-width 480px */
   @media (max-width: 480px) {
@@ -184,5 +231,18 @@ body {
         width: 90%; 
         padding: 10px; 
       }
+
+      #patterns{
+
+        padding:15px;
+        width:100%
+
+      }
+
+      #images {
+        padding: 3px;  
+    }
+
+    
   }
   
