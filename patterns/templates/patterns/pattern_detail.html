@@ -12,38 +12,41 @@
 <div class="container" id="patterns">
     <div class="row">
         <!-- Pattern Image Column -->
-        <div class="col-md-5 mb-4">
+        <div class="col-md-6 col-lg-5 mb-4" id="pattern-detail-image">
             {% if pattern.image %}
                 <a href="{{ pattern.image.url }}" target="_blank">
-                    <img class="card-img-top img-fluid" src="{{ pattern.image.url }}" alt="{{ pattern.name }}">
+                    <img class="card-img-top img-fluid rounded shadow-sm" src="{{ pattern.image.url }}" alt="{{ pattern.name }}">
                 </a>
             {% else %}
-                <a href="">
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="No image available for {{ pattern.name }}">
+                <a href="#">
+                    <img class="card-img-top img-fluid rounded shadow-sm" src="{{ MEDIA_URL }}noimage.png" alt="No image available for {{ pattern.name }}">
                 </a>
             {% endif %}
         </div>
 
         <!-- Pattern Detail Column -->
-        <div class="col-md-7 mb-4">
-            <h1 class="mb-3">{{ pattern.name }}</h1>
+        <div class="col-md-6 col-lg-7 mb-4">
+            <h1 class="display-4 mb-3">{{ pattern.name }}</h1>
             
             <div class="mb-3">
-               
                 <h4>Difficulty Level: <span class="text-muted">{{ pattern.difficulty }}</span></h4>
-               
-                <h4>Price: <span class="text-muted"> Price: {{ currency_symbol }}{{ pattern.price }}</span></h4>
             </div>
 
             <div class="mb-3">
+                <h4>Price: <span class="text-muted">{{ currency_symbol }}{{ pattern.price }}</span></h4>
+            </div>
+
+            <div class="mb-4">
                 <h5>Description:</h5>
                 <p>{{ pattern.description }}</p>
             </div>
 
             <div class="text-center">
-                <a href="{% url 'patterns' %}" class="btn btn-primary">Back to All Patterns</a>
+                <a href="{% url 'patterns' %}" class="btn btn-primary btn-lg">Back to All Patterns</a>
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
+
+

@@ -151,6 +151,25 @@ body {
       margin-bottom: 10px;
       max-width: 100%;  
   }
+
+
+  /* pattern-detail */
+
+/* CSS for Pattern Detail Page */
+#pattern-detail-image {
+  
+  height: 600px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pattern-detail-image img {
+  max-height: 100%;  
+  object-fit: contain;  
+}
+
+ 
          
 
   
@@ -174,10 +193,22 @@ body {
     width: 80%; 
   }
 
- 
- 
-  }
+  /*pattern-detail page*/
+  #pattern-detail-image {
+    height: 500px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#pattern-detail-image img {
+    max-height: 90%;  
+}
+}
+
+ 
+ 
+  
 
   
    /* Media-quries for medium Screens max-width 786px */
@@ -206,6 +237,16 @@ body {
       #images {
         padding: 5px;  
     }
+
+    /* pattern-detail page*/
+
+    #pattern-detail-image {
+      height: 400px;  
+  }
+
+  #pattern-detail-image img {
+      max-height: 80%;  
+  }
 
 
   }
@@ -242,6 +283,14 @@ body {
       #images {
         padding: 3px;  
     }
+  /* pattern-detail page */
+    #pattern-detail-image {
+      height: 350px;  
+  }
+
+  #pattern-detail-image img {
+      max-height: 75%;  
+  }
 
     
   }
