@@ -14,6 +14,15 @@
        
         <div id="pattern-heading" class="text-center mb-4">
             <h1>Crochet Patterns</h1>
+            {% if messages %}
+            <div class="message-container">
+                {% for message in messages %}
+                    <div class="alert alert-info">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
         </div>
 
         <div class="row">
