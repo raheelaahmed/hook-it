@@ -11,17 +11,31 @@
 {% block content %}
     <div class="container" id="patterns">
       
-      <div id="pattern-heading">
-      <h1> Crochet Patterns</h1>
-      </div>
+       
+        <div id="pattern-heading" class="text-center mb-4">
+            <h1>Crochet Patterns</h1>
+        </div>
 
         <div class="row">
             {% for pattern in patterns %}
-                <div class=" col-sm-4 " id="images">
-                    <img src="{{ pattern.image.url }}" alt="{{ pattern.name }}" width="400">
-                    <h3>{{ pattern.name }}</h3>
-                    <p>Price: ${{ pattern.price }}</p>
-                    
+                <div class="col-sm-4" id="images">
+                    <div class="pattern-item text-center">
+                        
+                        <img src="{{ pattern.image.url }}" alt="{{ pattern.name }}" class="img-fluid mb-3" />
+                        
+                        
+                        <h3>{{ pattern.name }}</h3>
+                        
+                        
+                        <p>Price: {{ currency_symbol }}{{ pattern.price }}</p>
+                        
+
+                        {% if pattern.rating %}
+                            <small class="text-muted">
+                                <i class="fas fa-star mr-1"></i>{{ pattern.rating }} / 5
+                            </small>
+                        {% endif %}
+                    </div>
                 </div>
 
                 {% if forloop.counter|divisibleby:3 %}

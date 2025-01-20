@@ -6,9 +6,14 @@ def all_patterns(request):
 
     
     patterns = Pattern.objects.all()
+    currency_symbol = "€" 
 
     
-    context = {'patterns': patterns}
+    context = {
+        
+    'patterns': patterns,
+    'currency_symbol': currency_symbol,
+    }
 
     
     return render(request, 'patterns/pattern.html', context)

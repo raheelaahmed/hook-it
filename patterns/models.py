@@ -30,6 +30,7 @@ class Pattern(models.Model):
     pattern = models.FileField(upload_to='media/files', null=True, blank=True)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True,
                                  blank=True)
+    description = models.TextField(null=True, blank=True)                            
 
     def __str__(self):
         return self.name
