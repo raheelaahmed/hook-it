@@ -169,6 +169,10 @@ body {
   object-fit: contain;  
 }
 
+#name-pattern-detail{
+  color:#a7a0a4;
+}
+
  
          
 
@@ -205,6 +209,8 @@ body {
     max-height: 90%;  
 }
 }
+
+
 
  
  

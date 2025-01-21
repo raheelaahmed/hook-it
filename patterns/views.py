@@ -4,11 +4,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.urls import reverse
 
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from django.db.models import Q
-from django.urls import reverse
-from .models import Pattern  
+
 
 def all_patterns(request):
     """ A view to return all patterns including queries and search """
@@ -25,13 +21,14 @@ def all_patterns(request):
             
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse('patterns'))
-            
-            
+                return redirect(reverse('patterns'))  
+
+            #  queries for pattern name, description, category name, and difficulty
             queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries |= Q(category__name__icontains=query) 
+            queries |= Q(difficulty__icontains=query)  
             patterns = patterns.filter(queries)
 
-                        
             if not patterns.exists():
                 messages.error(request, "No patterns found for your search criteria.")
 
