@@ -11,8 +11,28 @@
 {% block content %}
     <div class="container" id="patterns">
       
-       
-        <div id="pattern-heading" class="text-center mb-4">
+        <form method="GET" action="{% url 'patterns' %}" class="form-inline mb-3">
+        <div class="form-group text-center">
+            <label for="sort_by" class="mr-2">Sort by:</label>
+            <select name="sort_by" id="sort_by" class="form-control" onchange="this.form.submit()">
+                <option value="date_created" {% if sort_by == "date_created" %}selected{% endif %}>Newest</option>
+                <option value="name" {% if sort_by == "name" %}selected{% endif %}>Name</option>
+                <option value="price" {% if sort_by == "price" %}selected{% endif %}>Price</option>
+                <option value="difficulty" {% if sort_by == "difficulty" %}selected{% endif %}>Difficulty</option>
+            </select>
+        </div>
+    
+        <div class="form-group text-center">
+            <label for="direction" class="mr-2">Order by:</label>
+            <select name="direction" id="direction" class="form-control" onchange="this.form.submit()">
+                <option value="asc" {% if direction == "asc" %}selected{% endif %}>Ascending</option>
+                <option value="desc" {% if direction == "desc" %}selected{% endif %}>Descending</option>
+            </select>
+        </div>
+    </form>
+
+
+            <div id="pattern-heading" class="text-center mb-4">
             <h1>Crochet Patterns</h1>
             {% if messages %}
             <div class="message-container">

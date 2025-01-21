@@ -9,33 +9,54 @@ from django.urls import reverse
 def all_patterns(request):
     """ A view to return all patterns including queries and search """
 
-
     patterns = Pattern.objects.all()
     currency_symbol = "€"
     query = None
+    sort_by = request.GET.get('sort_by', 'date_created')  # Default sort by date_created
+    direction = request.GET.get('direction', 'asc')  # Default direction is ascending
 
-    if request.GET:
-        if 'q' in request.GET:
-            query = request.GET['q']
-            
-            
-            if not query:
-                messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse('patterns'))  
+    # Handle search query
+    if 'q' in request.GET:
+        query = request.GET['q']
+        
+        if not query:
+            messages.error(request, "You didn't enter any search criteria!")
+            return redirect('patterns')
 
-            #  queries for pattern name, description, category name, and difficulty
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
-            queries |= Q(category__name__icontains=query) 
-            queries |= Q(difficulty__icontains=query)  
-            patterns = patterns.filter(queries)
+        # Construct queries for pattern name, description, category name, and difficulty
+        queries = Q(name__icontains=query) | Q(description__icontains=query)
+        queries |= Q(category__name__icontains=query)
+        queries |= Q(difficulty__icontains=query)
+        patterns = patterns.filter(queries)
 
-            if not patterns.exists():
-                messages.error(request, "No patterns found for your search criteria.")
+        if not patterns.exists():
+            messages.error(request, "No patterns found for your search criteria.")
 
+    # Sorting logic: Apply sort_by and direction
+    if sort_by == 'name':
+        sortkey = 'name'
+    elif sort_by == 'price':
+        sortkey = 'price'
+    elif sort_by == 'difficulty':
+        sortkey = 'difficulty'
+    elif sort_by == 'date_created':
+        sortkey = 'date_created'
+    else:
+        sortkey = 'date_created'  # Default sorting if not specified
+
+    # Apply ascending or descending order based on the direction
+    if direction == 'desc':
+        sortkey = f'-{sortkey}'  # Prepend '-' for descending order
+    
+    patterns = patterns.order_by(sortkey)
+
+    # Prepare context for the template
     context = {
         'patterns': patterns,
         'currency_symbol': currency_symbol,
         'search_term': query,
+        'sort_by': sort_by,
+        'direction': direction,  # Send direction so it's remembered in the template
     }
 
     return render(request, 'patterns/pattern.html', context)
