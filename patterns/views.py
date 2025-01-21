@@ -1,9 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Pattern  
+from .models import Pattern, Category 
 from django.contrib import messages
 from django.db.models import Q
 from django.urls import reverse
-
 
 
 def all_patterns(request):
@@ -12,6 +11,7 @@ def all_patterns(request):
     patterns = Pattern.objects.all()
     currency_symbol = "€"
     query = None
+
     sort_by = request.GET.get('sort_by', 'date_created')  # Default sort by date_created
     direction = request.GET.get('direction', 'asc')  # Default direction is ascending
 
@@ -60,6 +60,7 @@ def all_patterns(request):
     }
 
     return render(request, 'patterns/pattern.html', context)
+
 
 
 # pattern detail view 

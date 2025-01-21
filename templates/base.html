@@ -38,9 +38,9 @@
     <title>Hook It {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm fixed-top" >
+    <nav class="navbar navbar-expand-sm fixed-top custom-header" >
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}">HOOK IT</a>
+        <a class="navbar-brand custom-header"  href="{% url 'home' %}">HOOK IT</a>
         <!-- Toggler for mobile view (hamburger icon) -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -101,12 +101,12 @@
           
 
           </ul>
-          <div class="list-inline-item">
-            <a class="{% if grand_total %}text-info font-weight-bolder{% else %}text-black{% endif %} nav-link"
+          <div class="list-inline-item " id="bag">
+            <a class="{% if grand_total %}text-info font-weight-bolder custom-text-color{% else %}text-black{% endif %} nav-link"
               href="{% url 'view_bag' %}"id="navbar-bag-link">
               <div class="text-center">
-                <div><i class="fa-solid fa-bag-shopping"></i></div>
-                <p class="my-0" id="basket-total-text">
+                <div><i class="fa-solid fa-bag-shopping custom-icon-color"></i></div>
+                <p class="my-0 custom-text-color" id="basket-total-text">
                   {% if grand_total %}
                   €{{ grand_total|floatformat:2 }}
                   {% else %}
