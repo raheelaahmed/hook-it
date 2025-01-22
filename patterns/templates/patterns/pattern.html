@@ -11,21 +11,19 @@
 {% block content %}
     <div class="container" id="patterns">
         <div class="sort-options mb-3">
-            <form method="GET" action="{% url 'patterns' %}">
-                <div class="row">
-                    <!-- Sort by -->
-                    <div class="col-sm-4">
-                        <label for="sort-by">Sort by</label>
-                        <select name="sort_by" id="sort-by" class="form-control" onchange="this.form.submit()">
-                            <option value="date_created" {% if sort_by == 'date_created' %}selected{% endif %}>Newest</option>
-                            <option value="date_created" {% if sort_by == 'date_created' and direction == 'asc' %}selected{% endif %}>Oldest</option>
-                            <option value="price" {% if sort_by == 'price' and direction == 'asc' %}selected{% endif %}> price Low to High</option>
-                            <option value="price" {% if sort_by == 'price' and direction == 'desc' %}selected{% endif %}> price High to Low</option>
-                            <option value="name" {% if sort_by == 'name' %}selected{% endif %}>Name (A-Z)</option>
-                            <option value="name" {% if sort_by == 'name' and direction == 'desc' %}selected{% endif %}>Name (Z-A)</option>
-                        </select>
-                    </div>
-                </div>
+            <form method="get">
+
+               <p>Sort By:</p>
+                <select name="sort_by" class="form-control" onchange="this.form.submit()">
+                    
+                    <option value="date_created_asc" {% if sort_by == 'date_created' and direction == 'asc' %}selected{% endif %}>Newest</option>
+                    <option value="date_created_desc" {% if sort_by == 'date_created' and direction == 'desc' %}selected{% endif %}>Oldest</option>
+                    <option value="price_asc" {% if sort_by == 'price' and direction == 'asc' %}selected{% endif %}>Price Low to High</option>
+                    <option value="price_desc" {% if sort_by == 'price' and direction == 'desc' %}selected{% endif %}>Price High to Low</option>
+                    <option value="name_asc" {% if sort_by == 'name' and direction == 'asc' %}selected{% endif %}>Name (A-Z)</option>
+                    <option value="name_desc" {% if sort_by == 'name' and direction == 'desc' %}selected{% endif %}>Name (Z-A)</option>
+                </select>
+                
             </form>
         </div>
         

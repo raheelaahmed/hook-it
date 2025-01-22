@@ -135,6 +135,28 @@ body {
     color:#484747;
   }
 
+  .sort-options select {
+    display: block;          
+    margin: 0 auto;          
+    text-align: center;      
+    width: auto;             
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+select.form-control {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 5px;
+}
+
 
   /* pattern-detail */
 
