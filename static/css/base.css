@@ -18,24 +18,33 @@ body {
   font-size: 25px;
 }
 
-.navbar-brand.custom-header {
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
   font-weight: bold;
-  color: #484747;
-  margin-left: 10px;
-  font-size: 35px;
+  font-size: 25px !important;       
+  color: #484747 !important;      
 }
+
+.navbar-logo {
+  height: 40px;         
+  margin-right: 12px;   
+}
+
+
+
 
 .navbar-collapse{
     background-color: #e2cbcb;
 }
 
 .custom-text-color {
-  color: #484747; /* Change this to your desired text color */
+  color: #484747; 
 }
-
 /* Custom bag icon color */
 .custom-icon-color {
-  color: #484747; /* Change this to your desired icon color */
+  color: #484747; 
 }
 /* home page container div */
 #content {

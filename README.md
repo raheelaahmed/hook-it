@@ -40,6 +40,9 @@
 
 ## Credits
 
+* https://www.flaticon.com   (logo)
+* https://coolors.co/
+
 ### Content
 
 ### Media
