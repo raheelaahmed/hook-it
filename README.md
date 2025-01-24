@@ -10,6 +10,8 @@ For my project, I’ve chosen a well-balanced color scheme that combines subtle 
 
 
 ![](documents/screenshots/hook-it.png)
+
+
 ### Typography
 ## User Stories
 ## Features
@@ -67,6 +69,18 @@ foreign key error in serch term
 solution:
 
 Since category is a foreign key, we can't filter it with icontains directly as if it were a CharField. we need to filter based on a field within the related Category model, like category__name__icontains.
+
+
+## Error redirect error:
+
+Redirect error for clicking add to bag button.
+
+![Redirect-error](documents/screenshots/redirect.png)
+
+Solution:
+
+Import Redirect from django shortcuts.
+
 
 
 
