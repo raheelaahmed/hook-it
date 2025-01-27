@@ -12,7 +12,7 @@
 
 {% block content %}
     <div class="container" id="patterns">
-    <div class="container mb-2">
+    <div class="container mb-2" id="shopping-bag">
         <div class="row">
             <div class="col">
                 <hr>
@@ -24,9 +24,9 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
-                    <div class="table-responsive rounded">
+                    <div class="table-responsive rounded" >
                         <table class="table table-sm table-borderless">
-                            <thead class="text-black">
+                            <thead class="text-black" id="shopping-bag">
                                 <tr>
                                     <th scope="col">Pattern Info</th>
                                     <th scope="col"></th>
@@ -48,7 +48,7 @@
                                         <p class="my-0">${{ item.pattern.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                        <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}" >
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -88,7 +88,7 @@
                                 </tr>
                             {% endfor %}
                             <tr>
-                                <td colspan="5" class="pt-5 text-right">
+                                <td colspan="5" class="pt-5 text-right" id="shopping-bag">
                                     <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
                                     <h4 class="mt-4"><strong>Total: ${{ total|floatformat:2 }}</strong></h4>
                                 </td>
