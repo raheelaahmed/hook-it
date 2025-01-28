@@ -41,10 +41,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'ckeditor',
     'home',
     'patterns',
     'bag',
+    'django_ckeditor_5',
 ]
 
 MIDDLEWARE = [
@@ -81,6 +81,16 @@ TEMPLATES = [
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
+# CKEditor 5 settings
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': [
+            'bold', 'italic', 'link', 'blockQuote', 'undo', 'redo',
+            'insertTable', 'code', 'imageUpload', 'mediaEmbed',
+            'fontColor',
+        ],
+    }
+}
 AUTHENTICATION_BACKENDS = [
     
     # Needed to login by username in Django admin, regardless of `allauth`

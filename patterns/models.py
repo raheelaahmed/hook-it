@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from ckeditor.fields import RichTextField 
+from django_ckeditor_5.fields import CKEditor5Field 
 
 
 class Category(models.Model):
@@ -31,7 +31,7 @@ class Pattern(models.Model):
     pattern = models.FileField(upload_to='media/files', null=True, blank=True)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True,
                                  blank=True)
-    description = RichTextField(null=True, blank=True)                        
+    description = CKEditor5Field(null=True, blank=True)                       
 
     def __str__(self):
         return self.name
