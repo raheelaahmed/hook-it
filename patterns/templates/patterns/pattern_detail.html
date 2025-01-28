@@ -8,6 +8,7 @@
         </div>
     </div>
 {% endblock %}
+
 {% block content %}
 <div class="container" id="patterns">
 
@@ -27,16 +28,16 @@
 
         <!-- Pattern Detail Column -->
         <div class="col-md-6 col-lg-7 mb-4">
-            <h1 class="display-4 mb-3 custom-header" id="name-pattern-detail" >{{ pattern.name }}</h1>
-            
+            <h1 class="display-4 mb-3 custom-header" id="name-pattern-detail">{{ pattern.name }}</h1>
+
             <div class="mb-3">
                 <h4>Difficulty Level: <span class="text-muted">{{ pattern.difficulty }}</span></h4>
             </div>
 
             <div class="mb-3">
                 <h4>Price: <span class="text-muted">{{ currency_symbol }}{{ pattern.price }}</span></h4>
-            </div>                   
-            
+            </div>
+
             <form class="form" action="{% url 'add_to_bag' pattern.id %}" method="POST">
                 {% csrf_token %}
                 <div class="form-row">
@@ -46,7 +47,7 @@
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <button class="decrement-qty btn btn-black rounded-0" 
-                                        data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                        data-item_id="{{ pattern.id }}" id="decrement-qty_{{ pattern.id }}">
                                         <span class="icon">
                                             <i class="fas fa-minus"></i>
                                         </span>
@@ -54,11 +55,11 @@
                                 </div>
                                 <input class="form-control qty_input" type="number"
                                     name="quantity" value="1" min="1" max="99"
-                                    data-item_id="{{ product.id }}"
-                                    id="id_qty_{{ product.id }}">
+                                    data-item_id="{{ pattern.id }}"
+                                    id="id_qty_{{ pattern.id }}">
                                 <div class="input-group-append">
                                     <button class="increment-qty btn btn-black rounded-0"
-                                        data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                        data-item_id="{{ pattern.id }}" id="increment-qty_{{ pattern.id }}">
                                         <span class="icon">
                                             <i class="fas fa-plus"></i>
                                         </span>
@@ -78,7 +79,6 @@
                         <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                    
                 </div>
             </form>
 
@@ -87,13 +87,47 @@
                 <p>{{ pattern.description|safe }}</p>
             </div>
 
-            <div class="text-center">
-                <a href="{% url 'patterns' %}" class="btn btn-primary btn-lg">Back to All Patterns</a>
-            </div>
+            <h2>Reviews</h2>
+            {% if reviews %}
+            <ul>
+              {% for review in reviews %}
+                <li>
+                  <strong>
+                    {% if review.user %}
+                      {{ review.user.username }}
+                    {% else %}
+                      Anonymous
+                    {% endif %}
+                  </strong> ({{ review.rating }} stars)
+                  <p>{{ review.comment }}</p>
+                  <p><small>Reviewed on {{ review.created_at|date:"F j, Y, g:i a" }}</small></p>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>No reviews yet. Be the first to review this pattern!</p>
+          {% endif %}
+            <!-- Add Review Form -->
+            {% if user.is_authenticated %}
+            <h3>Leave a Review</h3>
+            <form method="POST" action="{% url 'add_review' pattern.id %}">
+                {% csrf_token %}
+                <label for="rating">Rating (1-5):</label>
+                <input type="number" name="rating" min="1" max="5" required>
+
+                <label for="comment">Comment:</label>
+                <textarea name="comment" required></textarea>
+
+                <button type="submit">Submit Review</button>
+            </form>
+            {% else %}
+              <p>You need to be logged in to leave a review.</p>
+            {% endif %}
         </div>
     </div>
 </div>
 {% endblock %}
+
 {% block postloadjs %}
 {{ block.super }}
 {% include 'patterns/includes/quantity_input_script.html' %}

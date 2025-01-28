@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Pattern
+from .models import Category, Pattern, Review
 from django_ckeditor_5.widgets import CKEditor5Widget
 from django_ckeditor_5.fields import CKEditor5Field 
 from django import forms
@@ -29,3 +29,10 @@ class PatternAdmin(admin.ModelAdmin):
 
 # Register the Pattern model with the custom admin
 admin.site.register(Pattern, PatternAdmin)
+
+
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ['pattern', 'user', 'rating', 'created_at']
+    search_fields = ['pattern__name', 'user__username']
+
+admin.site.register(Review, ReviewAdmin)
