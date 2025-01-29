@@ -129,7 +129,7 @@ body {
       margin-top:200px;
       margin-bottom:200px;
       font-family: "Roboto", serif;
-      background-color: #e2cbcb;;
+      background-color: #e2cbcb;
       text-align: center;
       padding:20px;
       color:#484747;
@@ -181,6 +181,17 @@ select.form-control {
   /* pattern-detail */
 
 /* CSS for Pattern Detail Page */
+
+#pattern-detail{
+  background-color: #e2cbcb;
+  margin-top:200px;
+  margin-bottom:200px;
+  font-family: "Roboto", serif;
+  background-color: #e2cbcb;
+  padding:20px;
+  color:#484747;
+}
+
 #pattern-detail-image {
   
   height: 600px;  
@@ -200,11 +211,77 @@ select.form-control {
   color:#484747;
   font-weight: 500;
 }
+
+/* review */
+/* Styling the Review Form */
+.review-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+}
+
+.review-form .form-group {
+  margin-bottom: 15px;
+}
+
+.review-form label {
+  font-weight: bold;
+}
+
+/* Star Rating Styling */
+.stars {
+  font-size: 1.5rem;
+  color: #ddd; /* Light grey for inactive stars */
+  cursor: pointer;
+  display: flex;
+  gap: 5px;
+}
+
+.stars i {
+  transition: color 0.3s ease;
+}
+
+/* Active Star Color */
+.stars .active {
+  color: #f39c12; /* Gold for active stars */
+}
+
+/* Hover Effect for Stars */
+.stars i:hover, .stars i:hover ~ i {
+  color: #f39c12;
+}
+
+/* Make the form and button look clean */
+textarea.form-control {
+  resize: vertical;
+}
+
+button.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+.stars {
+  font-size: 1.5rem;
+  color: #ddd; /* Light grey for inactive stars */
+}
+
+
  /* shopping bag*/
 
  #shopping-bag {
   color: #484747 !important;
 }
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {

@@ -10,127 +10,186 @@
 {% endblock %}
 
 {% block content %}
-<div class="container" id="patterns">
+    <style>
+        #pattern-description {
+            text-align: left !important;
+        }
+    </style>
 
-    <div class="row">
-        <!-- Pattern Image Column -->
-        <div class="col-md-6 col-lg-5 mb-4" id="pattern-detail-image">
-            {% if pattern.image %}
-                <a href="{{ pattern.image.url }}" target="_blank">
-                    <img class="card-img-top img-fluid rounded shadow-sm" src="{{ pattern.image.url }}" alt="{{ pattern.name }}">
-                </a>
-            {% else %}
-                <a href="#">
-                    <img class="card-img-top img-fluid rounded shadow-sm" src="{{ MEDIA_URL }}noimage.png" alt="No image available for {{ pattern.name }}">
-                </a>
-            {% endif %}
-        </div>
-
-        <!-- Pattern Detail Column -->
-        <div class="col-md-6 col-lg-7 mb-4">
-            <h1 class="display-4 mb-3 custom-header" id="name-pattern-detail">{{ pattern.name }}</h1>
-
-            <div class="mb-3">
-                <h4>Difficulty Level: <span class="text-muted">{{ pattern.difficulty }}</span></h4>
+    <div class="container"  id="pattern-detail">
+        <div class="row">
+            <!-- Pattern Image Column -->
+            <div class="col-md-6 col-lg-5 mb-4" id="pattern-detail-image">
+                {% if pattern.image %}
+                    <a href="{{ pattern.image.url }}" target="_blank">
+                        <img class="card-img-top img-fluid rounded shadow-sm" src="{{ pattern.image.url }}" alt="{{ pattern.name }}">
+                    </a>
+                {% else %}
+                    <a href="#">
+                        <img class="card-img-top img-fluid rounded shadow-sm" src="{{ MEDIA_URL }}noimage.png" alt="No image available for {{ pattern.name }}">
+                    </a>
+                {% endif %}
             </div>
 
-            <div class="mb-3">
-                <h4>Price: <span class="text-muted">{{ currency_symbol }}{{ pattern.price }}</span></h4>
-            </div>
+            <!-- Pattern Detail Column -->
+            <div class="col-md-6 col-lg-7 mb-4">
+                <h1 class="display-4 mb-3 custom-header" id="name-pattern-detail">{{ pattern.name }}</h1>
 
-            <form class="form" action="{% url 'add_to_bag' pattern.id %}" method="POST">
-                {% csrf_token %}
-                <div class="form-row">
-                    <div class="col-12">
-                        <p class="mt-3"><strong>Quantity:</strong></p>
-                        <div class="form-group w-50">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <button class="decrement-qty btn btn-black rounded-0" 
-                                        data-item_id="{{ pattern.id }}" id="decrement-qty_{{ pattern.id }}">
-                                        <span class="icon">
-                                            <i class="fas fa-minus"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                                <input class="form-control qty_input" type="number"
-                                    name="quantity" value="1" min="1" max="99"
-                                    data-item_id="{{ pattern.id }}"
-                                    id="id_qty_{{ pattern.id }}">
-                                <div class="input-group-append">
-                                    <button class="increment-qty btn btn-black rounded-0"
-                                        data-item_id="{{ pattern.id }}" id="increment-qty_{{ pattern.id }}">
-                                        <span class="icon">
-                                            <i class="fas fa-plus"></i>
-                                        </span>
-                                    </button>
+                <div class="mb-3">
+                    <h4>Difficulty Level: <span class="text-muted">{{ pattern.difficulty }}</span></h4>
+                </div>
+
+                <div class="mb-3">
+                    <h4>Price: <span class="text-muted">{{ currency_symbol }}{{ pattern.price }}</span></h4>
+                </div>
+
+                <form class="form" action="{% url 'add_to_bag' pattern.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-12">
+                            <p class="mt-3"><strong>Quantity:</strong></p>
+                            <div class="form-group w-50">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <button class="decrement-qty btn btn-black rounded-0" 
+                                            data-item_id="{{ pattern.id }}" id="decrement-qty_{{ pattern.id }}">
+                                            <span class="icon">
+                                                <i class="fas fa-minus"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <input class="form-control qty_input" type="number"
+                                        name="quantity" value="1" min="1" max="99"
+                                        data-item_id="{{ pattern.id }}"
+                                        id="id_qty_{{ pattern.id }}">
+                                    <div class="input-group-append">
+                                        <button class="increment-qty btn btn-black rounded-0"
+                                            data-item_id="{{ pattern.id }}" id="increment-qty_{{ pattern.id }}">
+                                            <span class="icon">
+                                                <i class="fas fa-plus"></i>
+                                            </span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col{% if s %}-12 mt-2{% endif %}">
-                        <a href="{% url 'patterns' %}" class="btn btn-outline-black rounded-0 mt-5">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="text-uppercase">Keep Shopping</span>
-                        </a>
-                        <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                        <div class="col{% if s %}-12 mt-2{% endif %}">
+                            <a href="{% url 'patterns' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </form>
+
+                <div class="mb-4">
+                    <h5>Description:</h5>
+                    <p id="pattern-description" style="text-align: left;">{{ pattern.description|safe }}</p>
                 </div>
-            </form>
 
-            <div class="mb-4">
-                <h5>Description:</h5>
-                <p>{{ pattern.description|safe }}</p>
-            </div>
-
-            <h2>Reviews</h2>
-            {% if reviews %}
-            <ul>
-              {% for review in reviews %}
-                <li>
-                  <strong>
-                    {% if review.user %}
-                      {{ review.user.username }}
-                    {% else %}
-                      Anonymous
-                    {% endif %}
-                  </strong> ({{ review.rating }} stars)
-                  <p>{{ review.comment }}</p>
-                  <p><small>Reviewed on {{ review.created_at|date:"F j, Y, g:i a" }}</small></p>
-                </li>
-              {% endfor %}
-            </ul>
-          {% else %}
-            <p>No reviews yet. Be the first to review this pattern!</p>
-          {% endif %}
-            <!-- Add Review Form -->
-            {% if user.is_authenticated %}
-            <h3>Leave a Review</h3>
-            <form method="POST" action="{% url 'add_review' pattern.id %}">
-                {% csrf_token %}
-                <label for="rating">Rating (1-5):</label>
-                <input type="number" name="rating" min="1" max="5" required>
-
-                <label for="comment">Comment:</label>
-                <textarea name="comment" required></textarea>
-
-                <button type="submit">Submit Review</button>
-            </form>
+                <h2>Reviews</h2>
+                {% if reviews %}
+                <ul>
+                  {% for review in reviews %}
+                    <li>
+                      <strong>
+                        {% if review.user %}
+                          {{ review.user.username }}
+                        {% else %}
+                          Anonymous
+                        {% endif %}
+                      </strong> 
+                      
+                      <!-- Rating stars for the review -->
+                      <div class="stars">
+                        {% for i in "12345"|slice:":5" %}
+                          {% if forloop.counter <= review.rating %}
+                            <i class="fas fa-star active"></i> <!-- Active star -->
+                          {% else %}
+                            <i class="fas fa-star"></i> <!-- Inactive star -->
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                      
+                      <p>{{ review.comment }}</p>
+                      <p><small>Reviewed on {{ review.created_at|date:"F j, Y, g:i a" }}</small></p>
+                    </li>
+                  {% endfor %}
+                </ul>
             {% else %}
-              <p>You need to be logged in to leave a review.</p>
+                <p>No reviews yet. Be the first to review this pattern!</p>
             {% endif %}
+            
+            
+
+                <!-- Add Review Form -->
+                {% if user.is_authenticated %}
+                <h3>Leave a Review</h3>
+                <form method="POST" action="{% url 'add_review' pattern.id %}" class="review-form">
+                    {% csrf_token %}
+                    
+                    <div class="form-group">
+                        <label for="rating">Rating:</label>
+                        <div id="rating-stars" class="stars">
+                            <i class="fas fa-star" data-value="1"></i>
+                            <i class="fas fa-star" data-value="2"></i>
+                            <i class="fas fa-star" data-value="3"></i>
+                            <i class="fas fa-star" data-value="4"></i>
+                            <i class="fas fa-star" data-value="5"></i>
+                        </div>
+                        <input type="hidden" name="rating" id="rating-input" value="1" required>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="comment">Comment:</label>
+                        <textarea name="comment" id="comment" rows="4" class="form-control" required></textarea>
+                    </div>
+                
+                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                </form>
+                
+                {% else %}
+                  <p>You need to be logged in to leave a review.</p>
+                {% endif %}
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}
 
+
+
+
 {% block postloadjs %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const stars = document.querySelectorAll('#rating-stars i');
+        const ratingInput = document.getElementById('rating-input');
+
+        stars.forEach(star => {
+            star.addEventListener('click', function () {
+                const value = this.getAttribute('data-value');
+                ratingInput.value = value;
+
+                // Update star colors based on the selected rating
+                stars.forEach(star => {
+                    if (star.getAttribute('data-value') <= value) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            });
+        });
+    });
+</script>
 {{ block.super }}
 {% include 'patterns/includes/quantity_input_script.html' %}
 {% endblock %}
+
 
 

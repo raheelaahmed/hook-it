@@ -30,7 +30,6 @@ ALLOWED_HOSTS =['8000-raheelaahmed-hookit-n3puhx18hco.ws.codeinstitute-ide.net',
     'localhost',
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
