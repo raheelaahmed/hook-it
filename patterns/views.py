@@ -1,8 +1,12 @@
 from django.shortcuts import render, get_object_or_404,redirect
-from .models import Pattern, Category, Review
+from .models import Pattern, Review
 from django.contrib import messages
 from django.db.models import Q
-from django.urls import reverse
+
+
+
+
+
 
 
 def all_patterns(request):
@@ -65,6 +69,8 @@ def all_patterns(request):
     }
 
     return render(request, 'patterns/pattern.html', context)
+
+
 
 
 
