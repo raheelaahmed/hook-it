@@ -140,6 +140,7 @@
             {% endwith %}
         {% endfor %}
     </div>
+
     {% endif %}
 
     {% block page_header %}
@@ -147,6 +148,9 @@
 
     {% block content %}
     {% endblock %}
+    <hr class="footer-separator">
+
+
 
     {% block postloadjs %}
     <script type="text/javascript">
@@ -155,6 +159,10 @@
     </script>
     {% endblock %}
 
-
+  <!-- Footer -->
+  <footer class=" container-fluid py-5" >
+    <p> coppy right</p>
+    </footer>
+  
   </body>
 </html>

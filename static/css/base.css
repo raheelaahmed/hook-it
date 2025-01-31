@@ -1,6 +1,4 @@
-html {
-    height: 100%;
-}
+
 /*.roboto-header-text {
   font-family: "Roboto", serif;
   font-optical-sizing: auto;
@@ -9,12 +7,17 @@ html {
   font-variation-settings: "wdth" 100;
 }*/
 
-body {
+html,body {
     background: url('/media/crrochet4.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #484747;
     font-family: "Roboto", serif;
+    padding-bottom: 80px;
+    height: 100%; 
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
     
 }
 
@@ -297,6 +300,25 @@ button.btn-primary:hover {
 
 .toast-capper {
   height: 2px;
+}
+
+
+/* Footer */
+
+/* Footer Styles */
+
+
+footer {
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; 
+  background-color: #f8f8f8; 
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  z-index: 1000; /* Ensure footer is on top of other content */
+  margin-top:100px;
+  
 }
 
  
