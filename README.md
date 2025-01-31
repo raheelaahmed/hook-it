@@ -35,7 +35,45 @@ The Patterns page showcases a variety of crochet patterns, displaying images, na
 
 ![patterns](documents/screenshots/patterns.png)
 
+- **Pattern-detail page**
+
+The pattern detail page provides comprehensive information about the pattern, including the materials required and the available sizes that can be made using it. Users who are logged in can rate the pattern and leave reviews. The page displays key details such as the pattern name, difficulty level, price, and a quantity input field. There are also options to add the pattern to the shopping cart or continue shopping. Below the product description, logged-in users can share their feedback by leaving a rating and review of the pattern.
+
+![pattern-deatil](documents/screenshots/pattern-detail.png)
+
+
 ### User Features
+
+- **Review and Rating**
+
+Users have the opportunity to share their feedback by rating and reviewing the pattern. This allows others to get insights based on real experiences, helping them make more informed decisions before purchasing.
+
+![Review](documents/screenshots/review.png)
+
+
+
+- **pagination**
+
+The patterns page includes a pagination feature, allowing users to easily navigate through multiple pages of patterns without having to scroll endlessly. Users can view a set number of patterns per page and click the "Next Page" button to explore more options. If they wish to go back, they can simply click the "Previous" button to return to the previous page.
+
+![Pagination](documents/screenshots/pagination.png)
+
+
+- **Sorting**
+
+The pattern page offers a sorting feature that allows users to organize the patterns based on their preferences. Users can sort the patterns by the newest arrivals, price (from highest to lowest or lowest to highest), and alphabetically (from A to Z or Z to A). This makes it easier to find patterns that meet specific criteria.
+
+![Sorting](documents/screenshots/sorting.png)
+
+- **Search**
+
+The search feature allows users to easily find patterns by entering keywords, whether it’s the pattern name, a specific term from the description, or a category. This makes it simple for users to quickly locate the exact pattern they're looking for.
+
+![Seearch](documents/screenshots/search.png)
+
+
+
+
 
 - **Toasts**
 
@@ -68,8 +106,8 @@ The Patterns page showcases a variety of crochet patterns, displaying images, na
 * https://coolors.co/
 * https://www.youtube.com/watch?v=wY_BNsxCEi4
 i have followed this video for adding pagination.
-
-
+* https://www.youtube.com/watch?v=J-r75L3Tflg
+i have followed this video for kepping the footer at the botom of page without using fixed or stickey position.
 ### Content
 
 ### Media
