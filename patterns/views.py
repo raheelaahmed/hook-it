@@ -2,73 +2,64 @@ from django.shortcuts import render, get_object_or_404,redirect
 from .models import Pattern, Review
 from django.contrib import messages
 from django.db.models import Q
-
-
-
-
-
-
+from django.core.paginator import Paginator
 
 def all_patterns(request):
     """ A view to return all patterns including queries and search """
     patterns = Pattern.objects.all()
     currency_symbol = "€"
     query = None
-
-    # Get the combined sorting and direction
-    sort_by = request.GET.get('sort_by', 'date_created_asc')  # Default sort is 'date_created_asc'
-
-    # Extract sort field and direction
+    
+    # Sorting logic
+    sort_by = request.GET.get('sort_by', 'date_created_asc')
     try:
-        sort_field, direction = sort_by.split('_')  # Split by underscore
+        sort_field, direction = sort_by.split('_')
     except ValueError:
-        # Handle the case where 'sort_by' is not in the correct format
-        sort_field, direction = 'date_created', 'asc'  # Default sorting if not correct
+        sort_field, direction = 'date_created', 'asc'
 
-    # Handle search query
-    if 'q' in request.GET:
-        query = request.GET['q']
-        
-        if not query:
-            messages.error(request, "You didn't enter any search criteria!")
-            return redirect('patterns')
-
-        # Construct queries for pattern name, description, category name, and difficulty
-        queries = Q(name__icontains=query) | Q(description__icontains=query)
-        queries |= Q(category__name__icontains=query)
-        queries |= Q(difficulty__icontains=query)
-        patterns = patterns.filter(queries)
-
-        if not patterns.exists():
-            messages.error(request, "No patterns found for your search criteria.")
-
-    # Sorting logic: Apply sort_by and direction
     if sort_field == 'name':
         sortkey = 'name'
     elif sort_field == 'price':
         sortkey = 'price'
     elif sort_field == 'difficulty':
         sortkey = 'difficulty'
-    elif sort_field == 'date_created':
-        sortkey = 'date_created'
     else:
-        sortkey = 'date_created'  # Default sorting if not specified
+        sortkey = 'date_created'
 
-    # Apply ascending or descending order based on the direction
     if direction == 'desc':
-        sortkey = f'-{sortkey}'  # Prepend '-' for descending order
+        sortkey = f'-{sortkey}'
 
-    patterns = patterns.order_by(sortkey)
+    # Search functionality
+    if 'q' in request.GET:
+        query = request.GET['q']
+        if not query:
+            messages.error(request, "You didn't enter any search criteria!")
+            return redirect('patterns') 
 
-    # Prepare context for the template
-    context = {
-        'patterns': patterns,
+        queries = Q(name__icontains=query) | Q(description__icontains=query) | \
+                 Q(category__name__icontains=query) | Q(difficulty__icontains=query)
+        patterns = patterns.filter(queries)
+
+        if not patterns.exists():
+            messages.error(request, "No patterns found for your search criteria.")
+
+    # Apply sorting
+    patterns = patterns.order_by(sortkey) 
+
+    # Pagination
+    paginator = Paginator(patterns, 9)  # Show 6 patterns per page
+    page_number = request.GET.get('page')
+    pattern_list = paginator.get_page(page_number) 
+
+    context = { 
+        'pattern_list': pattern_list, 
         'currency_symbol': currency_symbol,
         'search_term': query,
-        'sort_by': sort_by,  # Pass the combined sort_by for template to remember
+        'sort_by': sort_by, 
     }
 
-    return render(request, 'patterns/pattern.html', context)
+    return render(request, 'patterns/pattern.html', context) 
+
 
 
 

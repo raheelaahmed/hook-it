@@ -40,7 +40,7 @@
         </div>
 
         <div class="row">
-            {% for pattern in patterns %}
+            {% for pattern in pattern_list %}
                 <div class="col-sm-4" id="images">
                     <div class="pattern-item text-center">
                         
@@ -69,6 +69,27 @@
             {% endfor %}
         </div>
         
+        <!-- Pagination Controls -->
+        
+        <div class="pagination-controls text-center mt-4">
+            {% if pattern_list.has_previous %}
+                <a href="?page=1&sort_by={{ sort_by }}" class="btn btn-secondary">First</a>
+                <a href="?page={{ pattern_list.previous_page_number }}&sort_by={{ sort_by }}" class="btn btn-secondary">Previous</a>
+            {% else %}
+                <span class="btn btn-secondary disabled">First</span>
+                <span class="btn btn-secondary disabled">Previous</span>
+            {% endif %}
+
+            <span class="mx-2">Page {{ pattern_list.number }} of {{ pattern_list.paginator.num_pages }}</span>
+
+            {% if pattern_list.has_next %}
+                <a href="?page={{ pattern_list.next_page_number }}&sort_by={{ sort_by }}" class="btn btn-secondary">Next</a>
+                <a href="?page={{ pattern_list.paginator.num_pages }}&sort_by={{ sort_by }}" class="btn btn-secondary">Last</a>
+            {% else %}
+                <span class="btn btn-secondary disabled">Next</span>
+                <span class="btn btn-secondary disabled">Last</span>
+            {% endif %}
+        </div>
 
         
     </div>
