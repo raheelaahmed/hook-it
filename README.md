@@ -66,6 +66,9 @@ The Patterns page showcases a variety of crochet patterns, displaying images, na
 
 * https://www.flaticon.com   (logo)
 * https://coolors.co/
+* https://www.youtube.com/watch?v=wY_BNsxCEi4
+i have followed this video for adding pagination.
+
 
 ### Content
 

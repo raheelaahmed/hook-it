@@ -7,17 +7,20 @@
   font-variation-settings: "wdth" 100;
 }*/
 
-html,body {
+html,body{
+height:100%;
+margin: 0;
+padding: 0;
+position: relative; 
+}
+body {
     background: url('/media/crrochet4.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
     color: #484747;
     font-family: "Roboto", serif;
-    padding-bottom: 80px;
-    height: 100%; 
-    margin: 0; 
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
     
 }
 
@@ -307,19 +310,19 @@ button.btn-primary:hover {
 
 /* Footer Styles */
 
-
 footer {
-  position:fixed;
-  left: 0;
-  bottom: 0;
   width: 100%; 
-  background-color: #f8f8f8; 
+  background-color: #b1bebb; 
   padding: 1rem;
-  border-top: 1px solid #ddd;
-  z-index: 1000; /* Ensure footer is on top of other content */
-  margin-top:100px;
-  
+  border-top: 1px solid #ddd;  /* Stay within the document flow */
+  margin-top: auto; /* This will ensure the footer stays at the bottom */
+  bottom: 0;
 }
+
+
+
+
+
 
  
          

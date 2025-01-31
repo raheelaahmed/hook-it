@@ -145,10 +145,11 @@
 
     {% block page_header %}
     {% endblock %}
-
+    <div class="main-content">
     {% block content %}
     {% endblock %}
-    <hr class="footer-separator">
+    </div>
+
 
 
 
@@ -157,6 +158,9 @@
         // Enable toast functionality
         $('.toast').toast('show');
     </script>
+    
+
+
     {% endblock %}
 
   <!-- Footer -->
