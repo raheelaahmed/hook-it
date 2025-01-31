@@ -39,6 +39,8 @@
     <title>Hook It {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
+    <div id="page-container">
+      <div id="content-wrap">
     <nav class="navbar navbar-expand-sm fixed-top custom-header">
       <div class="container-fluid">
         <a class="navbar-brand custom-header" href="{% url 'home' %}">
@@ -149,6 +151,12 @@
     {% block content %}
     {% endblock %}
     </div>
+  </div>
+  <!-- Footer -->
+  <footer class=" container-fluid py-5" >
+    <p> copy right</p>
+    </footer>
+  </div>
 
 
 
@@ -163,10 +171,5 @@
 
     {% endblock %}
 
-  <!-- Footer -->
-  <footer class=" container-fluid py-5" >
-    <p> coppy right</p>
-    </footer>
-  
   </body>
 </html>
