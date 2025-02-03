@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'patterns',
     'bag',
     'django_ckeditor_5',
+    'checkout',
 ]
 
 MIDDLEWARE = [
