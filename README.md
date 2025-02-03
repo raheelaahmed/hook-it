@@ -135,6 +135,16 @@ Solution:
 
 Import Redirect from django shortcuts.
 
+## Cispy_form error:
+
+Crispy_form error :
+
+![crispy](documents/screenshots/crispy-form.png)
+
+Solution:
+
+added 'crispy_bootstrap4' in installed apps to fix it.
+
 
 
 

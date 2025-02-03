@@ -25,9 +25,8 @@ SECRET_KEY = 'django-insecure-q9)mjrl^#2^gwjd44cmhe)2#whztjbc_-@2$%)j_nhm@f&ti5l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS =['8000-raheelaahmed-hookit-n3puhx18hco.ws.codeinstitute-ide.net',
-    '127.0.0.1',
-    'localhost',
+ALLOWED_HOSTS = ['8000-raheelaahmed-hookit-n3puhx18hco.ws.codeinstitute-ide.net',
+                '127.0.0.1','localhost',
 ]
 
 # Application definition
@@ -48,6 +47,8 @@ INSTALLED_APPS = [
     'bag',
     'django_ckeditor_5',
     'checkout',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'hook_it.urls'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -78,6 +80,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'bag.contexts.bag_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]

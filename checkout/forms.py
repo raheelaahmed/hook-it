@@ -1,6 +1,6 @@
 from django import forms
 from .models import Order
-
+from crispy_forms.helper import FormHelper 
 
 class OrderForm(forms.ModelForm):
     class Meta:
@@ -36,4 +36,10 @@ class OrderForm(forms.ModelForm):
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-            self.fields[field].label = False
+            self.fields[field].label = False 
+
+        # Add CSS classes to the form and its container
+        self.helper = FormHelper()
+        self.helper.form_class = 'form-group'
+        self.helper.label_class = 'col-form-label' 
+        self.helper.field_class = 'col-form-input' 

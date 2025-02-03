@@ -24,7 +24,8 @@ urlpatterns = [
     path('bag/', include('bag.urls')),
     path('pattern/', include('patterns.urls')),
     path('accounts/', include('allauth.urls')),
-    path('', include('home.urls')), 
+    path('', include('home.urls')),
+    path('checkout/', include('checkout.urls')), 
     path('ckeditor5/', include('django_ckeditor_5.urls')),  # This includes the home app URLs
       # This includes the patterns app URLs
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
