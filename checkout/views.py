@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
@@ -8,6 +9,23 @@ from patterns.models import Pattern
 from bag.contexts import bag_contents
 
 import stripe
+import json
+
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'bag': json.dumps(request.session.get('bag', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
 
 def checkout(request):
@@ -33,7 +51,7 @@ def checkout(request):
             order = order_form.save()
             for item_id, item_data in bag.items():
                 try:
-                    pattern = Pattern.objects.get(id=item_id)
+                    pattern= Pattern.objects.get(id=item_id)
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
@@ -42,16 +60,17 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for  quantity in item_data['items_by_size'].items():
+                        for quantity in item_data['items_by_size'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 pattern=pattern,
                                 quantity=quantity,
+                             
                             )
                             order_line_item.save()
                 except Pattern.DoesNotExist:
                     messages.error(request, (
-                        "One of the patterns in your bag wasn't found in our database. "
+                        "One of the products in your bag wasn't found in our database. "
                         "Please call us for assistance!")
                     )
                     order.delete()
@@ -93,22 +112,44 @@ def checkout(request):
     return render(request, template, context)
 
 
+
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    Handle successful checkouts and display the download link for the pattern
     """
-    save_info = request.session.get('save_info')
+    # Retrieve the order by order number
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
 
+    # Notify the user about the successful order
+    messages.success(request, f'Order successfully processed! Your order number is {order_number}. A confirmation email will be sent to {order.email}.')
+
+    # Retrieve all order line items for this order
+    order_line_items = OrderLineItem.objects.filter(order=order)
+
+    # Generate a list of patterns (and their download links) from the order line items
+    patterns_with_download = []
+    for item in order_line_items:
+        pattern = item.pattern
+        if pattern.pattern:  # Check if the pattern file exists
+            patterns_with_download.append({
+                'pattern_name': pattern.name,
+                'pattern_url': pattern.pattern.url
+            })
+        else:
+            patterns_with_download.append({
+                'pattern_name': pattern.name,
+                'pattern_url': None  # No download link if the file doesn't exist
+            })
+
+    # Clear the shopping bag after successful checkout
     if 'bag' in request.session:
         del request.session['bag']
 
+    # Pass the necessary context to the success template
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
+        'patterns_with_download': patterns_with_download,  # Pass the list of patterns and their download links
     }
 
     return render(request, template, context)
