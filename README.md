@@ -146,6 +146,15 @@ Solution:
 added 'crispy_bootstrap4' in installed apps to fix it.
 
 
+## stripe card input field disabled:
+
+Issue: On the checkout page, the payment card input field was disabled due to an insecure form connection.
+
+Solution: I resolved this issue by clearing the browser history and cache, which allowed the form to reload securely.
+
+
+
+
 
 
 
