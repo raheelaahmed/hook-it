@@ -59,6 +59,7 @@ def adjust_bag(request, item_id):
 
     return redirect('view_bag')
 
+
 def remove_from_bag(request, item_id):
     """ Function for removing items from the basket """
     try:
