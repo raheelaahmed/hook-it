@@ -25,12 +25,13 @@
             <div class="col-12 col-md-6">
                 <form method="POST" action="{% url 'edit_pattern' pattern.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
-                    
-                    <!-- Render the form with crispy styling -->
-                    {{ form | crispy }}
-
-                    <!-- Optional: Render form as plain paragraphs, if needed -->
-                    <!-- {{ form.as_p }} -->
+                    {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    {% endfor %}
                     
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'patterns' %}">Cancel</a>
@@ -45,13 +46,13 @@
 {% block extra_js %}
     <!-- Include CKEditor scripts -->
     <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            ClassicEditor
-                .create(document.querySelector('#id_description'))  // Ensure this matches your field's ID
-                .catch(error => {
-                    console.error(error);
-                });
+
+ 
+    <script type="text/javascript">
+        $('#new-image').change(function() {
+            var file = $('#new-image')[0].files[0];
+            $('#filename').text(`Image will be set to: ${file.name}`);
         });
     </script>
+
 {% endblock %}
