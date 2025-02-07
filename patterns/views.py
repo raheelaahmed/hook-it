@@ -3,6 +3,8 @@ from .models import Pattern, Review
 from django.contrib import messages
 from django.db.models import Q
 from django.core.paginator import Paginator
+from .forms import PatternForm
+
 
 def all_patterns(request):
     """ A view to return all patterns including queries and search """
@@ -62,33 +64,24 @@ def all_patterns(request):
 
 
 
-
-
-
-
 # pattern detail view 
+
+
 def pattern_detail(request, pattern_id):
     """ A view to show individual pattern detail """
-
-    
     pattern = get_object_or_404(Pattern, pk=pattern_id)
     reviews = pattern.reviews.all() 
     currency_symbol = "€" 
-
-    
     context = {
         'pattern': pattern,
         'currency_symbol': currency_symbol,
         'reviews': reviews, 
     }
 
-    
     return render(request, 'patterns/pattern_detail.html', context)
 
 
 # review
-
-
 
 def add_review(request, pattern_id):
     """ A view to handle adding a review to a pattern """
@@ -129,6 +122,17 @@ def add_review(request, pattern_id):
 
     # If method is not POST, return a 405 error
     return HttpResponse("Invalid method", status=405)
+
+
+def add_pattern(request):
+    """ Add a product to the store """
+    form = PatternForm()
+    template = 'patterns/add_pattern.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
 
 
   
