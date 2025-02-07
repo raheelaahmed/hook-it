@@ -10,5 +10,6 @@ urlpatterns = [
     # Add a review for a specific pattern
     path('pattern/<int:pattern_id>/review/', views.add_review, name='add_review'),
     path('add/', views.add_pattern, name='add_pattern'),
+    path('edit/<int:pattern_id>/', views.edit_pattern, name='edit_pattern'),
    
 ]

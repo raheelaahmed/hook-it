@@ -5,38 +5,42 @@ from django.db.models import Q
 from django.core.paginator import Paginator
 from .forms import PatternForm
 
-
 def all_patterns(request):
     """ A view to return all patterns including queries and search """
     patterns = Pattern.objects.all()
     currency_symbol = "€"
     query = None
-    
-    # Sorting logic
-    sort_by = request.GET.get('sort_by', 'date_created_asc')
-    try:
-        sort_field, direction = sort_by.split('_')
-    except ValueError:
-        sort_field, direction = 'date_created', 'asc'
 
+    # Sorting logic
+    sort_by = request.GET.get('sort_by', 'date_created_asc')  # Default sorting
+    try:
+        sort_field, direction = sort_by.split('_')  # 'field_direction' format
+    except ValueError:
+        sort_field, direction = 'date_created', 'asc'  # Default to 'date_created' with ascending order
+
+    # Handle sorting based on the selected field
     if sort_field == 'name':
         sortkey = 'name'
     elif sort_field == 'price':
         sortkey = 'price'
     elif sort_field == 'difficulty':
         sortkey = 'difficulty'
-    else:
+    elif sort_field == 'date_created':  # Handle sorting by date_created
         sortkey = 'date_created'
 
+    # Apply the sorting direction (ascending or descending)
     if direction == 'desc':
-        sortkey = f'-{sortkey}'
+        sortkey = f'-{sortkey}'  # Reverse the order for descending (Newest)
+
+    # Apply sorting to the patterns
+    patterns = patterns.order_by(sortkey)
 
     # Search functionality
     if 'q' in request.GET:
         query = request.GET['q']
         if not query:
             messages.error(request, "You didn't enter any search criteria!")
-            return redirect('patterns') 
+            return redirect('patterns')
 
         queries = Q(name__icontains=query) | Q(description__icontains=query) | \
                  Q(category__name__icontains=query) | Q(difficulty__icontains=query)
@@ -45,22 +49,20 @@ def all_patterns(request):
         if not patterns.exists():
             messages.error(request, "No patterns found for your search criteria.")
 
-    # Apply sorting
-    patterns = patterns.order_by(sortkey) 
-
     # Pagination
-    paginator = Paginator(patterns, 9)  # Show 6 patterns per page
+    paginator = Paginator(patterns, 9)  # Show 9 patterns per page
     page_number = request.GET.get('page')
-    pattern_list = paginator.get_page(page_number) 
+    pattern_list = paginator.get_page(page_number)
 
     context = { 
         'pattern_list': pattern_list, 
         'currency_symbol': currency_symbol,
         'search_term': query,
-        'sort_by': sort_by, 
+        'sort_by': sort_by,  # Pass sorting option back to template
     }
 
     return render(request, 'patterns/pattern.html', context) 
+
 
 
 
@@ -140,6 +142,30 @@ def add_pattern(request):
         template = 'patterns/add_pattern.html'
         context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_pattern(request, pattern_id):
+    """ Edit a pattern in the store """
+    pattern = get_object_or_404(Pattern, pk=pattern_id)
+    if request.method == 'POST':
+        form = PatternForm(request.POST, request.FILES, instance=pattern)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated pattern!')
+            return redirect(reverse('pattern_detail', args=[pattern.id]))
+        else:
+            messages.error(request, 'Failed to update pattern. Please ensure the form is valid.')
+    else:
+        form = PatternForm(instance=pattern)
+        messages.info(request, f'You are editing {pattern.name}')
+
+    template = 'patterns/edit_pattern.html'
+    context = {
+        'form': form,
+        'pattern': pattern,
     }
 
     return render(request, template, context)
