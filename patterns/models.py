@@ -11,7 +11,7 @@ class Category(models.Model):
         return self.name
 # pattern model
 class Pattern(models.Model):
-    
+ 
     DIFFICULTY_LEVEL = (
         ('Beginner', 'Beginner'),  
         ('Intermediate', 'Intermediate'),

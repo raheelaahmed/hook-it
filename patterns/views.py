@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404,redirect
+from django.shortcuts import render, get_object_or_404,redirect,reverse
 from .models import Pattern, Review
 from django.contrib import messages
 from django.db.models import Q
@@ -125,10 +125,20 @@ def add_review(request, pattern_id):
 
 
 def add_pattern(request):
-    """ Add a product to the store """
-    form = PatternForm()
-    template = 'patterns/add_pattern.html'
-    context = {
+    """ Add a pattern to the store """
+    if request.method == 'POST':
+        form = PatternForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added pattern!')
+            return redirect(reverse('add_pattern'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+
+        form = PatternForm()
+        template = 'patterns/add_pattern.html'
+        context = {
         'form': form,
     }
 

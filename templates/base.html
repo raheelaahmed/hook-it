@@ -87,10 +87,18 @@
             {% endif %}
     
             {% if user.is_authenticated %}
+            
               <li class="nav-item">
                 <a class="nav-link {% if request.path == create_post_url %}active{% endif %}" href="{% url 'profile' %}" >Profile</a>
               </li>
             {% endif %}
+
+            {% if user.is_superuser %}
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == create_post_url %}active{% endif %}" href="{% url 'add_pattern' %}" >Pattern Management</a>
+            </li>
+            {% endif %}
+
     
             <!-- Search Form -->
             <li class="nav-item dropdown">
