@@ -4,6 +4,10 @@ from django.contrib import messages
 from django.db.models import Q
 from django.core.paginator import Paginator
 from .forms import PatternForm
+from django.contrib.auth.decorators import login_required
+from django.db.models.functions import Lower
+
+
 
 def all_patterns(request):
     """ A view to return all patterns including queries and search """
@@ -125,9 +129,12 @@ def add_review(request, pattern_id):
     # If method is not POST, return a 405 error
     return HttpResponse("Invalid method", status=405)
 
-
+@login_required
 def add_pattern(request):
     """ Add a pattern to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
     if request.method == 'POST':
         form = PatternForm(request.POST, request.FILES)
         if form.is_valid():
@@ -147,16 +154,19 @@ def add_pattern(request):
 
     return render(request, template, context)
 
-
+@login_required
 def edit_pattern(request, pattern_id):
     """ Edit a pattern in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
     pattern = get_object_or_404(Pattern, pk=pattern_id)
     if request.method == 'POST':
         form = PatternForm(request.POST, request.FILES, instance=pattern)
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated pattern!')
-            return redirect(reverse('pattern_detail', args=[pattern.id]))
+            return redirect('pattern-detail', pattern_id=pattern.id)
         else:
             messages.error(request, 'Failed to update pattern. Please ensure the form is valid.')
     else:
@@ -172,8 +182,12 @@ def edit_pattern(request, pattern_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_pattern(request, pattern_id):
     """ Delete a pattern from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
     pattern = get_object_or_404(Pattern, pk=pattern_id)
     pattern.delete()
     messages.success(request, 'Pattern deleted!')

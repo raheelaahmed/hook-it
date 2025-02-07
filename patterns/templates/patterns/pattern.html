@@ -62,14 +62,15 @@
                             </small>
                         {% endif %}
                     </div>
+                    {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a href="{% url 'edit_pattern' pattern.id %}">Edit</a> | 
+                        <a class="text-danger" href="{% url 'delete_pattern' pattern.id %}">Delete</a>
+                    </small>
+                {% endif %}
                 </div>
 
-                {% if request.user.is_superuser %}
-                <small class="ml-3">
-                    <a href="{% url 'edit_pattern' pattern.id %}">Edit</a> | 
-                    <a class="text-danger" href="{% url 'delete_pattern' pattern.id %}">Delete</a>
-                </small>
-            {% endif %}
+
 
                 {% if forloop.counter|divisibleby:3 %}
                     </div><div class="row">
