@@ -1,6 +1,6 @@
 from django import forms
 from .models import Pattern, Category
-from django_ckeditor_5.widgets import CKEditor5Widget  # Use CKEditor5Widget if you are using CKEditor 5
+from .widgets import CustomClearableFileInput
 
 class PatternForm(forms.ModelForm):
 
@@ -13,20 +13,18 @@ class PatternForm(forms.ModelForm):
 
         # Fetch all categories from the database
         categories = Category.objects.all()
-        
-        # Create a list of tuples with the category id and name for the 'category' field choices
+
+        # Create a list of tuples with category id and name
         category_choices = [(category.id, category.name) for category in categories]
 
-        # Set the category field choices to the names
+        # Set the 'category' field choices to the list of tuples
         self.fields['category'].choices = category_choices
 
         # Apply default styling to all form fields
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'form-control border-black rounded-0'
+            field.widget.attrs['class'] = 'border-black rounded-0'
 
-        # Optionally, you can customize the widgets for file fields (e.g., pattern or image)
-        self.fields['pattern'].widget.attrs.update({'class': 'form-control-file'})
-        self.fields['image'].widget.attrs.update({'class': 'form-control-file'})
+        # Define image field with custom widget (if needed)
+        self.fields['image'] = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
 
-        # Apply CKEditor widget to the 'description' field
-        self.fields['description'].widget = CKEditor5Widget(config_name='default')  # Add CKEditor widget
+

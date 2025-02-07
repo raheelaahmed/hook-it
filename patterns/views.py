@@ -128,6 +128,10 @@ def add_review(request, pattern_id):
 
     # If method is not POST, return a 405 error
     return HttpResponse("Invalid method", status=405)
+from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from .forms import PatternForm
 
 @login_required
 def add_pattern(request):
@@ -135,24 +139,27 @@ def add_pattern(request):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
+
+    # Define template and context here to ensure they are available in both the POST and GET blocks
+    template = 'patterns/add_pattern.html'
+    context = {}
+
     if request.method == 'POST':
         form = PatternForm(request.POST, request.FILES)
         if form.is_valid():
             pattern = form.save()
             messages.success(request, 'Successfully added pattern!')
-            return redirect(reverse('pattern_detail', args=[pattern.id]))
+            return redirect('pattern-detail', pattern_id=pattern.id)
         else:
             messages.error(request, 'Failed to add pattern. Please ensure the form is valid.')
+            context['form'] = form  # Add form to the context to re-render the form with errors
+            return render(request, template, context)  # Ensure we return the response here
     else:
-
         form = PatternForm()
-        
-        template = 'patterns/add_pattern.html'
-        context = {
-            'form': form,
-        }
+        context['form'] = form  # Add form to the context for the GET request
+        return render(request, template, context)  # Return the response here for the GET request
 
-    return render(request, template, context)
+
 
 @login_required
 def edit_pattern(request, pattern_id):
