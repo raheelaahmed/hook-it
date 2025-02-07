@@ -87,6 +87,13 @@
                     </div>
                 </form>
 
+                {% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a href="{% url 'edit_pattern' pattern.id %}">Edit</a> | 
+                    <a class="text-danger" href="{% url 'delete_pattern' pattern.id %}">Delete</a>
+                </small>
+            {% endif %}
+
                 <div class="mb-4">
                     <h5>Description:</h5>
                     <p id="pattern-description" style="text-align: left;">{{ pattern.description|safe }}</p>

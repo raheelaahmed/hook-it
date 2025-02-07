@@ -131,18 +131,19 @@ def add_pattern(request):
     if request.method == 'POST':
         form = PatternForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            pattern = form.save()
             messages.success(request, 'Successfully added pattern!')
-            return redirect(reverse('add_pattern'))
+            return redirect(reverse('pattern_detail', args=[pattern.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add pattern. Please ensure the form is valid.')
     else:
 
         form = PatternForm()
+        
         template = 'patterns/add_pattern.html'
         context = {
-        'form': form,
-    }
+            'form': form,
+        }
 
     return render(request, template, context)
 
@@ -169,6 +170,14 @@ def edit_pattern(request, pattern_id):
     }
 
     return render(request, template, context)
+
+
+def delete_pattern(request, pattern_id):
+    """ Delete a pattern from the store """
+    pattern = get_object_or_404(Pattern, pk=pattern_id)
+    pattern.delete()
+    messages.success(request, 'Pattern deleted!')
+    return redirect(reverse('patterns'))
 
 
   
