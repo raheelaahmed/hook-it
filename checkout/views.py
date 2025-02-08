@@ -34,6 +34,8 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+    order_form = None  # Initialize the variable before the GET request handling
+
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
@@ -51,10 +53,17 @@ def checkout(request):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save()
-            pid = request.POST.get('client_secret').split('_secret')[0]
+            pid = request.POST.get('client_secret')
+            if pid:
+                pid = pid.split('_secret')[0]
+            else:
+                messages.error(request, 'Client secret missing.')
+                return redirect(reverse('checkout'))
+
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
+
             for item_id, item_data in bag.items():
                 try:
                     pattern = Pattern.objects.get(id=item_id)
@@ -71,7 +80,6 @@ def checkout(request):
                                 order=order,
                                 pattern=pattern,
                                 quantity=quantity,
-                             
                             )
                             order_line_item.save()
                 except Pattern.DoesNotExist:
@@ -87,7 +95,8 @@ def checkout(request):
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
-    else:
+
+    else:  # GET request logic
         bag = request.session.get('bag', {})
         if not bag:
             messages.error(request, "There's nothing in your bag at the moment")
@@ -101,6 +110,7 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
+
         # Attempt to prefill the form with any info the user maintains in their profile
         if request.user.is_authenticated:
             try:
@@ -117,7 +127,9 @@ def checkout(request):
                     'county': profile.default_county,
                 })
             except UserProfile.DoesNotExist:
-                order_form = OrderForm()
+                order_form = OrderForm()  # If no profile exists, initialize with an empty form
+        else:
+            order_form = OrderForm()  # If not authenticated, initialize with an empty form
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
@@ -131,7 +143,6 @@ def checkout(request):
     }
 
     return render(request, template, context)
-
 
 
 def checkout_success(request, order_number):
