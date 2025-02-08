@@ -34,8 +34,6 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    order_form = None  # Initialize the variable before the GET request handling
-
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
@@ -50,20 +48,15 @@ def checkout(request):
             'street_address2': request.POST['street_address2'],
             'county': request.POST['county'],
         }
+
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
-            pid = request.POST.get('client_secret')
-            if pid:
-                pid = pid.split('_secret')[0]
-            else:
-                messages.error(request, 'Client secret missing.')
-                return redirect(reverse('checkout'))
-
+        
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
-
             for item_id, item_data in bag.items():
                 try:
                     pattern = Pattern.objects.get(id=item_id)
@@ -75,32 +68,33 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for quantity in item_data['items_by_size'].items():
+                        for size, quantity in item_data['items_by_size'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 pattern=pattern,
                                 quantity=quantity,
+                               
                             )
                             order_line_item.save()
                 except Pattern.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
+                        "One of the patterns in your bag wasn't found in our database. "
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
+            # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
-
-    else:  # GET request logic
+    else:
         bag = request.session.get('bag', {})
         if not bag:
             messages.error(request, "There's nothing in your bag at the moment")
-            return redirect(reverse('patterns'))
+            return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
         total = current_bag['total']
@@ -127,9 +121,9 @@ def checkout(request):
                     'county': profile.default_county,
                 })
             except UserProfile.DoesNotExist:
-                order_form = OrderForm()  # If no profile exists, initialize with an empty form
+                order_form = OrderForm()
         else:
-            order_form = OrderForm()  # If not authenticated, initialize with an empty form
+            order_form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
