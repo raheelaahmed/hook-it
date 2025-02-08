@@ -1,1 +1,1 @@
-Boutique Ado Confirmation for Order Number {{ order.order_number }}
+Hook It Confirmation for Order Number {{ order.order_number }}
