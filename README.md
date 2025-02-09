@@ -176,7 +176,12 @@ Solution: I resolved this issue by clearing the browser history and cache, which
 
 Issue: I was unable to view media files, such as the logo, background, and other images, on my app.
 
+![Home-page-with-bug](documents/screenshots/bug-home.png)
+
+
 Solution: After removing the SSL configuration from the settings, everything started working properly.
+
+![fixed-homepage](documents/screenshots/fiexed-home.png)
 
 
 
