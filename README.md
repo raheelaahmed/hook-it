@@ -172,6 +172,13 @@ Issue: On the checkout page, the payment card input field was disabled due to an
 Solution: I resolved this issue by clearing the browser history and cache, which allowed the form to reload securely.
 
 
+## problem with media files:
+
+Issue: I was unable to view media files, such as the logo, background, and other images, on my app.
+
+Solution: After removing the SSL configuration from the settings, everything started working properly.
+
+
 
 
 

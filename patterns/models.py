@@ -41,6 +41,7 @@ class Pattern(models.Model):
 
 # Review model
 
+
 class Review(models.Model):
     pattern = models.ForeignKey(
         'Pattern', on_delete=models.CASCADE, related_name='reviews'
