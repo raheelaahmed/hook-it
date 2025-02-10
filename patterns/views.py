@@ -6,7 +6,7 @@ from django.core.paginator import Paginator
 from .forms import PatternForm
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
-
+from django.conf import settings 
 
 
 def all_patterns(request):
@@ -68,11 +68,7 @@ def all_patterns(request):
     return render(request, 'patterns/pattern.html', context) 
 
 
-
-
 # pattern detail view 
-
-
 def pattern_detail(request, pattern_id):
     """ A view to show individual pattern detail """
     pattern = get_object_or_404(Pattern, pk=pattern_id)
@@ -81,9 +77,10 @@ def pattern_detail(request, pattern_id):
     context = {
         'pattern': pattern,
         'currency_symbol': currency_symbol,
-        'reviews': reviews, 
-    }
-
+        'reviews': reviews,
+        'MEDIA_URL': settings.MEDIA_URL  # to acess media files from AWS
+        }
+    
     return render(request, 'patterns/pattern_detail.html', context)
 
 
@@ -126,12 +123,6 @@ def add_review(request, pattern_id):
         messages.success(request, "Your review has been added successfully!")
         return redirect('pattern-detail', pattern_id=pattern.id)  # Correct redirection here
 
-    # If method is not POST, return a 405 error
-    return HttpResponse("Invalid method", status=405)
-from django.shortcuts import render, redirect, reverse
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
-from .forms import PatternForm
 
 @login_required
 def add_pattern(request):
@@ -156,7 +147,10 @@ def add_pattern(request):
             return render(request, template, context)  # Ensure we return the response here
     else:
         form = PatternForm()
-        context['form'] = form  # Add form to the context for the GET request
+        context = {
+            'form': form,
+             'MEDIA_URL': settings.MEDIA_URL  # to access media filed from AWS
+             }  # Add form to the context for the GET request
         return render(request, template, context)  # Return the response here for the GET request
 
 
@@ -184,7 +178,8 @@ def edit_pattern(request, pattern_id):
     context = {
         'form': form,
         'pattern': pattern,
-    }
+         'MEDIA_URL': settings.MEDIA_URL  # to access media filed from AWS
+          }
 
     return render(request, template, context)
 
