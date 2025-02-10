@@ -63,6 +63,7 @@ def all_patterns(request):
         'currency_symbol': currency_symbol,
         'search_term': query,
         'sort_by': sort_by,  # Pass sorting option back to template
+        'MEDIA_URL': settings.MEDIA_URL  # to acess media files from AWS
     }
 
     return render(request, 'patterns/pattern.html', context) 
