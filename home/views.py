@@ -7,7 +7,7 @@ from django.conf import settings
 def index(request):
     """ A view to return the index page """
 
-    return render(request, 'home/index.html')
+    return render(request, 'home/index.html', {"MEDIA_URL": settings.MEDIA_URL})
 
 
 def about(request):
