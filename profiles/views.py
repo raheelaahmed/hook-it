@@ -4,6 +4,7 @@ from .models import UserProfile
 from .forms import UserProfileForm
 from checkout.models import Order
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 
 
 @login_required
@@ -26,7 +27,8 @@ def profile(request):
     context = {
         'form': form,
         'orders': orders,
-        'on_profile_page': True
+        'on_profile_page': True,
+        'MEDIA_URL': settings.MEDIA_URL
     }
 
     return render(request, template, context)

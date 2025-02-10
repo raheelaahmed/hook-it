@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.contrib import messages
+from django.conf import settings 
 
 
 def contact_view(request):
@@ -23,16 +24,18 @@ def contact_view(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found in form input')
 
-            # Save contact information to the database (optional)
             form.save()
 
-            # Set success message using Django's messages framework
             messages.success(request, "Your message has been sent successfully!")
 
-            # Redirect to avoid form resubmission on refresh
-            return redirect('contact')  # Make sure the 'contact' URL name matches
+            return redirect('contact')  
 
     else:
         form = ContactForm()
 
-    return render(request, 'contact_us/contact.html', {'form': form})  # Ensure the template path is correct
+        context = {
+            'form': form,
+            'MEDIA_URL': settings.MEDIA_URL
+        }
+
+    return render(request, 'contact_us/contact.html', context) 

@@ -1,12 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from patterns.models import Pattern  # Make sure to import the model
+from patterns.models import Pattern
+from django.conf import settings 
 
 # Create your views here.
 
+
 def view_bag(request):
     """ A view that renders the bag contents page """
-    return render(request, 'bag/bag.html')
+    return render(request, 'bag/bag.html', {'MEDIA_URL': settings.MEDIA_URL})
+
 
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
