@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.conf import settings
+
 
 # Create your views here.
 
@@ -11,4 +13,4 @@ def index(request):
 def about(request):
     """ A view to return the about page """
 
-    return render(request, 'home/about.html')
+    return render(request, 'home/about.html', {"MEDIA_URL": settings.MEDIA_URL})
