@@ -16,7 +16,7 @@ We've got your phone number on file as {{ order.phone_number }}.
 {% for item in order.items.all %}
 Pattern: {{ item.pattern_name }}
 {% if item.pattern_url %}
-Download Link: {{ item.pattern_url }}
+Download here: {{ item.pattern_url }}
 {% else %}
 No download available.
 {% endif %}
