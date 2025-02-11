@@ -31,8 +31,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True   
-""" 'DEVELOPMENT' in os.environ"""
+
+
+DEBUG = 'DEVELOPMENT' in os.environ
 ALLOWED_HOSTS = ['8000-raheelaahmed-hookit-n3puhx18hco.ws.codeinstitute-ide.net',
                 '127.0.0.1', 'localhost', 'hook-it-85e92c23978c.herokuapp.com',
                 ]
@@ -126,8 +127,6 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-
-
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
@@ -135,9 +134,6 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
-
-
-
 
 
 WSGI_APPLICATION = 'hook_it.wsgi.application'
@@ -249,6 +245,7 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET')
 
 # email
 if 'DEVELOPMENT' in os.environ:
+
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'patattern.hookit@gmail.com'
 else:
