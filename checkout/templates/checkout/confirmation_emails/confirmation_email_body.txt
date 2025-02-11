@@ -13,13 +13,11 @@ Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_ci
 
 We've got your phone number on file as {{ order.phone_number }}.
 
-{% for item in order.items.all %}
-Pattern: {{ item.pattern_name }}
-{% if item.pattern_url %}
-Download here: {{ item.pattern_url }}
-{% else %}
-No download available.
-{% endif %}
+
+
+
+{% for item in order.lineitems.all %}
+    {{ item.pattern.name }} - {{ item.pattern_url }}
 {% endfor %}
 
 If you have any questions, feel free to contact us at {{ contact_email }}.
