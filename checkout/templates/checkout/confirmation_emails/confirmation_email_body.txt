@@ -7,11 +7,20 @@ Order Date: {{ order.date }}
 
 Order Total: ${{ order.order_total }}
 Delivery: ${{ order.delivery_cost }}
-Grand Total: ${{ order.order_total }}
+Total: ${{ order.order_total }}
 
 Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
 
 We've got your phone number on file as {{ order.phone_number }}.
+
+{% for item in order.items.all %}
+Pattern: {{ item.pattern_name }}
+{% if item.pattern_url %}
+Download Link: {{ item.pattern_url }}
+{% else %}
+No download available.
+{% endif %}
+{% endfor %}
 
 If you have any questions, feel free to contact us at {{ contact_email }}.
 
