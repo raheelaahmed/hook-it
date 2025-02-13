@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/about/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/contact_us/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/accounts/login/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/bag/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/pattern/3/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/pattern/4/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/pattern/5/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/pattern/6/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/pattern/7/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/pattern/8/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/pattern/9/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/pattern/10/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/pattern/11/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/?page=2&amp;sort_by=date_created_asc</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/pattern/12/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/pattern/13/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/pattern/14/</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://hook-it-85e92c23978c.herokuapp.com/pattern/?page=1&amp;sort_by=date_created_asc</loc>
+  <lastmod>2025-02-13T16:16:08+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>

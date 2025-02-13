@@ -1,6 +1,6 @@
 Hello {{ order.full_name }}!
 
-This is a confirmation of your order at Boutique Ado. Your order information is below:
+This is a confirmation of your order at Hook it. Your order information is below:
 
 Order Number: {{ order.order_number }}
 Order Date: {{ order.date }}
@@ -13,14 +13,6 @@ Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_ci
 
 We've got your phone number on file as {{ order.phone_number }}.
 
-{% for item in order.lineitems.all %}
-    {{ item.pattern.name }} - 
-    {% if item.pattern.pattern_url %}
-       <a href="{{ item.pattern.get_s3_download_url }}" download>Download</a>
-    {% else %}
-        No download available
-    {% endif %}
-{% endfor %}
 
 If you have any questions, feel free to contact us at {{ contact_email }}.
 
