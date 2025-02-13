@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://hook-it-85e92c23978c.herokuapp.com/sitemap.xml

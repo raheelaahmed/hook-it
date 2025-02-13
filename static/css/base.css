@@ -322,8 +322,24 @@ html{
     bottom:0;
     
   }
+/* contact-us */
+#id_email  {
+  border: 5px solid #b1bebb; /* Example border */
+}
+#id_subject  {
+  border: 5px solid #b1bebb; /* Example border */
+}
+#id_message  {
+  border: 5px solid#b1bebb; /* Example border */
+}
+#submit-form{
+  background:#b1bebb ;
+  border-radius:50%;
+  padding:10px;
+  color:#484747;
+  font-weight: bold;
 
-
+}
   
   
   
