@@ -123,6 +123,48 @@ def add_review(request, pattern_id):
         # Redirect to the pattern detail page after the review is saved
         messages.success(request, "Your review has been added successfully!")
         return redirect('pattern-detail', pattern_id=pattern.id)  # Correct redirection here
+    
+
+
+@login_required
+def edit_review(request, review_id):
+    """ A view to handle editing a review """
+
+    # Get the review object or return 404 if not found
+    review = get_object_or_404(Review, id=review_id)
+
+    # Ensure the logged-in user is the author of the review
+    if review.user != request.user:
+        messages.error(request, "You do not have permission to edit this review.")
+        return redirect('pattern-detail', pattern_id=review.pattern.id)
+
+    if request.method == 'POST':
+        # Get updated data from the form
+        rating = request.POST.get('rating')
+        comment = request.POST.get('comment')
+
+        # Validate rating and comment
+        if not rating or not comment:
+            messages.error(request, "Both rating and comment are required.")
+            return redirect('edit-review', review_id=review.id)
+
+        try:
+            rating = int(rating)
+            if not (1 <= rating <= 5):
+                raise ValueError("Rating must be between 1 and 5.")
+        except ValueError:
+            messages.error(request, "Invalid rating value. It must be between 1 and 5.")
+            return redirect('edit-review', review_id=review.id)
+
+        # Update and save the review
+        review.rating = rating
+        review.comment = comment
+        review.save()
+
+        messages.success(request, "Your review has been updated successfully!")
+        return redirect('pattern-detail', pattern_id=review.pattern.id)
+
+    return render(request, 'patterns/edit_review.html', {'review': review})
 
 
 @login_required
@@ -197,6 +239,11 @@ def delete_pattern(request, pattern_id):
     return redirect(reverse('patterns'))
 
 
+  
+
+  
+
+  
   
 
   

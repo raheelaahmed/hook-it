@@ -1,5 +1,5 @@
 from django import forms
-from .models import Pattern, Category
+from .models import Pattern, Category, Review
 from .widgets import CustomClearableFileInput
 
 class PatternForm(forms.ModelForm):
@@ -26,5 +26,6 @@ class PatternForm(forms.ModelForm):
 
         # Define image field with custom widget (if needed)
         self.fields['image'] = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+
 
 
