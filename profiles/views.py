@@ -5,6 +5,7 @@ from .forms import UserProfileForm
 from checkout.models import Order
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
+from checkout.models import Order, OrderLineItem
 
 
 @login_required
@@ -42,10 +43,29 @@ def order_history(request, order_number):
         'A confirmation email was sent on the order date.'
     ))
 
+    order_line_items = OrderLineItem.objects.filter(order=order)
+
+    # Generate a list of patterns (and their download links) from the order line items
+    patterns_with_download = []
+    for item in order_line_items:
+        pattern = item.pattern
+        if pattern.pattern:  # Check if the pattern file exists
+            patterns_with_download.append({
+                'pattern_name': pattern.name,
+                'pattern_url': pattern.pattern.url
+            })
+        else:
+            patterns_with_download.append({
+                'pattern_name': pattern.name,
+                'pattern_url': None  # No download link if the file doesn't exist
+            })
+
     template = 'checkout/checkout_success.html'
+
     context = {
         'order': order,
         'from_profile': True,
+        'patterns_with_download': patterns_with_download,
     }
 
     return render(request, template, context)
