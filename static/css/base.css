@@ -336,11 +336,13 @@ html{
 #delete{
   font-size: 18px; /* Sets a small font size */
   color:red; /* Sets a dark gray color for the text */
+  border:none;
 }
 
 #delete:hover {
   color: darkred;
   font-size: 20px; /* Change the link color to dark blue on hover */
+
 }
 
   /* review */
@@ -538,6 +540,100 @@ html{
   padding: 10px;
   margin: 15px auto;
 }
+
+/* edit pattern page*/
+#pattern-management{
+  margin-top:200px;
+  margin-bottom:200px;
+  font-family: "Roboto", serif;
+  background-color: #e2cbcb;
+ 
+  padding:20px;
+  color:#484747;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Centers content vertically */
+  min-height: 80vh; /* Adjust the height */
+  text-align: center; /* Centers text inside */
+}
+#pattern-management .row {
+  width: 100%;
+  max-width: 600px; /* Adjust based on your preference */
+  margin: 0 auto; /* Centers the row */
+}
+
+/* Form Styling */
+#pattern-management form {
+  background: #f8f9fa; /* Light grey background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #b1bebb;
+}
+#pattern-management form input,
+#pattern-management form textarea,
+#pattern-management form select {
+  border: 2px solid #b1bebb; /* Light gray border */
+  padding: 8px; /* Adds some spacing inside */
+  border-radius: 5px; /* Slightly rounded corners */
+  outline: none; /* Removes default focus outline */
+  transition: border-color 0.3s ease-in-out; /* Smooth effect */
+  font-size: 16px; /* Improves readability */
+  width: 100%; /* Makes form elements full-width */
+  
+}
+
+#pattern-management form textarea {
+  min-height: 100px; /* Adjust height */
+  resize: vertical; /* Allow vertical resizing */
+}
+#pattern-management h2{
+  color: #4a4a4a;
+  font-weight: 700; /* Makes it bold */
+  font-size: 28px; /* Adjust size for prominence */
+  text-transform: uppercase; /* Makes text all uppercase */
+  letter-spacing: 2px; /* Spaced-out letters for elegance */
+  text-align: center; /* Centers the heading */
+
+  /* Padding and Spacing */
+  padding: 15px;
+  margin: 20px auto;
+}
+
+#pattern-management h5{
+  color: #4a4a4a;
+  font-weight: 700; /* Makes it bold */
+  font-size: 20px; /* Adjust size for prominence */
+  letter-spacing: 2px; /* Spaced-out letters for elegance */
+  text-align: center; /* Centers the heading */
+
+  /* Padding and Spacing */
+  padding: 15px;
+  margin: 20px auto;
+}
+
+#pattern-management a{
+  font-weight: 700; /* Makes it bold */
+  font-size: 20px; /* Adjust size for prominence */
+  color: #4a4a4a;
+}
+#pattern-management button{
+  font-weight: 700; /* Makes it bold */
+  font-size: 20px; /* Adjust size for prominence */
+  color: #4a4a4a;
+}
+#pattern-management a:hover {
+  color: #d9534f; /* Red shade on hover */
+  text-decoration: underline;
+}
+#pattern-management button:hover {
+    background-color: #d9534f; /* Red shade */
+    color: white;
+}
+
+
+
   
   
   

@@ -1,13 +1,19 @@
+# forms.py
+
 from django import forms
-from .models import Pattern, Category, Review
+from .models import Pattern, Category
+from django_ckeditor_5.widgets import CKEditor5Widget  # Import CKEditor5Widget
 from .widgets import CustomClearableFileInput
 
-class PatternForm(forms.ModelForm):
 
+class PatternForm(forms.ModelForm):
     class Meta:
         model = Pattern
         fields = '__all__'
 
+    # Explicitly add the CKEditor widget for the description field
+    description = forms.CharField(widget=CKEditor5Widget())  # Use CKEditor5 for the description field
+   
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

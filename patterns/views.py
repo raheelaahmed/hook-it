@@ -167,20 +167,20 @@ def edit_review(request, review_id):
     return render(request, 'patterns/edit_review.html', {'review': review})
 
 @login_required
-def delete_review(request, review_id, pattern_id):
+def delete_review(request, pattern_id, review_id):
     """ Delete a review for a pattern """
-    
+
     # Get the review and ensure it's associated with the correct pattern
-    review = get_object_or_404(Review, pk=review_id, pattern_id=pattern_id)
+    review = get_object_or_404(Review, id=review_id, pattern_id=pattern_id)
 
     # Check if the user is the author of the review or an admin
     if review.user != request.user and not request.user.is_superuser:
         messages.error(request, 'You do not have permission to delete this review.')
         return redirect('pattern-detail', pattern_id=pattern_id)
-    
+
     # Delete the review
     review.delete()
-    
+
     # Show success message
     messages.success(request, 'Review deleted successfully!')
 
