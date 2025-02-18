@@ -101,6 +101,11 @@
                 <!-- Show edit button only if the logged-in user created this review -->
                 {% if review.user == request.user %}
                     <a href="{% url 'edit-review' review.id %}" class="btn btn-outline-black rounded-0" id="edit">Edit</a>
+                    <form action="{% url 'delete-review' review.id pattern.id %}" method="POST" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-danger rounded-0">Delete</button>
+                    </form>
+                    
                 {% endif %}
             </li>
             {% endfor %}

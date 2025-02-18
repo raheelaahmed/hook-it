@@ -311,16 +311,36 @@ html{
 
 #add-to-bag .btn-black:hover {
   background-color: #484747;
+ 
 }
 
 #edit-pattern {
   font-size: 20px; /* Sets a small font size */
   color: #555; /* Sets a dark gray color for the text */
 }
+#edit-pattern:hover {
+
+  font-size: 24px; /* Change the link color to dark blue on hover */
+}
 /* for review edit links*/
 #edit{
-  font-size: 118x; /* Sets a small font size */
+  font-size: 18px; /* Sets a small font size */
   color:dodgerblue; /* Sets a dark gray color for the text */
+}
+#edit:hover {
+  color: darkblue;
+  font-size: 20px; /* Change the link color to dark blue on hover */
+}
+
+/* css for delete review*/
+#delete{
+  font-size: 18px; /* Sets a small font size */
+  color:red; /* Sets a dark gray color for the text */
+}
+
+#delete:hover {
+  color: darkred;
+  font-size: 20px; /* Change the link color to dark blue on hover */
 }
 
   /* review */
@@ -485,6 +505,38 @@ html{
   color:#484747;
   font-weight: bold;
 
+}
+
+#contact{
+    border: 2px solid #b1bebb;
+    border-radius: 8px;
+    margin-top:200px;
+    margin-bottom:200px;
+    font-family: "Roboto", serif;
+    background-color: #e2cbcb;
+    text-align: center;
+    padding:20px;
+    color:#484747;
+    width: 100%; /* Ensures responsiveness */
+    max-width: 600px; /* Limits the form width */
+}
+
+#contact h1{
+  color: #444; /* Dark gray for readability */
+  font-weight: 600; /* Slightly bold */
+  font-size: 30px; /* Adjust size for visibility */
+  text-transform: uppercase; /* Makes text stand out */
+  letter-spacing: 1px; /* Spaced-out letters for elegance */
+  text-align: center; /* Centers the heading */
+  
+
+  
+  /* Adds a slight shadow for depth */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+  /* Padding & Spacing */
+  padding: 10px;
+  margin: 15px auto;
 }
   
   
