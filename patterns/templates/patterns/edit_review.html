@@ -11,15 +11,23 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container" id="patterns">
+    <div class="container" id="review">
+
 
         <!-- The form will post to the 'edit-review' URL -->
-        <form method="POST" action="{% url 'edit-review' review.id %}">
+        <form method="POST" action="{% url 'edit-review' review.id %}" id="edit-review">
             {% csrf_token %}
             
             <div class="form-group">
-                <label for="rating">Rating (1-5):</label>
-                <input type="number" name="rating" id="rating" min="1" max="5" value="{{ review.rating }}" required class="form-control">
+                <label for="rating">Rating:</label>
+                <div id="rating-stars" class="stars">
+                    <i class="fas fa-star" data-value="1"></i>
+                    <i class="fas fa-star" data-value="2"></i>
+                    <i class="fas fa-star" data-value="3"></i>
+                    <i class="fas fa-star" data-value="4"></i>
+                    <i class="fas fa-star" data-value="5"></i>
+                </div>
+                <input type="hidden" name="rating" id="rating-input" value="1" required>
             </div>
             
             <div class="form-group">
@@ -32,3 +40,32 @@
 
     </div>
 {% endblock %}
+
+{% block postloadjs %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const stars = document.querySelectorAll('#rating-stars i');
+        const ratingInput = document.getElementById('rating-input');
+
+        stars.forEach(star => {
+            star.addEventListener('click', function () {
+                const value = this.getAttribute('data-value');
+                ratingInput.value = value;
+
+                // Update star colors based on the selected rating
+                stars.forEach(star => {
+                    if (star.getAttribute('data-value') <= value) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+{% endblock %}
+
+
+
