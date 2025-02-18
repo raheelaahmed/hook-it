@@ -11,9 +11,9 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container" id="patterns">
+    <div class="container" id="pattern-management">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-8">
+            <div class="col-12 ">
                 <hr>
                 <h2 class="logo-font mb-4 text-center">Pattern Management</h2>
                 <h5 class="text-muted text-center mb-4">Add a New Pattern</h5>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="row justify-content-center">
-            <div class="col-12 col-md-8">
+            <div class="col-12 ">
                 <form method="POST" action="{% url 'add_pattern' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
@@ -52,32 +52,24 @@
         });
     </script>
 {% endblock %}
-{% block extra_css %}
-    <style>
-        /* Center form elements in the container */
-        .container {
-            max-width: 900px;
-            margin-top: 50px;
-        }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+{% block extra_js %}
+    <!-- Include CKEditor scripts -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            ClassicEditor
+                .create(document.querySelector("#id_description"))  <!-- Ensure this matches the ID of your field -->
+                .catch(error => console.error(error));
+        });
+    </script>
 
-        .logo-font {
-            font-size: 2rem;
-        }
+ 
+    <script type="text/javascript">
+        $('#new-image').change(function() {
+            var file = $('#new-image')[0].files[0];
+            $('#filename').text(`Image will be set to: ${file.name}`);
+        });
+    </script>
 
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.1);
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -1;
-        }
-
-    </style>
 {% endblock %}
-
