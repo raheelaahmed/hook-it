@@ -26,14 +26,21 @@
             <h1 class="display-4 mb-3 custom-header" id="name-pattern-detail">{{ pattern.name }}</h1>
 
             <div class="mb-3">
-                <h4>Difficulty Level: <span class="text-muted">{{ pattern.difficulty }}</span></h4>
+                <h4 id="difficulty">Difficulty Level: <span>{{ pattern.difficulty }}</span></h4>
             </div>
 
             <div class="mb-3">
-                <h4>Price: <span class="text-muted">{{ currency_symbol }}{{ pattern.price }}</span></h4>
+                <h4 id="price">Price: <span>{{ currency_symbol }}{{ pattern.price }}</span></h4>
             </div>
 
-            <form class="form" action="{% url 'add_to_bag' pattern.id %}" method="POST">
+          
+
+
+            <div class="mb-4 description" >
+                <h5>Description:</h5>
+                <p id="pattern-description" style="text-align: left;">{{ pattern.description|safe }}</p>
+            </div>
+            <form  action="{% url 'add_to_bag' pattern.id %}" method="POST" id="add-to-bag">
                 {% csrf_token %}
                 <div class="form-row">
                     <div class="col-12">
@@ -53,19 +60,16 @@
             </form>
 
             {% if request.user.is_superuser %}
-            <small class="ml-3">
+            <small class="ml-3" id="edit-pattern">
                 <a href="{% url 'edit_pattern' pattern.id %}">Edit</a> | 
                 <a class="text-danger" href="{% url 'delete_pattern' pattern.id %}">Delete</a>
             </small>
             {% endif %}
 
-            <div class="mb-4">
-                <h5>Description:</h5>
-                <p id="pattern-description" style="text-align: left;">{{ pattern.description|safe }}</p>
-            </div>
+            <hr>
 
            <!-- Display Reviews for the Pattern -->
-<div class="row">
+<div class="row" id="display-review">
     <div class="col-12 col-md-6">
         <h3 class="text-muted mb-3">Reviews</h3>
         {% if pattern.reviews.all %}
@@ -96,7 +100,7 @@
 
                 <!-- Show edit button only if the logged-in user created this review -->
                 {% if review.user == request.user %}
-                    <a href="{% url 'edit-review' review.id %}" class="btn btn-outline-black rounded-0">Edit Review</a>
+                    <a href="{% url 'edit-review' review.id %}" class="btn btn-outline-black rounded-0" id="edit">Edit</a>
                 {% endif %}
             </li>
             {% endfor %}
@@ -106,6 +110,7 @@
         {% endif %}
     </div>
 </div>
+<hr>
             <!-- Add Review Form -->
             {% if user.is_authenticated %}
             <h3>Leave a Review</h3>
@@ -129,7 +134,7 @@
                     <textarea name="comment" id="comment" rows="4" class="form-control" required></textarea>
                 </div>
             
-                <button type="submit" class="btn btn-primary">Submit Review</button>
+                <button type="submit">Submit Review</button>
             </form>
             
             {% else %}
