@@ -13,9 +13,8 @@
         <div class="sort-options mb-3">
             <form method="get">
 
-               <p>Sort By:</p>
                <select name="sort_by" class="form-control" onchange="this.form.submit()">
-                <option value="sorting" disabled {% if not sort_by %}selected{% endif %}>Sort By</option>
+                <option value="sorting"  {% if not sort_by %}selected{% endif %}>Sort By</option>
                 <option value="date_created_asc" {% if sort_by == 'date_created_asc' %}selected{% endif %}>Oldest</option>
                 <option value="date_created_desc" {% if sort_by == 'date_created_desc' %}selected{% endif %}>Newest</option>
                 <option value="price_asc" {% if sort_by == 'price_asc' %}selected{% endif %}>Price Low to High</option>
@@ -46,6 +45,7 @@
                     <div class="pattern-item text-center">
                         
                         <img src="{{ pattern.image.url }}" alt="{{ pattern.name }}" class="img-fluid mb-3" />
+                        
                         
                         <a href="{% url 'pattern-detail' pattern.id %}">
                         <h3>{{ pattern.name }}</h3>
