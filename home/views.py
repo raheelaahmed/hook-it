@@ -14,3 +14,7 @@ def about(request):
     """ A view to return the about page """
 
     return render(request, 'home/about.html', {"MEDIA_URL": settings.MEDIA_URL})
+
+
+def privacy_policy(request):
+    return render(request, 'home/privacy-policy.html')
