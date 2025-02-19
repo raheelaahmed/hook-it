@@ -61,54 +61,62 @@ html{
   .custom-icon-color {
     color: #484747; 
   }
-  /* home page container div */
-  #content {
-      width: 90%; 
-      max-width: 600px; 
-      padding: 30px; 
-      text-align: center;
-      font-family: "Roboto", serif;
-      position: fixed; 
-      top: 50%; 
-      left: 50%; 
-      transform: translate(-50%, -50%); 
-      box-sizing: border-box; 
-    }
-  
-  
-    
-    /* Styling for the main tagline "Hook it" */
-    #content h1 {
-      font-size: 3em; 
-      margin: 0 0 10px 0; 
-      color: #484747; 
-      font-weight: bold;
-      letter-spacing: 2px; 
-      text-transform: uppercase; 
-    }
-    
-    /* Styling for the tagline description */
-    #content p {
-      font-size: 1.75em; 
-      color: #484747; 
-      line-height: 1.6; 
-      margin: 0;
-    }
-  
-      /* Explore Patterns button */
-  
-     #content .explore{
-            /* Explore Patterns button */
-            background-color: #e2cbcb; 
-            border: none;
-            color:#484747;
-            padding: 15px 32px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 20px;
-            border-radius:50%;
-    
-      }
+/* Home page container */
+#content {
+  width: 85%;
+  max-width: 700px;
+  padding: 30px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+/* Styling for the main tagline */
+#content h1 {
+  font-size: 3.5em;
+  margin: 0 0 15px 0;
+  color: #4a4a4a;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the tagline description */
+#content p {
+  font-size: 2.0em;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.85;
+}
+
+/* Explore Patterns button */
+#content .explore {
+  background-color: #e2cbcb;
+  border: 2px solid transparent;
+  color: #4a4a4a;
+  padding: 15px 35px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#content .explore:hover {
+  background-color: #d1b2b2;
+  color: #333;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
   
       /* css for about page */
   
