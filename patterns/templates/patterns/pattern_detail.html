@@ -38,7 +38,7 @@
 
             <div class="mb-4 description" >
                 <h5>Description:</h5>
-                <p id="pattern-description" style="text-align: left;">{{ pattern.description|safe }}</p>
+                <div id="pattern-description" style="text-align: left;">{{ pattern.description|safe }}</div>
             </div>
             <form  action="{% url 'add_to_bag' pattern.id %}" method="POST" id="add-to-bag">
                 {% csrf_token %}
