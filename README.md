@@ -41,11 +41,15 @@ For my project, I’ve chosen a well-balanced color scheme that combines subtle 
 ### Site Pages
 
 - **Home page**
+
+
 The homepage features a clean and minimalist design. At the top, there is a navigation bar that includes the logo on the left-hand side and links and button on the right-hand side for other pages and actions. The central part of the page showcases a prominent slogan, clearly communicating the brand’s message or theme. Below the slogan, there is a call-to-action button inviting users to "Explore the Patterns," encouraging them to engage with the content further. This simple yet effective layout creates a user-friendly experience while keeping the focus on the essential elements of the page.
 
 ![Home](documents/screenshots/home.png)
 
 - **About page**
+
+
 The About page provides users with an introduction to the platform, explaining who we are and what we offer. It gives a brief overview of crochet, its origins, and its creative potential. The page highlights the various projects and items that can be made using crochet, from decorative pieces to practical accessories, showcasing the versatility and artistry of this craft. This section aims to inspire visitors and give them a deeper understanding of crochet and its endless possibilities.
 
 ![About](documents/screenshots/about.png)
@@ -60,6 +64,41 @@ The Patterns page showcases a variety of crochet patterns, displaying images, na
 The pattern detail page provides comprehensive information about the pattern, including the materials required and the available sizes that can be made using it. Users who are logged in can rate the pattern and leave reviews. The page displays key details such as the pattern name, difficulty level, price, and a quantity input field. There are also options to add the pattern to the shopping cart or continue shopping. Below the product description, logged-in users can share their feedback by leaving a rating and review of the pattern.
 
 ![pattern-deatil](documents/screenshots/pattern-detail.png)
+
+- **contact-us page**
+
+The Contact Us page allows users to reach out to the administration for any issues they may encounter. Messages submitted through the page will be sent to the admin panel as well as the administration's email address.
+
+![contact-us](documents/screenshots/contact-us-screenshot.png)
+
+- **Profile page**
+
+
+The profile page displays a user's biodata, which can be updated using the provided form. It also includes the user's order history, allowing them to view purchased patterns by clicking on the order number. By selecting an order number, users can revisit the checkout success page and access the download link for their purchased pattern.
+
+![Profile](documents/screenshots/profile-screenshot.png)
+
+- **Pattern management page**
+
+
+This page is exclusively accessible to the management team, providing a frontend form for adding new patterns. If a user is logged in and is a member of the administration, they will see the Pattern Management option in the navigation bar, allowing them to add new patterns to the Patterns page.
+
+![add_pattern](documents/screenshots/add-pattern-screenshot.png)
+
+- **Edit pattern page**
+
+This page is also designed for the administration. An Edit button is available on both the Patterns and Pattern Detail pages, allowing admins to easily update pattern information.
+
+![edit-pattern](documents/screenshots/edit-pattern-screenshot.png)
+
+
+- **Shopping Bag page**
+
+This is the Shopping Bag page, where users can view all the patterns they have added to their bag. Each pattern displays five details: Pattern Image, Pattern Name, Price, a Remove button to delete the pattern, and the Subtotal. Users can remove a pattern from the bag using the Remove button. Additionally, they can continue shopping by clicking the Keep Shopping link or proceed to checkout by selecting Secure Checkout.
+
+![shopping-bag](documents/screenshots/shopping-bag-screenshot.png)
+
+
 
 
 ### User Features
