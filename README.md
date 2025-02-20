@@ -99,6 +99,65 @@ This is the Shopping Bag page, where users can view all the patterns they have a
 ![shopping-bag](documents/screenshots/shopping-bag-screenshot.png)
 
 
+- **checkout page**
+
+This is the Checkout page, where users can complete their purchase using the Stripe payment system. The page is divided into two sections: the left side contains the payment form, where users enter their details, and the right side displays the order summary, including order details and the total amount. Once the correct information is provided, users can successfully complete their checkout.
+
+
+![checkout](documents/screenshots/checkout-screenshot.png)
+
+
+
+- **Checkout Success page**
+
+
+This is the Checkout Success page, confirming that your order has been completed. A confirmation email with order details has been sent to you. The page displays your order summary along with a download link for your purchased pattern. Additionally, a "Check Out Our Latest Deals!" button is provided, allowing you to return to the patterns page and continue shopping.
+
+
+![checkout-success](documents/screenshots/chekout-success-screenshot.png)
+
+
+- **Order Confirmation Email**
+
+The user will receive a confirmation email containing the details of their order, including the order summary and payment confirmation.
+
+
+![email](documents/screenshots/email-screenshot.png)
+
+
+- **Privacy Policy**
+
+
+This page contains the privacy policy for our app. A link to this page is available in the footer for easy access.
+
+
+![Privacy-Policy](documents/screenshots/privacy-Policy-sceenshot.png)
+
+
+### Allauth Templates:
+
+- **Sign-in page**
+
+![Sign-In](documents/screenshots/sign-in-screenshot.png)
+- **Sign-out page**
+
+![Sign-out](documents/screenshots/signout-screenshot.png)
+- **Sign-up page**
+
+![Sign-Up](documents/screenshots/signup-form-screenshot.png)
+
+
+#### Password Reset Process:
+
+
+
+
+
+
+
+
+
+
 
 
 ### User Features
