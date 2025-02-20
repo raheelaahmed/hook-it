@@ -103,17 +103,16 @@ body {
 
 /* Explore Patterns button */
 #content .explore {
-  background-color: #e2cbcb;
-  border: 2px solid transparent;
-  color: #4a4a4a;
-  padding: 15px 35px;
+  display: inline-block;
+  background-color: #e2cbcb; 
+  color: #484747;
+  padding: 15px 32px;
   text-align: center;
   font-weight: bold;
-  font-size: 18px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  border-radius: 50%;
+  text-decoration: none; /* Removes underline */
+  border: none;
 
 
 }

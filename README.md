@@ -129,6 +129,7 @@ i have followed this video for adding pagination.
 * https://www.youtube.com/watch?v=J-r75L3Tflg
 i have followed this video for kepping the footer at the botom of page without using fixed or stickey position.
 * https://dbdiagram.io/ .
+* https://mailchimp.com/?currency=EUR
 created ER diagram
 ### Content
 
