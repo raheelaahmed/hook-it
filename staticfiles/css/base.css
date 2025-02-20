@@ -147,18 +147,18 @@ html{
         padding:40px;
       }
   
-      #images {
+      .images {
         text-align: center;  
         padding: 10px;
     }
     
     
-    #images img {
+    .images img {
         margin-bottom: 10px;
         max-width: 100%;  
     }
   
-    #images a{
+    .images a{
       color:#484747;
     }
   
@@ -396,7 +396,7 @@ html{
   
         }
   
-        #images {
+        .images {
           padding: 5px;  
       }
   
@@ -442,7 +442,7 @@ html{
   
         }
   
-        #images {
+        .images {
           padding: 3px;  
       }
     /* pattern-detail page */

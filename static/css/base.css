@@ -895,7 +895,7 @@ body {
   
         }
   
-        #images {
+        .images {
           padding: 5px;  
       }
   
@@ -941,7 +941,7 @@ body {
   
         }
   
-        #images {
+        .images {
           padding: 3px;  
       }
     /* pattern-detail page */

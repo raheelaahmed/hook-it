@@ -28,20 +28,11 @@
         
             <div id="pattern-heading" class="text-center mb-4">
             <h1>Crochet Patterns</h1>
-            {% if messages %}
-            <div class="message-container">
-                {% for message in messages %}
-                    <div class="alert alert-info">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
         </div>
 
         <div class="row">
             {% for pattern in pattern_list %}
-                <div class="col-sm-4" id="images">
+                <div class="col-sm-4 images">
                     <div class="pattern-item text-center">
                         
                         <img src="{{ pattern.image.url }}" alt="{{ pattern.name }}" class="img-fluid mb-3" />
