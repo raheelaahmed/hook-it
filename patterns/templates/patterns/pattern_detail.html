@@ -95,7 +95,7 @@
                     {% endfor %}
                 </div>
 
-                <p>{{ review.comment }}</p>
+                {{ review.comment }}
                 <p><small>Reviewed on {{ review.created_at|date:"F j, Y, g:i a" }}</small></p>
 
                 <!-- Show edit button only if the logged-in user created this review -->
