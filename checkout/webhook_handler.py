@@ -17,22 +17,49 @@ class StripeWH_Handler:
     def __init__(self, request):
         self.request = request
     
-    def _send_confirmation_email(self, order):
-        """Send the user a confirmation email"""
-        cust_email = order.email
-        subject = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_subject.txt',
-            {'order': order})
-        body = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_body.txt',
-            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
-        send_mail(
-            subject,
-            body,
-            settings.DEFAULT_FROM_EMAIL,
-            [cust_email]
-        )  
+
+def _send_confirmation_email(self, order):
+    """Send the user a confirmation email with download links"""
+    cust_email = order.email
+
+    # Fetch order line items
+    order_line_items = OrderLineItem.objects.filter(order=order)
+
+    # Generate pattern download links
+    patterns_with_download = []
+    for item in order_line_items:
+        pattern = item.pattern
+        if pattern.pattern:  # Check if the pattern file exists
+            patterns_with_download.append({
+                'pattern_name': pattern.name,
+                'pattern_url': pattern.pattern.url  # Keep relative URL
+            })
+        else:
+            patterns_with_download.append({
+                'pattern_name': pattern.name,
+                'pattern_url': None  # No download link if file missing
+            })
+
+    # Prepare email subject & body
+    subject = render_to_string(
+        'checkout/confirmation_emails/confirmation_email_subject.txt',
+        {'order': order}
+    )
+    body = render_to_string(
+        'checkout/confirmation_emails/confirmation_email_body.txt',
+        {
+            'order': order,
+            'contact_email': settings.DEFAULT_FROM_EMAIL,
+            'patterns_with_download': patterns_with_download,  # Include links
+        }
+    )
+
+    send_mail(
+        subject.strip(),
+        body,
+        settings.DEFAULT_FROM_EMAIL,
+        [cust_email]
+    ) 
 
     def handle_event(self, event):
         """
