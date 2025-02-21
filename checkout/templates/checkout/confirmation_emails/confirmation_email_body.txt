@@ -6,20 +6,6 @@ Order Number: {{ order.order_number }}
 Order Date: {{ order.date }}
 Order Total: ${{ order.order_total }}
 
-{% if patterns_with_download %}
-    Here are your download links:
-    {% for item in patterns_with_download %}
-        - {{ item.pattern_name }}: 
-          {% if item.pattern_url %}
-            [Download Here]({{ item.pattern_url }})
-          {% else %}
-            No download available.
-          {% endif %}
-    {% endfor %}
-{% else %}
-    No patterns included in your order.
-{% endif %}
-
 If you have any questions, feel free to contact us at {{ contact_email }}.
 
 Thank you for your order!

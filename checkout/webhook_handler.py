@@ -19,34 +19,17 @@ class StripeWH_Handler:
     
     def _send_confirmation_email(self, order):
         """Send the user a confirmation email"""
-            # Fetch order line items
-    order_line_items = OrderLineItem.objects.filter(order=Order)
-
-    # Generate pattern download links
-    patterns_with_download = []
-    for item in order_line_items:
-        pattern = item.pattern
-        if pattern.pattern:  # Check if the pattern file exists
-            patterns_with_download.append({
-                'pattern_name': pattern.name,
-                'pattern_url': pattern.pattern.url  # Keep relative URL
-            })
-        else:
-            patterns_with_download.append({
-                'pattern_name': pattern.name,
-                'pattern_url': None  # No download link if file missing
-            })
-        cust_email = Order.email
-
+        cust_email = order.email
+        
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
-            {'order': Order})
+            {'order': order})
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
-            {'order': Order, 'contact_email': settings.DEFAULT_FROM_EMAIL},'patterns_with_download': patterns_with_download, )
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
         
         send_mail(
-            subject.strip(),
+            subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
