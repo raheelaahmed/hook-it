@@ -134,7 +134,7 @@ def edit_review(request, review_id):
     review = get_object_or_404(Review, id=review_id)
 
     # Ensure the logged-in user is the author of the review
-    if review.user != request.user:
+    if review.user != request.user and not request.user.is_superuser:
         messages.error(request, "You do not have permission to edit this review.")
         return redirect('pattern-detail', pattern_id=review.pattern.id)
 

@@ -30,13 +30,44 @@ For my project, I’ve chosen a well-balanced color scheme that combines subtle 
 
 
 ### Typography
-## User Stories
-## Features
+ 
+ I have font awesome fonts and icons on my app.
 
+## User Stories:
 
+* User can view explore patterns.
+* User can open the pattern and can see pattern detail.
+* User can add the pattern to bag using add to bag feature on pattern detail page.
+* User can review the pattern on pattern detail page.
+* User can Edit and Delete his review.
+* User can see if they have anything in the bag by looking at bag icon in the nav bar, if they have patterns in the basket bag will show total amount payable. 
+If bag is empty they can see amout 0.00.
+* User can open the bag to see what is in the bag.
+* User can delete the pattern from the bag.
+* User can go checkout securely from the shopping bag page.
+* user can return back to pattern page to exple more pattern from shopping bag page.
+* User can do a secure checkout using stipe payment form.
+* User can see oder detail as well.
+* User can acess pattern download link if the payment was successfull.
+* User can download the pattern.
+* User can contact the administration if they have any problem with patterns using contact us form from the nav bar.
+* User can see all his order on his profile, he can see it in the nav bar if he in signed in.
+* User can access pattern by clicking order number from profile page. He will access the checkout sucess page from where he can download pattern agin.
+* User can Sign up using sign up form.
+* User can sign in if thgey have already an account.
+* User can logout using logout form.
+* User can see his status if he is signbed in or sign out by looking at nav bar. It cahngeds accordingly.
+* User can reset the password if they forgot using a button on sign in page.
+* User recieves authentication email for secure signup process.
 
+## Admin Stories:
 
-### Existing Features
+* Admin can access extra feaures form managing the app.
+* Admin can add a Pattern using a front end form. he can acess the form from the nav bar named Pattern Management.
+* Admin can Edit and delete the pattern as well using edit and delete buttons on pattern and pattern detail page.
+* Admin recieves email from the user, if user tryies to contact using contact us form.
+* Admin can edit and delete user reviews using frontend as well.
+
 
 ### Site Pages
 
@@ -195,7 +226,9 @@ The search feature allows users to easily find patterns by entering keywords, wh
 
 - **Toasts**
 
-- **Basket Updates**
+
+
+- **Bag Updates**
 
 
 - **User Email Confirmations**

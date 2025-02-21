@@ -98,14 +98,17 @@
                 {{ review.comment }}
                 <p><small>Reviewed on {{ review.created_at|date:"F j, Y, g:i a" }}</small></p>
 
+                
                 <!-- Show edit button only if the logged-in user created this review -->
-                {% if review.user == request.user %}
+                {% if review.user == request.user or request.user.is_superuser %}
+
                     <a href="{% url 'edit-review' review.id %}" class="btn btn-outline-black rounded-0" id="edit">Edit</a>
                     <a href="{% url 'delete-review' pattern.id review.id %}" class="btn btn-outline-black rounded-0" id="delete">
                         Delete
                     </a>
                     
                 {% endif %}
+                
             </li>
             {% endfor %}
         </ul>
