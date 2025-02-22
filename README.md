@@ -348,7 +348,56 @@ Building a strong social media presence and linking it to the business website c
 
 ![facebook](documents/screenshots/facebook.png)
 
+### Sitemap
+
+I've used [XML-Sitemaps](https://www.xml-sitemaps.com) to generate a sitemap.xml file.
+This was generated using my deployed site URL: https://hook-it-85e92c23978c.herokuapp.com/
+
+After it finished crawling the entire site, it created a
+[sitemap.xml](sitemap.xml) which I've downloaded and included in the repository.
+
+### Robots
+
+I've created the [robots.txt](robots.txt) file at the root-level.
+Inside, I've included the default settings:
+
+```
+User-agent: *
+Disallow:
+Sitemap: https://hook-it-85e92c23978c.herokuapp.com//sitemap.xml
+```
+
+Further links for future implementation:
+- [Google search console](https://search.google.com/search-console)
+- [Creating and submitting a sitemap](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap)
+- [Managing your sitemaps and using sitemaps reports](https://support.google.com/webmasters/answer/7451001)
+- [Testing the robots.txt file](https://support.google.com/webmasters/answer/6062598)
+
+
+## Tools & Technologies Used
+* HTML used for the main site content.
+* CSS used for the main site design and layout.
+* JavaScript used for user interaction on the site.
+* Python used as the back-end programming language.
+* Git used for version control. (git add, git commit, git push)
+* GitHub used for secure online code storage.
+* Gitpod used as a cloud-based IDE for development.
+* Bootstrap used as the front-end CSS framework for modern responsiveness and pre-built components.
+* Django used as the Python framework for the site.
+* PostgreSQL used as the relational database management.
+* ElephantSQL used as the Postgres database.
+* Psycopg2 used as a PostgreSQL database adapter
+* Heroku used for hosting the deployed back-end site.
+* Stripe used for online secure payments of ecommerce products/services.
+* AWS S3 used for online static file storage.
+* Allauth used as the user authentication system
+* Pillow used as the Python framework for the site.
+* Gunicorn used for WSGI server
+* Crispy Forms used for auto-formatting of front-end forms
+* django_ckeditor_5 used for styling text.
+
 ## Testing:
+[Testing](TESTING.md)
 
 #### Cloning:
 
@@ -667,20 +716,6 @@ You can fork this repository by using the following steps:
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/raheelaahmed/hook-it)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
-
-
-### Content
-
-
-
-
-| [StackOverflow](https://stackoverflow.com/questions/3578882) | Django Authentication | How to specify the login_required redirect url in django |
-| [StackOverflow](https://stackoverflow.com/questions/47089450) | automated testing | How to test content of a Django email |
-
-| [Bootstrap Components](https://getbootstrap.com/docs/5.3/examples/) | entire site | Bootstrap stock components used as a base for various site features such as navbar & footer |
-
-| [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) | entire site | Various code sections taken from the CI Boutique Ado Walkthrough Project |
-
 
 
 
