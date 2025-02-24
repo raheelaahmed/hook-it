@@ -76,3 +76,4 @@ def remove_from_bag(request, item_id):
         messages.error(request, "Oops, something went wrong. Please try again.")
         return redirect('view_bag')
     
+    

@@ -19,7 +19,6 @@ import dj_database_url
 load_dotenv()
 
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -34,9 +33,12 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 
 DEBUG = 'DEVELOPMENT' in os.environ
-ALLOWED_HOSTS = ['8000-raheelaahmed-hookit-n3puhx18hco.ws.codeinstitute-ide.net',
-                '127.0.0.1', 'localhost', 'hook-it-85e92c23978c.herokuapp.com',
-                ]
+ALLOWED_HOSTS = [
+    '8000-raheelaahmed-hookit-n3puhx18hco.ws.codeinstitute-ide.net',
+    '127.0.0.1',
+    'localhost',
+    'hook-it-85e92c23978c.herokuapp.com',
+]
 
 # Application definition
 
@@ -82,7 +84,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [        
+        'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'allauth'),
         ],
@@ -116,14 +118,12 @@ CKEDITOR_5_CONFIGS = {
     }
 }
 AUTHENTICATION_BACKENDS = [
-    
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by email
     'allauth.account.auth_backends.AuthenticationBackend',
-    
-]
+    ]
 
 SITE_ID = 1
 
@@ -158,7 +158,7 @@ else:
     }
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeinstitute-ide.net/",]
+    "https://*.codeinstitute-ide.net/", ]
 
 
 # Password validation
@@ -200,8 +200,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
