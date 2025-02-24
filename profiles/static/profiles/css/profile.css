@@ -10,20 +10,6 @@
     margin-bottom: 20px;
 }
 
-/* Scrollbar Styling */
-.order-history::-webkit-scrollbar {
-    width: 8px;
-}
-
-.order-history::-webkit-scrollbar-thumb {
-    background: #d1b2b2;
-    border-radius: 10px;
-}
-
-.order-history::-webkit-scrollbar-thumb:hover {
-    background:#d1b2b2;
-}
-
 .order-history table {
     width: 100%;
     border-collapse: separate;

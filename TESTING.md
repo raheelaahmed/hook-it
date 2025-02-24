@@ -13,44 +13,33 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Page | W3C URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| 400 | [W3C - Validated By Input](https://validator.w3.org/#validate_by_input) | ![screenshot](documentation/validation/html/400.png) | Pass: No Errors |
-| 403 | [W3C - Validated By Input](https://validator.w3.org/#validate_by_input) | ![screenshot](documentation/validation/html/403.png) | Pass: No Errors |
-| 404 | [W3C - Validated By Input](https://validator.w3.org/#validate_by_input) | ![screenshot](documentation/validation/html/404.png) | Pass: No Errors |
-| 500 | [W3C - Validated By Input](https://validator.w3.org/#validate_by_input) | ![screenshot](documentation/validation/html/500.png) | Pass: No Errors |
-| about | ![screenshot](documentation/validation/html/about.png) | Pass: No Errors |
-| add-pattern |  ![screenshot](documents/screenshots/html-validation/about.png) | Pass: No Errors |
-| bag | ![screenshot](documents/screenshots/html-validation/bag.png) | Pass: No Errors |
-| checkout |  ![screenshot](documentation/validation/html/checkout.png) | Pass: No Errors |
-| checkout-success |  ![screenshot](documentation/validation/html/checkout-success.png) | Pass: No Errors |
-| contact |  ![screenshot](documents/screenshots/html-validation/contact-us.png) | Pass: No Errors |
-
-| patterns | ![screenshot](documents/screenshots/html-validation/patterns.png) | Pass: No Errors |
-| edit-pattern | ![screenshot](documentation/validation/html/edit-product.png) | Pass: No Errors |
-
-| home |  ![screenshot](documents/screenshots/html-validation/home.png) | Pass: No Errors |
-| login |  ![screenshot](documents/screenshots/html-validation/signin.png) | Pass: No Errors |
-| pattern-detail |  ![screenshot](documents/screenshots/html-validation/pattern-detail.png) | Pass: No Errors |
-| profile |![screenshot](documentation/validation/html/profile.png) | Pass: No Errors |
-| register |  ![screenshot](documents/screenshots/html-validation/signup.png) | Pass: No Errors |
-| toast-error | ![screenshot](documentation/validation/html/toast-error.png) |
-| toast-info | ![screenshot](documentation/validation/html/toast-info.png) |
-| toast-success |  ![screenshot](documentation/validation/html/toast-success.png) |
-| toast-warning | ![screenshot](documentation/validation/html/toast-warning.png) |
-| unsubscribe | ![screenshot](documentation/validation/html/unsubscribe.png) | Pass: No Errors |
-
+| 404 |![screenshot](documents/html-validation/error404.png) | Pass: No Errors |
+| about | ![screenshot](documents/html-validation/about.png) | Pass: No Errors |
+| add-pattern |  ![screenshot](documents/html-validation/about.png) | Pass: No Errors |
+| bag | ![screenshot](documents/html-validation/bag.png) | Pass: No Errors |
+| checkout |  ![screenshot](documents/html-validation/checkout.png) | Pass: No Errors |
+| checkout-success |  ![screenshot](documents/html-validation/checkout-success.png) | Pass: No Errors |
+| contact |  ![screenshot](documents/html-validation/contact-us.png) | Pass: No Errors |
+| patterns | ![screenshot](documents/html-validation/patterns.png) | Pass: No Errors |
+| edit-pattern | ![screenshot](documents/html-validation/edit-pattern.png) | Pass: No Errors |
+| home |  ![screenshot](documents/html-validation/home.png) | Pass: No Errors |
+| login |  ![screenshot](documents/html-validation/signin.png) | Pass: No Errors |
+| pattern-detail |  ![screenshot](documents/html-validation/pattern-detail.png) | Pass: No Errors |
+| profile |![screenshot](documents/html-validation/profile.png) | Pass: No Errors |
+| register |  ![screenshot](documents/html-validation/signup.png) | Pass: No Errors |
+| sign-out |  ![screenshot](documents/html-validation/signout.png) | Pass: No Errors |
 
 ### CSS
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
 
 
-| File | Jigsaw URL | Screenshot | Notes |
-| --- | --- | --- | --- |
-| base.css | ![screenshot](documents/screenshots/css-validation/bass-css.png) | Pass: No Errors( input base.css code passed but there are errors from external css fields given below) |
-| external css | ![screenshot](documents/screenshots/css-validation/external-css.png) | Fail
-: external css files like bootstrap,chimpmonk mail causing errors|
-| checkout.css | n/a | ![screenshot](documentation/validation/css/checkout.png) | Pass: No Errors |
-| profile.css | n/a | ![screenshot](documentation/validation/css/profile.png) | Pass: No Errors |
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| base.css | ![screenshot](documents/css-validation/bass-css.png) | Pass: No Errors( input base.css code passed but there are errors from external css fields given below) |
+| external css | ![screenshot](documents/css-validation/external-css.png) | Fail: external css files like bootstrap,chimpmonk mail causing errors|
+| checkout.css | ![screenshot](documents/css-validation/checkout.png) | Pass: No Errors |
+| profile.css |  ![screenshot](documents/css-validation/profile.png) | Pass: No Errors |
 
 
 ### JavaScript
@@ -59,10 +48,9 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| stripe_elements.js | ![screenshot](documentation/validation/js/stripe-elements.png) | Undefined Stripe variable |
-| tooltips.js | ![screenshot](documentation/validation/js/tooltips.png) | Pass: No Errors |
-| navbar.js | ![screenshot](documentation/validation/js/navbar.png) | Pass: No Errors |
-| countryfield.js | ![screenshot](documentation/validation/js/countryfield.png) | Pass: No Errors |
+| stripe_elements.js | ![screenshot](documents/javascript-testing/stripe.png) | warning (use version 6)|
+| countryfield.js | ![screenshot](documents/javascript-testing/contry-field.png) | Pass: No Errors |
+| quantity-input-script.js | ![screenshot](documents/javascript-testing/qauntity-input.png) | warning (use version 6) |
 
 
 
@@ -70,29 +58,26 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
-### Basket App
-| File | CI URL | Screenshot | Notes |
-| --- | --- | --- | --- |
-| apps.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/basket/apps.py) | ![screenshot](documentation/validation/python/basket/apps.png) | Pass: No Errors |
-| contexts.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/basket/contexts.py) | ![screenshot](documentation/validation/python/basket/contexts.png) | Pass: No Errors |
-| tests.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/basket/tests.py) | ![screenshot](documentation/validation/python/basket/tests.png) | Pass: No Errors |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/basket/urls.py) | ![screenshot](documentation/validation/python/basket/urls.png) | Pass: No Errors |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/basket/views.py) | ![screenshot](documentation/validation/python/basket/views.png) | Pass: No Errors |
+### Bag App
+| File |  Screenshot | Notes |
+| --- | --- | --- |
+| apps.py | ![screenshot](documents/python-testing/apps.bag.png) | Pass: No Errors |
+| contexts.py | ![screenshot](documents/python-testing/context.bag.png) | Pass: No Errors |
+| urls.py |![screenshot](documents/python-testing/urls.bag.png) | Pass: No Errors |
+| views.py |  ![screenshot](documents/python-testing/views.bag.png) | Pass: No Errors |
 
 ### Checkout App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/checkout/admin.py) | ![screenshot](documentation/validation/python/checkout/admin.png) | Pass: No Errors |
-| apps.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/checkout/apps.py) | ![screenshot](documentation/validation/python/checkout/apps.png) | Pass: No Errors |
-| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/checkout/forms.py) | ![screenshot](documentation/validation/python/checkout/forms.png) | Pass: No Errors |
-| init.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/checkout/__init__.py) | ![screenshot](documentation/validation/python/checkout/init.png) | Pass: No Errors |
-| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/checkout/models.py) | ![screenshot](documentation/validation/python/checkout/models.png) | Pass: No Errors |
-| signals.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/checkout/signals.py) | ![screenshot](documentation/validation/python/checkout/signals.png) | Pass: No Errors |
-| tests.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/checkout/tests.py) | ![screenshot](documentation/validation/python/checkout/tests.png) | Pass: No Errors |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/checkout/urls.py) | ![screenshot](documentation/validation/python/checkout/urls.png) | Pass: No Errors |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/checkout/views.py) | ![screenshot](documentation/validation/python/checkout/views.png) | Pass: No Errors |
-| webhook_handler.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/checkout/webhook_handler.py) | ![screenshot](documentation/validation/python/checkout/webhook-handler.png) | Pass: No Errors |
-| webhooks.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/LewisMDillon/web-piano-academy/main/checkout/webhooks.py) | ![screenshot](documentation/validation/python/checkout/webhooks.png) | Pass: No Errors |
+| admin.py | ![screenshot](documents/python-testing/admin.checkout.png) | Pass: No Errors |
+| apps.py | ![screenshot](documents/python-testing/apps.checkout.png) | Pass: No Errors |
+| forms.py | ![screenshot](documents/python-testing/forms.checkout.png) | line too long |
+| models.py | ![screenshot](documents/python-testing/models.checkout.png) | line too long, no newline at the end.|
+| signals.py | ![screenshot](documents/python-testing/signals.checkout.png) | no new line |
+| urls.py |![screenshot](documents/python-testing/urls.checkout.png) | line too long |
+| views.py |![screenshot](documents/python-testing/views.checkout.png) | Pline too long |
+| webhook_handler.py |![screenshot](documents/python-testing/wh-handler.checkout.png) | line too long, no new line |
+| webhooks.py |  ![screenshot](documents/python-testing/wh.checkout.png) | line too long |
 
 
 ### Config App

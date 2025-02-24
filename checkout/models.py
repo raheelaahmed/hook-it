@@ -44,7 +44,6 @@ class Order(models.Model):
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.save()
 
-
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the order number
@@ -71,7 +70,6 @@ class OrderLineItem(models.Model):
         """
         self.lineitem_total = self.pattern.price * self.quantity
         super().save(*args, **kwargs)
-
 
     def __str__(self):
         return f'Pattern: {self.pattern.name} -- Order: {self.order.order_number}'

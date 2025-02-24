@@ -13,6 +13,7 @@ from bag.contexts import bag_contents
 import stripe
 import json
 
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -51,7 +52,6 @@ def checkout(request):
 
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-        
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
@@ -73,8 +73,7 @@ def checkout(request):
                                 order=order,
                                 pattern=pattern,
                                 quantity=quantity,
-                               
-                            )
+                               )
                             order_line_item.save()
                 except Pattern.DoesNotExist:
                     messages.error(request, (
@@ -198,7 +197,7 @@ def checkout_success(request, order_number):
     context = {
         'order': order,
         'patterns_with_download': patterns_with_download,
-        'MEDIA_URL': settings.MEDIA_URL 
+        'MEDIA_URL': settings.MEDIA_URL
     }
 
     return render(request, template, context)

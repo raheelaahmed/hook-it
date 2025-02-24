@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from patterns.models import Pattern
-from django.conf import settings 
+from django.conf import settings
 
 # Create your views here.
 
@@ -47,7 +47,6 @@ def adjust_bag(request, item_id):
 
     # Get the new quantity from the POST data
     quantity = int(request.POST.get('quantity'))
-    
     # Get the current shopping bag from the session
     bag = request.session.get('bag', {})
 
@@ -55,7 +54,7 @@ def adjust_bag(request, item_id):
         bag[item_id] = quantity
         messages.success(request, f'Updated quantity of {pattern.name} to {quantity} in your bag.')
     else:
-        bag.pop(item_id, None)  
+        bag.pop(item_id, None)
         messages.info(request, f'Removed {pattern.name} from your bag.')
 
     request.session['bag'] = bag
@@ -76,3 +75,4 @@ def remove_from_bag(request, item_id):
     except Exception as e:
         messages.error(request, "Oops, something went wrong. Please try again.")
         return redirect('view_bag')
+    
