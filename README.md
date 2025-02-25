@@ -161,7 +161,7 @@ This is the Checkout Success page, confirming that your order has been completed
 The user will receive a confirmation email containing the details of their order, including the order summary and payment confirmation.
 
 
-![email](documents/screenshots/email-screenshot.png)
+![email](documents/screenshots/email-confirmatioon.png)
 
 
 - **Privacy Policy**
@@ -171,6 +171,15 @@ This page contains the privacy policy for our app. A link to this page is availa
 
 
 ![Privacy-Policy](documents/screenshots/privacy-Policy-sceenshot.png)
+
+
+
+- **Error-404**
+
+The app includes a custom 404 error page to enhance user experience when they navigate to a non-existent route. This page is designed to inform users that the requested content is unavailable while maintaining the app’s overall aesthetic and usability.
+
+
+![error](documents/screenshots/error.png)
 
 
 ### Allauth Templates:
@@ -206,10 +215,6 @@ The user can reset their password by providing their email address. A password r
 
 
 ![password-reset-4](documents/screenshots/password-changed-screenshot.png)
-
-
-
-
 
 
 ### User Features
@@ -299,6 +304,57 @@ User is able to recieve order confirmation email using webhook handler.
 * User will recieve discount codes.
 * There will be a blog on the app about the products and patterns.
 * User will be able to access Free patterns on the blog posts.
+
+## Navbar:
+
+### Navbar when User is Logged Out
+
+When a user is logged out, the navigation bar displays the following elements:
+
+- **Logo and Name**: Located on the left side of the navbar.
+- **Home**: The main landing page of the website.
+- **About**: Information about the website or company.
+- **Contact Us**: A link to contact details or a contact form.
+- **Patterns**: A section showcasing available patterns.
+- **Register**: A link to the user registration page.
+- **Login**: A link to the login page for users to access their account.
+- **Search**: A search bar to find content across the website.
+- **Bag**: A shopping bag icon for users to view their selected items.
+
+
+![logout-navbar](documents/screenshots/nav-logout.png)
+
+### Navbar when User is Logged In
+
+When a user is logged In, the navigation bar displays the following elements:
+
+- **Logo and Name**: Located on the left side of the navbar.
+- **Home**: The main landing page of the website.
+- **About**: Information about the website or company.
+- **Contact Us**: A link to contact details or a contact form.
+- **Patterns**: A section showcasing available patterns.
+- **Logout**: A link to the lLogout page.
+- **Profile**: A link to see Profile page.
+- **Pattern Managemenet(if user is superuser)**: A link to add pattern page.
+- **Search**: A search bar to find content across the website.
+- **Bag**: A shopping bag icon for users to view their selected items.
+
+![login](documents/screenshots/nav-login.png)
+
+
+## Footer
+
+The footer of the website contains the following sections:
+
+- **About Us**: Provides information about the website or company.
+- **Contact Us**: A link to the contact page for reaching out or customer support.
+- **Privacy Policy**: A link to the website's privacy policy detailing data handling practices.
+- **Facebook Page**: A link to the official Facebook page for social media engagement.
+- **Newsletter Subscription**: A form allowing users to subscribe to receive updates and news.
+
+
+![footer](documents/screenshots/footer.png)
+
 
 
 ## Agile methodology:

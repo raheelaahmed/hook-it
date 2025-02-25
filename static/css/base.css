@@ -650,6 +650,60 @@ body {
   margin: 15px auto;
 }
 
+/*confirm delete pattern*/
+#confirm-delete {
+  margin-top:200px;
+  margin-bottom:200px;
+  font-family: "Roboto", serif;
+  background-color: #e2cbcb;
+  text-align: center;
+  padding:20px;
+  color:#484747;
+  max-width: 500px;
+}
+
+
+#confirm-delete h2 {
+  font-size: 20px;
+  color: red;
+  margin-bottom: 15px;
+}
+
+#confirm-delete p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#confirm-delete .btn {
+  padding: 10px 15px;
+  font-size: 14px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+#confirm-delete .btn-danger {
+  background-color: red;
+  color: white;
+}
+
+#confirm-delete .btn-danger:hover {
+  background-color: darkred;
+}
+
+#confirm-delete .btn-secondary {
+  background-color: gray;
+  color: white;
+}
+
+#confirm-delete .btn-secondary:hover {
+  background-color: darkgray;
+}
+
+
 /* edit pattern page*/
 #pattern-management{
   margin-top:200px;
@@ -823,14 +877,16 @@ body {
 }
 
 /* error 404 page */
-
 #error-404 {
-  display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
+  max-width: 600px; /* Set a max width */
+  margin: 10% auto; /* Center it */
+  padding: 20px;
   text-align: center;
   background-color: #d1b2b2;
+  border-radius: 10px; /* Optional: Add rounded corners */
 }
 
 .error-box {
@@ -860,6 +916,8 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+
 
 
   

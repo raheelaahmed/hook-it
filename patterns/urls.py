@@ -9,6 +9,6 @@ urlpatterns = [
       path('pattern/<int:pattern_id>/review/<int:review_id>/delete/', views.delete_review, name='delete-review'),
       path('add/', views.add_pattern, name='add_pattern'),
       path('edit/<int:pattern_id>/', views.edit_pattern, name='edit_pattern'),
-      path('delete/<int:pattern_id>/', views.delete_pattern, name='delete_pattern'),
+      path('delete_pattern/<int:pattern_id>/', views.delete_pattern, name='delete_pattern'),
 
 ]

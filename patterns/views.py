@@ -217,12 +217,17 @@ def edit_pattern(request, pattern_id):
 
 @login_required
 def delete_pattern(request, pattern_id):
-    """ Delete a pattern from the store """
+    """Delete a pattern from the store after confirmation"""
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
     pattern = get_object_or_404(Pattern, pk=pattern_id)
-    pattern.delete()
-    messages.success(request, 'Pattern deleted!')
-    return redirect(reverse('patterns'))
+
+    if request.method == 'POST':  # If the form is submitted to confirm the deletion
+        pattern.delete()
+        messages.success(request, 'Pattern deleted!')
+        return redirect(reverse('patterns'))
+
+    # If it's a GET request, show the confirmation page
+    return render(request, 'patterns/confirm_delete.html', {'pattern': pattern})
