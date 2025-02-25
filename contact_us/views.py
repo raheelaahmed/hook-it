@@ -35,7 +35,6 @@ def contact_view(request):
 
         context = {
             'form': form,
-            'MEDIA_URL': settings.MEDIA_URL
         }
 
     return render(request, 'contact_us/contact.html', context)
