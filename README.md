@@ -130,6 +130,12 @@ This page is also designed for the administration. An Edit button is available o
 
 ![edit-pattern](documents/screenshots/edit-pattern-screenshot.png)
 
+- **Confirm Delette Page** 
+
+This page is designed to confirm the user's intention to delete the pattern, ensuring that the deletion is intentional and not accidental.
+
+![delete](documents/screenshots/confirm-delete.png)
+
 
 - **Shopping Bag page**
 

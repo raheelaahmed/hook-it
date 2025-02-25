@@ -22,6 +22,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | contact |  ![screenshot](documents/html-validation/contact-us.png) | Pass: No Errors |
 | patterns | ![screenshot](documents/html-validation/patterns.png) | Pass: No Errors |
 | edit-pattern | ![screenshot](documents/html-validation/edit-pattern.png) | Pass: No Errors |
+| delete-confirm | ![screenshot](documents/html-validation/confirm-delete.png) | Pass: No Errors |
 | home |  ![screenshot](documents/html-validation/home.png) | Pass: No Errors |
 | login |  ![screenshot](documents/html-validation/signin.png) | Pass: No Errors |
 | pattern-detail |  ![screenshot](documents/html-validation/pattern-detail.png) | Pass: No Errors |
@@ -173,7 +174,8 @@ On all pages, Lighthouse is flagging a warning 'Issues were logged in the Issues
 | checkout-success |  ![screenshot](documents/lighthouse-audit/checkout-success.png) | pass |
 | contact |  ![screenshot](documents/lighthouse-audit/contact-us.png) | pass |
 | patterns | ![screenshot](documents/lighthouse-audit/patterns.png) | pass|
-| edit-product |  ![screenshot](documents/lighthouse-audit/edit-pattern.png) | pass |
+| edit-pattern |  ![screenshot](documents/lighthouse-audit/edit-pattern.png) | pass |
+| confirm-delete |  ![screenshot](documents/lighthouse-audit/confirm-delete.png) | pass |
 | home |  ![screenshot](documents/lighthouse-audit/home.png) |pass|
 | sign-in |  ![screenshot](documents/lighthouse-audit/sign-in.png) | pass |
 | pattern-detail |  ![screenshot](documents/lighthouse-audit/pattern-detail.png) | pass|
@@ -227,14 +229,14 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on sorting dropdown options | Sort patterns by selected criteria | Pass | |
 | Patterns - Admin Only| | | | |
 | | Click on an edit button | Redirect to edit pattern page for that pattern | Pass | |
-| | Click on a delete button | delete pattern | Pass | |
+| | Click on a delete button | directs to confirm delete page | Pass | |
 | Pattern Details | | | | |
 | | Click on 'Keep Shopping' button | Redirect to pattern page | Pass | |
 | | Click on 'Add To Bag' button | Adds pattern to bag, bag message displayed | Pass | |
 | | Click on 'submit Review' button | posts Review, success message displayed | Pass | |
 | Pattern Details - Admin Only | | | | |
 | | Click on Edit button | Redirect to edit pattern page for that pattern | Pass | |
-| |  Click on delete button | delete the pattern | Pass | |
+| |  Click on delete button | directs to confirm-delete page| Pass | |
 | |  Click on edit button for reviews|Redirect to edit review page for that review | Pass | |
 | |  Click on delete button | delete the review | Pass | |
 | Contact | | | | |
