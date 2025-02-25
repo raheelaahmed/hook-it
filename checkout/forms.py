@@ -7,7 +7,7 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number', 'postcode', 'town_or_city', 'street_address1',
-                  'street_address2', ' county', 'country')
+                  'street_address2', 'county', 'country')
 
     def __init__(self, *args, **kwargs):
         """
@@ -42,4 +42,3 @@ class OrderForm(forms.ModelForm):
         self.helper.form_class = 'form-group'
         self.helper.label_class = 'col-form-label'
         self.helper.field_class = 'col-form-input'
-        

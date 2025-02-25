@@ -34,6 +34,3 @@ def __init__(self, *args, **kwargs):
 
         # Define image field with custom widget (if needed)
         self.fields['image'] = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
-
-
-

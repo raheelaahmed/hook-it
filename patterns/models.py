@@ -79,4 +79,3 @@ class Review(models.Model):
 
     class Meta:
         ordering = ['-created_at']  # Show most recent reviews first
-

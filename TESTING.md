@@ -64,7 +64,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | apps.py | ![screenshot](documents/python-testing/apps.bag.png) | Pass: No Errors |
 | contexts.py | ![screenshot](documents/python-testing/context.bag.png) | Pass: No Errors |
 | urls.py |![screenshot](documents/python-testing/urls.bag.png) | Pass: No Errors |
-| views.py |  ![screenshot](documents/python-testing/views.bag.png) | Pass: No Errors |
+| views.py |  ![screenshot](documents/python-testing/views.bag.png) | E501(line too long)|
 
 ### Checkout App
 | File | CI URL | Screenshot | Notes |
@@ -142,9 +142,7 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 | Browser | Screenshot | Notes |
 | --- | --- | --- |
-
 | Chrome | ![screenshot](documents/browser/chorome.png) | Works as expected |
-
 | Safari | ![screenshot](documents/browser/safari.png) | Works as expected |
 
 ## Responsiveness
@@ -153,13 +151,11 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 
 | Device | Screenshot | Notes |
 | --- | --- | --- |
-| Mobile (DevTools) | ![screenshot](documentation/responsiveness/mobile.png) | Works as expected |
-| Tablet (DevTools) | ![screenshot](documentation/responsiveness/tablet.png) | Works as expected |
-| Desktop | ![screenshot](documentation/responsiveness/desktop.png) | Works as expected |
-| XL Monitor | ![screenshot](documentation/responsiveness/xl.png) | Scaling starts to have minor issues |
-| 4k Monitor | ![screenshot](documentation/responsiveness/4k.png) | Noticeable scaling issues |
-| Oneplus Nord | ![screenshot](documentation/responsiveness/oneplus.jpg) | Works as expected |
-| iPhone15 | ![screenshot](documentation/responsiveness/iphone.png) | Works as expected |
+| Mobile (googl3-pixel-7) | ![screenshot](documents/responsiveness/google-pixel-7.png) | Works as expected |
+| Tablet (ipad-air) | ![screenshot](documents/responsiveness/ipad-air.png) | Works as expected |
+| Mac-book | ![screenshot](documents/responsiveness/macbook.png) | Works as expected |
+| XL Monitor | ![screenshot](documents/responsiveness/large-monitor.png) | Works as expected |
+
 
 ## Lighthouse Audit
 
@@ -167,17 +163,14 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 On all pages, Lighthouse is flagging a warning 'Issues were logged in the Issues panel in Chrome Devtools'. This is caused by the built-in Stripe element used by the site.
 
-| Page | Mobile | Desktop | Notes |
-| --- | --- | --- | --- |
-| 400 | ![screenshot](documentation/lighthouse/mobile/400.png) | ![screenshot](documentation/lighthouse/desktop/400.png) | Some Minor Warnings |
-| 403 | ![screenshot](documentation/lighthouse/mobile/403.png) | ![screenshot](documentation/lighthouse/desktop/403.png) | Some Minor Warnings |
-| 404 | ![screenshot](documentation/lighthouse/mobile/404.png) | ![screenshot](documentation/lighthouse/desktop/404.png) | Some Minor Warnings |
-| 500 | ![screenshot](documentation/lighthouse/mobile/500.png) | ![screenshot](documentation/lighthouse/desktop/500.png) | Some Minor Warnings |
+| Page | Desktop | Notes |
+| --- |  --- | --- |
+| 404 | ![screenshot](documentation/lighthouse/desktop/404.png) | Some Minor Warnings |
 | about |![screenshot](documents/lighthouse-audit/about.png) | pass |
 | add-patern |  ![screenshot](documents/lighthouse-audit/add-a-pattern.png) | pass |
 | bag | ![screenshot](documents/lighthouse-audit/add-a-pattern.png) | pass |
-| checkout | ![screenshot](documentation/lighthouse/mobile/checkout.png) | ![screenshot](documentation/lighthouse/desktop/checkout.png) | Warning about country input element with no label - this element is dynamically labelled by javascript |
-| checkout-success | ![screenshot](documentation/lighthouse/mobile/checkout-success.png) | ![screenshot](documentation/lighthouse/desktop/checkout-success.png) | Some Minor Warnings |
+| checkout | ![screenshot](documentation/lighthouse/desktop/checkout.png) | Warning about country input element with no label - this element is dynamically labelled by javascript |
+| checkout-success |  ![screenshot](documentation/lighthouse/desktop/checkout-success.png) | Some Minor Warnings |
 | contact |  ![screenshot](documents/lighthouse-audit/contact-us.png) | pass |
 | patterns | ![screenshot](documents/lighthouse-audit/patterns.png) | pass|
 | edit-product |  ![screenshot](documentation/lighthouse/desktop/edit-product.png) | Some Minor Warnings |

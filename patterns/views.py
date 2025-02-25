@@ -226,16 +226,3 @@ def delete_pattern(request, pattern_id):
     pattern.delete()
     messages.success(request, 'Pattern deleted!')
     return redirect(reverse('patterns'))
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  

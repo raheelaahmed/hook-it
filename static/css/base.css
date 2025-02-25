@@ -822,6 +822,45 @@ body {
   padding: 0 20px;
 }
 
+/* error 404 page */
+
+#error-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #d1b2b2;
+}
+
+.error-box {
+  padding: 40px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.error-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.shop-now-button {
+  background: #007bff;
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 12px 20px;
+}
+
+.shop-now-button:hover {
+  background: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 
   
   
