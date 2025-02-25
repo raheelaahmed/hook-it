@@ -17,7 +17,7 @@ class HomeViewTestCase(TestCase):
         self.assertTemplateUsed(
             response, 'home/index.html', 'base.html'
             )
-        
+
     def test_about_render(self):
         """
         Tests that the home page is rendered properly
