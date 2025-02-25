@@ -165,15 +165,15 @@ On all pages, Lighthouse is flagging a warning 'Issues were logged in the Issues
 
 | Page | Desktop | Notes |
 | --- |  --- | --- |
-| 404 | ![screenshot](documentation/lighthouse/desktop/404.png) | Some Minor Warnings |
+| 404 | ![screenshot](documents/lighthouse-audit/error404.png) | pass |
 | about |![screenshot](documents/lighthouse-audit/about.png) | pass |
 | add-patern |  ![screenshot](documents/lighthouse-audit/add-a-pattern.png) | pass |
 | bag | ![screenshot](documents/lighthouse-audit/add-a-pattern.png) | pass |
-| checkout | ![screenshot](documentation/lighthouse/desktop/checkout.png) | Warning about country input element with no label - this element is dynamically labelled by javascript |
-| checkout-success |  ![screenshot](documentation/lighthouse/desktop/checkout-success.png) | Some Minor Warnings |
+| checkout | ![screenshot](documents/lighthouse-audit/checkout.png) | pass |
+| checkout-success |  ![screenshot](documents/lighthouse-audit/checkout-success.png) | pass |
 | contact |  ![screenshot](documents/lighthouse-audit/contact-us.png) | pass |
 | patterns | ![screenshot](documents/lighthouse-audit/patterns.png) | pass|
-| edit-product |  ![screenshot](documentation/lighthouse/desktop/edit-product.png) | Some Minor Warnings |
+| edit-product |  ![screenshot](documents/lighthouse-audit/edit-pattern.png) | pass |
 | home |  ![screenshot](documents/lighthouse-audit/home.png) |pass|
 | sign-in |  ![screenshot](documents/lighthouse-audit/sign-in.png) | pass |
 | pattern-detail |  ![screenshot](documents/lighthouse-audit/pattern-detail.png) | pass|
@@ -189,37 +189,23 @@ Defensive programming was manually tested with the below user acceptance testing
 | Page | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
 | Nav links | | | | |
-| | Click on Logo | Redirection to Home page | Pass | |
 | | Click on site name in navbar | Redirection to Home page | Pass | |
 | | Click on About Us link in navbar | Redirection to About page | Pass | |
-| | Click on Courses - All Courses link in navbar | Redirection to Courses page | Pass | |
-| | Click on Courses - Classical link in navbar | Redirection to Courses page - Display only 'Classical' category courses | Pass | |
-| | Click on Courses - Jazz link in navbar | Redirection to Courses page - Display only 'Jazz' category courses | Pass | |
-| | Click on Courses - Pop link in navbar | Redirection to Courses page - Display only 'Pop' category courses | Pass | |
-| | Click on Courses - Music Theory link in navbar | Redirection to Courses page - Display only 'Music Theory' category courses | Pass | |
-| | Click on Faq link in navbar | Redirection to Faq page | Pass | |
+| | Click on Patterns link in navbar | Redirection to Patterns page | Pass | |
 | | Click on Contact link in navbar | Redirection to Contact page | Pass | |
-| | Click on Search link in navbar | Search box dropdown, with input to search on courses page | Pass | |
+| | Click on Search link in navbar | Search box dropdown, with input to search on Pattern page | Pass | |
 | | Click on Register link in navbar | Redirection to Register page | Pass | |
 | | Click on Login link in navbar | Redirection to Login page | Pass | |
-| | Click on Basket link in navbar | Redirection to Basket page | Pass | |
-| | Click on My Account - My Profile link in navbar | Redirection to User Profile page | Pass | |
-| | Click on My Account - Logout link in navbar | Redirection to Logout page | Pass | |
-| | Click on Add New Product link in navbar | Redirection to Add Product page | Pass | |
-| | Click on Edit A Product link in navbar | Redirection to Courses page | Pass | |
-| | Click on Delete A Product link in navbar | Redirection to Courses page | Pass | |
-| | Click on Contact Requests link in navbar | Redirection to Contact Requests page | Pass | |
+| | Click on Bag link in navbar | Redirection to Bag page | Pass | |
+| | Click on Profile link in navbar | Redirection to User Profile page | Pass | |
+| | Click on Logout link in navbar | Redirection to Logout page | Pass | |
+| | Click on Pattern Management link in navbar | Redirection to Add Pattern page | Pass | |
+| | Click on Home link in navbar | Redirection to Home Page | Pass | |
 | Footer | | | | |
-| | Click on Home link | Redirection to Home page | Pass | |
-| | Click on Our Courses | Redirection to Courses page | Pass | |
 | | Click on About Us link in footer | Redirection to About page | Pass | |
-| | Click on Faqs link in footer | Redirection to Faq page | Pass | |
-| | Click on Contact link in footer | Redirection to Contact page | Pass | |
-| | Click on Register link in footer | Redirection to Register page | Pass | |
-| | Click on Login link in footer | Redirection to Login page | Pass | |
-| | Click on My Profile link in footer | Redirection to User Profile page | Pass | |
-| | Click on Logout link in footer | Redirection to Logout page | Pass | |
-| | Click on 'Subscribe to our mailing list' button in footer | Redirection to Newsletter Subscription page | Pass | |
+| | Click on Contact Us link in footer | Redirection to Contact page | Pass | |
+| | Click on Privacy policy link in footer | Redirection to Privacy pocliy page | Pass | |
+| | Click on 'Subscribe to our mailing list' button in footer | subscribtion essage | Pass | |
 | Register | | | | |
 | | Enter valid email address (twice) | Field will only accept email address format | Pass | |
 | | Enter valid password (twice) | Field will only accept password format | Pass | |
@@ -233,69 +219,45 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click Logout button | Logs out user, Redirects user to home page | Pass |
 | Profile | | | | |
 | | Click on the Update Information button | Inputted information is saved | Pass | |
-| | Click on Order History links | Redirects to user order confirmation | Pass | |
+| | Click on Order History links | Redirects to user order confirmation/checkout success page | Pass | |
 | Site Navigations - Logged Out User | | | | |
 | | Navigate to any login required URL | Redirect to login page, redirect back after login | Pass | |
-| Courses | | | | |
-| | Click on course image | Redirect to clicked course details page | Pass | |
-| | Click on course title | Redirect to clicked course details page | Pass | |
-| | Click on sorting dropdown options | Sort courses by selected criteria | Pass | |
-| Courses - Admin Only| | | | |
-| | Click on an edit button | Redirect to edit product page for that course | Pass | |
-| | Click on a delete button | Trigger delete confirmation modal | Pass | |
-| | Delete confirmation modal - 'yes, delete' button | Delete the course | Pass | |
-| | Delete confirmation modal - 'no, go back' button | Close the modal | Pass | |
-| Product Details | | | | |
-| | Click on course image | Load full image | Pass | |
-| | Click on 'Back To Our Courses' button | Redirect to courses page | Pass | |
-| | Click on 'Add To Basket' button | Adds product to basket, basket message displayed | Pass | |
-| Product Details - Admin Only | | | | |
-| | Click on Edit button | Redirect to edit product page for that course | Pass | |
-| | Click on Delete button | Trigger delete confirmation modal | Pass | |
-| | Delete confirmation modal - 'yes, delete' button | Delete the course | Pass | |
-| | Delete confirmation modal - 'no, go back' button | Close the modal | Pass | |
-| FAQ | | | | |
-| | Click on question | Dropdown with answer appears | Pass | |
-| | Click on open question | Dropdown with answer disappears | Pass | |
+| Pattern | | | | |
+| | Click on Patterrn title | Redirect to clicked pattern details page | Pass | |
+| | Click on sorting dropdown options | Sort patterns by selected criteria | Pass | |
+| Patterns - Admin Only| | | | |
+| | Click on an edit button | Redirect to edit pattern page for that pattern | Pass | |
+| | Click on a delete button | delete pattern | Pass | |
+| Pattern Details | | | | |
+| | Click on 'Keep Shopping' button | Redirect to pattern page | Pass | |
+| | Click on 'Add To Bag' button | Adds pattern to bag, bag message displayed | Pass | |
+| | Click on 'submit Review' button | posts Review, success message displayed | Pass | |
+| Pattern Details - Admin Only | | | | |
+| | Click on Edit button | Redirect to edit pattern page for that pattern | Pass | |
+| |  Click on delete button | delete the pattern | Pass | |
+| |  Click on edit button for reviews|Redirect to edit review page for that review | Pass | |
+| |  Click on delete button | delete the review | Pass | |
 | Contact | | | | |
-| | Email input | Auto-fills if user is logged in | Pass | |
 | | Email input | Required, accepts only email format | Pass | |
-| | Name input | Required | Pass | |
 | | Subject input | Required, user given a list of options | Pass | |
-| | Message input | Required, Max characters = 1024 | Pass | |
-| | Click on 'Send' button | Posts form if valid, redirects to contact success page | Pass | |
-| Contact Requests - Admin Only | | | | |
-| | Click on a 'View Details' link | Redirect to clicked message details page | Pass | |
-| Message Details - Admin Only | | | | |
-| | Click on 'Back To Contact List' link | Redirect to contact list page | Pass | |
-| | Click on 'Respond To Message' button | Email dropdown appears | Pass | |
-| | Click on 'Respond To Message' button while open | Email dropdown disappears | Pass | |
-| | Click on a 'Send Email' button | Email is sent to displayed address, success message displayed, Respond button disappears | Pass | |
-| | Click on 'Delete Message' button | Redirect to message delete confirmation page | Pass | |
-| Message Delete - Admin Only | | | | |
-| | Click on 'Yes, Delete It' button | Message is deleted, success message displayed, redirect to contact list page | Pass | |
-| | Click on 'No, Go Back' button | Redirect to message details page | Pass | |
-| Add New Product - Admin Only | | | | |
+| | Message input | Required | Pass | |
+| | Click on 'Submit' button |Success message | Pass | |
+| Add New Pattern - Admin Only | | | | |
 | | Category Input | Not required, select from options | Pass | |
-| | Level Input | Not required, select from options | Pass | |
-| | Level Display Name Input | Not required | Pass | |
+| | Difficulty Input | Not required, select from options | Pass | |
 | | Name Input | Required | Pass | |
-| | Subtitle Input | Not required | Pass | |
-| | Description Input | Required | Pass | |
 | | Price Input | Required, Numbers only | Pass | |
-| | Course URL | Not required | Pass | |
-| | Image URL | Not required | Pass | |
-| | Image | Not required | Pass | |
-| Edit Product - Admin Only | | | | |
-| | Click on 'Cancel' button | Redirect to Courses page | Pass | |
-| | Click on 'Update Product' button | Save changes, redirect to course details page | Pass | |
-| Delete Product - Admin Only | | | | |
-| | Click on Delete button | Trigger delete confirmation modal | Pass | |
-| | Delete confirmation modal - 'yes, delete' button | Delete the course | Pass | |
-| | Delete confirmation modal - 'no, go back' button | Close the modal | Pass | |
-| Basket | | | | |
-| | Click on 'Remove This Item' link | Remove item from basket | Pass | |
-| | Click on 'Back To Courses' button | Redirect to Courses page | Pass | |
+| | Date-Created | auto fill | Pass | |
+| | Image | required | Pass | |
+| | pattern URL |  required | Pass | |
+| | Description Input | Required | Pass | |
+| | Click on 'Cancel' button | Redirect to Pattern page | Pass | |
+| | Click on 'Update Pattern' button | Save changes, redirect to pattern details page | Pass | |
+| Delete Pattern - Admin Only | | | | |
+| | Delete button | deletes the pattern | Pass | |
+| Bag | | | | |
+| | Click on 'Remove' link | Remove item from bag | Pass | |
+| | Click on 'Keep Shopping' button | Redirect to Patterns page | Pass | |
 | | Click on 'Secure Checkout' button | Redirect to Checkout page | Pass | |
 | Checkout | | | | |
 | | Full Name Input | Required | Pass | |
@@ -308,95 +270,11 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Postal Code Input | Not required, autofill if saved | Pass | |
 | | Country Input | Required, autofill if saved, select from options | Pass | |
 | | Stripe Card Details | Required, validates on input | Pass | |
-| | Hover over Address Details tooltip icon | Displays tooltip | Pass | |
 | | Check 'save delivery info.' box | Saves information to user profile | Pass | |
-| | Click course image in order summary | Redirect to the course details page | Pass | |
-| | Click on 'Adjust Basket' button | Redirect to Basket page | Pass | |
+| | Click on 'Adjust Bag' button | Redirect to Bag page | Pass | |
 | | Click on 'Complete Order' button | Complete Checkout with given information, redirect to order confirmation page if valid | Pass | |
 | Newsletter - Subscribe | | | | |
-| | Email Input | Required, autofills if user is logged in, accepts only email format | Pass | |
-| | Click on 'Subscribe' button | Subscribes user, redirects to homepage, displays success message | Pass | |
-| Newsletter - Unsubscribe | | | | |
-| | Click on 'Unsubscribe' button | Unsubscribes user, redirects to homepage, displays success message | Pass | |
+| | Email Input | Required | Pass | |
+| | Click on 'Subscribe' button | Subscribes user| Pass | |
 
 
-## User Story Testing
-
-| User Story | Screenshot |
-| --- | --- |
-| As a user I can fill out a front-end registration form so that I can make an account and have a personal presence on the site | ![screenshot](documentation/features/sitepages/signup.png) |
-| As an admin I can hash & securely store users' passwords so that users' sensitive information remains secure | ![screenshot](documentation/features/sitepages/signup.png) |
-| As an admin I can save users' account details to a backend database so that users can create permanent accounts on my site | ![screenshot](documentation/features/sitepages/login.png) |
-| As a user I can see and edit my personal user profile so that I can see my saved user details and other information such as past orders | ![screenshot](documentation/features/sitepages/profile.png) |
-| As an admin I can send confirmation emails to registering users so that My registration process is more secure, and I validate all user emails when they register | ![screenshot](documentation/features/user/email-confirmation1.png) |
-| As a user I can log in & out of my account so that I can see my profile and access login-only areas of the site, as well as log out to keep my account secure | ![screenshot](documentation/features/sitepages/login.png) |
-| As a user I can navigate around the site using links in a navbar so that I can easily access any area of the site I wish to see | ![screenshot](documentation/features/user/login-navbar-links1.png) |
-| As a user I can see different nav links depending on my login state so that I can see only the relevant nav links I need, and links such as 'login' are removed if I am logged in | ![screenshot](documentation/features/user/login-navbar-links2.png) |
-| As a user I can use buttons on site pages to bring me back/forward a step or bring me to a specific page so that when on an area of the site which naturally leads to or follows on from another specific site page, I can click a button provided to take me there. | ![screenshot](documentation/features/sitepages/basket.png) |
-| As a user I can see prices of all products so that I have an accurate measure of the costs of all products that I view | ![screenshot](documentation/features/sitepages/courses.png) |
-| As a user I can use my credit/debit card to pay for products so that I can use the online payment system on the site and receive my products, without dealing with cash payments | ![screenshot](documentation/features/sitepages/checkout3.png) |
-| As an admin I can create orders & order numbers for user purchases so that orders can be organised & stored correctly, and reviewed if need be | ![screenshot](documentation/features/sitepages/checkout-success.png) |
-| As an admin I can initialise a secure chain of payment processes so that users cannot accidentally or intentionally interrupt the processing of their payment or their order creation after it has been initialised | ![screenshot](documentation/features/admin/webhooks.png) |
-| As a user I can receive purchase confirmation emails so that I have confirmation of my order, and a record of my purchase and important order information | ![screenshot](documentation/features/user/email-confirmation1.png) |
-| As a user I can add products to my shopping basket so that I can pre-select them for possible purchase | ![screenshot](documentation/features/user/basket-update.png) |
-| As a user I can remove items from the basket so that they are not added to my order when I go to the checkout page | ![screenshot](documentation/features/sitepages/basket.png) |
-| As a user I can see a running total of the price of all products in my basket so that I can, at a glance, see the total cost of my intended purchases | ![screenshot](documentation/features/user/basket-update.png) |
-| As a user I can see and interact with a list of products available on the site | ![screenshot](documentation/features/sitepages/courses.png) |
-| As an admin I can create/read/update/delete products in a back-end database so that I have control over what products exist and are displayed for purchase on the site | ![screenshot](documentation/features/admin/update-product.png) |
-| As a user I can search for and sort products so that I can easily find the most suitable product for my needs | ![screenshot](documentation/features/user/course-search.png) |
-| As a user I can see common error pages with user friendly messages and site-related styling so that I can more accurately understand why I have reached an error page, can still see all site related styling and have an option to return to the homepage | ![screenshot](documentation/features/sitepages/404.png) |
-| As a user I can see places where I can easily sign up for the site newsletter so that I can sign up without hassle | ![screenshot](documentation/features/user/newsletter1.png) |
-| As an admin I can store user emails so that I can send them the site newsletter | ![screenshot](documentation/features/admin/newsletter-confirmation-email.png) |
-| As an admin I can add products to the site's database using a front-end form so that I can easily create new site products in a user-friendly way. | ![screenshot](documentation/features/admin/create-product.png) |
-| As an admin I can edit products on the site's database using a front-end form so that I can easily edit site products in a user-friendly way. | ![screenshot](documentation/features/admin/update-product.png) |
-| As an admin I can delete products from site's database using a front-end form so that I can easily delete existing site products in a user-friendly way. | ![screenshot](documentation/features/admin/delete-product.png) |
-| As an admin I can keep an organised database of user profiles so that user profiles can be created and saved to the backend of the site. | ![screenshot](documentation/features/sitepages/profile.png) |
-| As an admin I can Automatically create profiles for users upon registration so that users have a profile which displays their basic details, without having to manually create one after registering on the site | ![screenshot](documentation/features/sitepages/profile.png) |
-| As a user I can create a profile after I make a purchase so that I can use the details provided during checkout to easily create a profile with all of my information pre-filled | ![screenshot](documentation/features/sitepages/profile.png) |
-| As a user I can see and edit my profile page so that my profile details are viewable, and I can change them to match any changes in my information | ![screenshot](documentation/features/sitepages/profile.png) |
-
-
-## Automated Testing
-
-I have conducted a series of automated tests on my application.
-
-I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
-
-### Python (Unit Testing)
-
-I have used Django's built-in unit testing framework to test the application functionality.
-
-In order to run the tests, I ran the following command in the terminal each time:
-
-`python3 manage.py test name-of-app `
-
-To create the coverage report, I would then run the following commands:
-
-`coverage run --source=name-of-app manage.py test`
-
-`coverage report`
-
-To see the HTML version of the reports, and find out whether some pieces of code were missing, I ran the following commands:
-
-`coverage html`
-
-`python3 -m http.server`
-
-Below are the results from the various apps on my application that I've tested:
-
-| App | File | Coverage | Screenshot |
-| --- | --- | --- | --- |
-| basket | tests.py | 93% | ![screenshot](documentation/py-test/basket.png) |
-| checkout | tests.py | 74% | ![screenshot](documentation/py-test/checkout.png) |
-| contact | tests.py | 97% | ![screenshot](documentation/py-test/contact.png) |
-| faq | tests.py | 98% | ![screenshot](documentation/py-test/faq.png) |
-| home | tests.py | 100% | ![screenshot](documentation/py-test/home.png) |
-| newsletter | tests.py | 95% | ![screenshot](documentation/py-test/newsletter.png) |
-| products | tests.py | 88% | ![screenshot](documentation/py-test/products.png) |
-| profiles | tests.py | 96% | ![screenshot](documentation/py-test/profiles.png) |
-
-#### Unit Test Issues
-
-While testing the checkout process of the checkout app, I could not seem to redefine the `pid` variable for the purposes of the test. Even when explicitly redeclaring `pid = x`, the test would overwrite it with the value from the views.py. To circumvent this, I put the `stripe pid` into my environment variables and created a line of code in the checkout view, to be used for this specific test purpose only:
-
-![screenshot](documentation/unittest-code-line.png)
