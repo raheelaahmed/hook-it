@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+  
+<div class="container" id="error-404">
+    <div class="error-box">
+        <h1 class="error-title">Server Error</h1>
+        <p class="lead text-muted">Something went wrong on our end. Please try again later. If the problem persists, contact support.</p>
+        <a href="{% url 'patterns' %}" class="shop-now-button btn btn-lg text-uppercase mt-3">
+            Return to Shop
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -66,6 +66,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | contexts.py | ![screenshot](documents/python-testing/context.bag.png) | Pass: No Errors |
 | urls.py |![screenshot](documents/python-testing/urls.bag.png) | Pass: No Errors |
 | views.py |  ![screenshot](documents/python-testing/views.bag.png) | E501(line too long)|
+| tests.py |  ![screenshot](documents/python-testing/test_bag.png) | E501(line too long)|
 
 ### Checkout App
 | File | CI URL | Screenshot | Notes |
@@ -79,6 +80,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | views.py |![screenshot](documents/python-testing/views.checkout.png) | Pline too long |
 | webhook_handler.py |![screenshot](documents/python-testing/wh-handler.checkout.png) | line too long, no new line |
 | webhooks.py |  ![screenshot](documents/python-testing/wh.checkout.png) | line too long |
+| tests.py |  ![screenshot](documents/python-testing/test_checkout.png) | line too long |
 
 
 ### Hook_It App
@@ -98,6 +100,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | models.py | ![screenshot](documents/python-testing/model.contact.png) | Pass: No Errors |
 | urls.py |  ![screenshot](documents/python-testing/urls.contact.png) | Pass: No Errors |
 | views.py | ![screenshot](documents/python-testing/views.contact.png) | line too long |
+| tests.py | ![screenshot](documents/python-testing/test_contactus.png) | line too long |
 
 
 
@@ -107,6 +110,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | apps.py |![screenshot](documents/python-testing/app.home.png) | Pass: No Errors |
 | urls.py |  ![screenshot](documents/python-testing/urls.home.png) | Pass: No Errors |
 | views.py |  ![screenshot](documents/python-testing/views.home.png) | line too long |
+| tests.py |![screenshot](documents/python-testing/test_home.png) | Pass: No Errors |
 
 
 ### Patterns App
@@ -118,6 +122,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | models.py |  ![screenshot](documents/python-testing/models.patterns.png) | Pass: No Errors |
 | urls.py |  ![screenshot](documents/python-testing/urls.pattern.png) | Pass: No Errors |
 | views.py |  ![screenshot](documents/python-testing/views.patterns.png) | line too long|
+| tests.py |  ![screenshot](documents/python-testing/test_pattern.png) | line too long|
 
 ### Profiles App
 | File |  Screenshot | Notes |
@@ -128,6 +133,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | models.py |  ![screenshot](documents/python-testing/models-profile.png) | line too long |
 | urls.py |  ![screenshot](documents/python-testing/views-profile.png) | line too long|
 | views.py |  ![screenshot](documents/python-testing/views-profile.png) | line too long |
+| tests.py |  ![screenshot](documents/python-testing/test_profiles.png) | line too long |
 
 ### Root Level Files
 | File | Screenshot | Notes |
@@ -282,7 +288,7 @@ Defensive programming was manually tested with the below user acceptance testing
 
 ## Automated Testing Coverage Report:
 
-# Test Coverage Report
+### Test Coverage Report
 
 | File | Statements | Missing | Coverage | Missing Lines |
 |------|------------|---------|----------|---------------|
