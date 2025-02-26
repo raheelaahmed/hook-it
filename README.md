@@ -354,6 +354,8 @@ How it works:
 The site uses a secure and robust webhook system to ensure that the payment process cannot be interrupted and corrupted, either through user error or malicious intent. Webhooks are incorporated via the Stripe payment system and are handled on the Stripe website, by way of the python code in checkout > webhook_handler.py and checkout > webhooks.py.
 User is able to recieve order confirmation email using webhook handler.
 
+ ![webhooks](documents/screenshots/webhook-test.png)
+
  ![webhooks](documents/screenshots/webhooks.png)
 
 

@@ -189,7 +189,6 @@ On all pages, Lighthouse is flagging a warning 'Issues were logged in the Issues
 | sign-up | ![screenshot](documents/lighthouse-audit/sign-up.png) |pass |
 | sign-out | ![screenshot](documents/lighthouse-audit/signout.png) | pass |
 
-
 ## Defensive Programming
 
 Defensive programming was manually tested with the below user acceptance testing:
