@@ -34,6 +34,6 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'hook_it.views.handler404'
-handler400 = "your_app.views.handler400"
-handler403 = "your_app.views.handler403"
-handler500 = "your_app.views.handler500"
+handler400 = "hook_it.views.handler400"
+handler403 = "hook_it.views.handler403"
+handler500 = "hook_it.views.handler500"
