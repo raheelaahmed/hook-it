@@ -180,12 +180,56 @@ This page contains the privacy policy for our app. A link to this page is availa
 
 
 
-- **Error-404**
 
-The app includes a custom 404 error page to enhance user experience when they navigate to a non-existent route. This page is designed to inform users that the requested content is unavailable while maintaining the app’s overall aesthetic and usability.
+
+# Error Pages Customization
+
+In this project, we have customized error pages to provide a better user experience when something goes wrong. Below are the titles and messages used for various error pages:
+
+## 400 - Bad Request
+
+**Title**: `Bad Request`  
+**Message**:  
+"Your request couldn't be processed. Please check and try again."
+
+This error occurs when the server cannot process the request due to malformed syntax or invalid input. Users are encouraged to review their request and try again.
+
+---
+
+## 403 - Forbidden
+
+**Title**: `Forbidden`  
+**Message**:  
+"You don't have permission to access this page. Please check your credentials or contact support if you believe this is a mistake."
+
+The 403 error indicates that the user does not have permission to view the requested resource. This message informs users that access is restricted, and provides guidance to check their credentials or reach out to support if needed.
+
+---
+
+## 404 - Page Not Found
+
+**Title**: `Oops! Page Not Found`  
+**Message**:  
+"The page you are looking for isn't available."
+
+This error occurs when the user attempts to access a page that doesn't exist. Users are given the option to return to the shop or homepage to continue their browsing.
 
 
 ![error](documents/screenshots/error.png)
+
+---
+
+## 500 - Internal Server Error
+
+**Title**: `Server Error`  
+**Message**:  
+"Something went wrong on our end. Please try again later. If the problem persists, contact support."
+
+A 500 error signifies a server-side issue. This message reassures the user that the problem is not on their end and provides a means to contact support if the issue continues.
+
+---
+
+These error pages help maintain a professional and user-friendly experience, even in cases where something goes wrong.
 
 
 ### Allauth Templates:
@@ -294,7 +338,16 @@ When you add a new item in the bag. Bag updates and show you a success message y
 User can Subscribe for the newsletter using a link provided in the footer of the page.
 User need to add his email address and then press the button subscribe.
 
+How it works:
+
+- **User Subscription**: When a user signs up for the newsletter, their information (e.g., email address) is collected via a subscription form.
+- **Mailchimp Integration**: The user's data is securely sent to **Mailchimp**, where it is stored in a mailing list.
+- **Email Campaigns**: Once subscribed, users will receive periodic newsletters, promotions, or updates directly in their inbox.
+
+
 ![subscribe](documents/screenshots/Subscribe.png)
+
+![newsletter-data](documents/screenshots/subscribers-detail.png)
 
 - **Webhooks**
 
@@ -357,6 +410,9 @@ The footer of the website contains the following sections:
 - **Privacy Policy**: A link to the website's privacy policy detailing data handling practices.
 - **Facebook Page**: A link to the official Facebook page for social media engagement.
 - **Newsletter Subscription**: A form allowing users to subscribe to receive updates and news.
+
+
+
 
 
 ![footer](documents/screenshots/footer.png)
