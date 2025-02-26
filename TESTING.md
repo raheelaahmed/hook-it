@@ -280,3 +280,90 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on 'Subscribe' button | Subscribes user| Pass | |
 
 
+## Automated Testing Coverage Report:
+
+# Test Coverage Report
+
+| File | Statements | Missing | Coverage | Missing Lines |
+|------|------------|---------|----------|---------------|
+| `bag/__init__.py` | 0 | 0 | 100% | - |
+| `bag/admin.py` | 1 | 0 | 100% | - |
+| `bag/apps.py` | 4 | 0 | 100% | - |
+| `bag/contexts.py` | 16 | 0 | 100% | - |
+| `bag/migrations/__init__.py` | 0 | 0 | 100% | - |
+| `bag/models.py` | 1 | 0 | 100% | - |
+| `bag/templatetags/__init__.py` | 0 | 0 | 100% | - |
+| `bag/templatetags/bag_tools.py` | 5 | 0 | 100% | - |
+| `bag/tests.py` | 17 | 0 | 100% | - |
+| `bag/urls.py` | 3 | 0 | 100% | - |
+| `bag/views.py` | 41 | 15 | 63% | 24-25, 46-62, 75-77 |
+| `checkout/__init__.py` | 1 | 0 | 100% | - |
+| `checkout/admin.py` | 12 | 0 | 100% | - |
+| `checkout/apps.py` | 6 | 0 | 100% | - |
+| `checkout/forms.py` | 22 | 0 | 100% | - |
+| `checkout/migrations/0001_initial.py` | 6 | 0 | 100% | - |
+| `checkout/migrations/0002_order_original_bag_order_stripe_pid_order_total_and_more.py` | 5 | 0 | 100% | - |
+| `checkout/migrations/0003_order_user_profile.py` | 5 | 0 | 100% | - |
+| `checkout/migrations/__init__.py` | 0 | 0 | 100% | - |
+| `checkout/models.py` | 47 | 4 | 91% | 38, 55, 59, 77 |
+| `checkout/signals.py` | 9 | 1 | 89% | 19 |
+| `checkout/tests.py` | 36 | 0 | 100% | - |
+| `checkout/urls.py` | 4 | 0 | 100% | - |
+| `checkout/views.py` | 97 | 65 | 33% | 19-31, 39-90, 95-96, 109-123, 128, 147-203 |
+| `checkout/webhook_handler.py` | 74 | 58 | 22% | 18, 22-29, 40, 48-141, 149 |
+| `checkout/webhooks.py` | 28 | 19 | 32% | 16-55 |
+| `contact_us/__init__.py` | 0 | 0 | 100% | - |
+| `contact_us/admin.py` | 5 | 0 | 100% | - |
+| `contact_us/apps.py` | 4 | 0 | 100% | - |
+| `contact_us/forms.py` | 6 | 0 | 100% | - |
+| `contact_us/migrations/0001_initial.py` | 5 | 0 | 100% | - |
+| `contact_us/migrations/__init__.py` | 0 | 0 | 100% | - |
+| `contact_us/models.py` | 7 | 1 | 86% | 12 |
+| `contact_us/tests.py` | 19 | 0 | 100% | - |
+| `contact_us/urls.py` | 3 | 0 | 100% | - |
+| `contact_us/views.py` | 23 | 2 | 91% | 24-25 |
+| `custom_storages.py` | 6 | 6 | 0% | 1-10 |
+| `home/__init__.py` | 0 | 0 | 100% | - |
+| `home/admin.py` | 1 | 0 | 100% | - |
+| `home/apps.py` | 4 | 0 | 100% | - |
+| `home/migrations/__init__.py` | 0 | 0 | 100% | - |
+| `home/models.py` | 1 | 0 | 100% | - |
+| `home/tests.py` | 10 | 0 | 100% | - |
+| `home/urls.py` | 3 | 0 | 100% | - |
+| `home/views.py` | 8 | 1 | 88% | 20 |
+| `hook_it/__init__.py` | 0 | 0 | 100% | - |
+| `hook_it/asgi.py` | 4 | 4 | 0% | 10-16 |
+| `hook_it/settings.py` | 70 | 21 | 70% | 152-153, 211-231, 251-257 |
+| `hook_it/urls.py` | 7 | 0 | 100% | - |
+| `hook_it/views.py` | 3 | 0 | 100% | - |
+| `hook_it/wsgi.py` | 4 | 4 | 0% | 10-16 |
+| `manage.py` | 11 | 2 | 82% | 12-13 |
+| `patterns/__init__.py` | 0 | 0 | 100% | - |
+| `patterns/admin.py` | 21 | 0 | 100% | - |
+| `patterns/apps.py` | 4 | 0 | 100% | - |
+| `patterns/forms.py` | 17 | 7 | 59% | 20-36 |
+| `patterns/migrations/0001_initial.py` | 7 | 0 | 100% | - |
+| `patterns/migrations/0002_alter_pattern_options_pattern_description.py` | 5 | 0 | 100% | - |
+| `patterns/migrations/0003_review.py` | 7 | 0 | 100% | - |
+| `patterns/migrations/__init__.py` | 0 | 0 | 100% | - |
+| `patterns/models.py` | 31 | 3 | 90% | 11, 48, 75 |
+| `patterns/tests.py` | 72 | 0 | 100% | - |
+| `patterns/urls.py` | 3 | 0 | 100% | - |
+| `patterns/views.py` | 135 | 79 | 41% | 14-67, 72-83, 88-114, 127-147, 174-180, 200-206, 233 |
+| `patterns/widgets.py` | 7 | 0 | 100% | - |
+| `profiles/__init__.py` | 0 | 0 | 100% | - |
+| `profiles/admin.py` | 6 | 0 | 100% | - |
+| `profiles/apps.py` | 3 | 0 | 100% | - |
+| `profiles/forms.py` | 18 | 1 | 94% | 30 |
+| `profiles/migrations/0001_initial.py` | 8 | 0 | 100% | - |
+| `profiles/migrations/0002_userprofile_default_email.py` | 4 | 0 | 100% | - |
+| `profiles/migrations/0003_userprofile_default_name.py` | 4 | 0 | 100% | - |
+| `profiles/migrations/0004_rename_default_email_userprofile_default_user_email_and_more.py` | 4 | 0 | 100% | - |
+| `profiles/migrations/__init__.py` | 0 | 0 | 100% | - |
+| `profiles/models.py` | 22 | 1 | 95% | 26 |
+| `profiles/tests.py` | 44 | 0 | 100% | - |
+| `profiles/urls.py` | 3 | 0 | 100% | - |
+| `profiles/views.py` | 36 | 2 | 94% | 22, 58 |
+| **TOTAL** | **1105** | **296** | **73%** | - |
+
+

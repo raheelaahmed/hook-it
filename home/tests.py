@@ -2,6 +2,7 @@ from django.test import TestCase
 
 # Create your tests here.
 
+
 class HomeViewTestCase(TestCase):
     """
     Test case for testing home views.
