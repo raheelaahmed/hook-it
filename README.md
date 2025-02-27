@@ -4,7 +4,8 @@
 - [App Structure](#app-structure)
 - [UX](#ux)
 - [User Stories](#user-stories)
-- [Admin Stories](#sdmin-stories)
+- [Admin Stories](#admin-stories)
+- [Django Project](#django-project)
 - [Site Pages](#site-pages)
 - [User Features](#user-features)
 - [Future Features](#future-features)
@@ -115,6 +116,91 @@ If bag is empty they can see amout 0.00.
 * Admin recieves email from the user, if user tryies to contact using contact us form.
 * Admin can edit and delete user reviews using frontend as well.
 
+## Django Project:
+
+I have created my project using the Django platform.  
+The project is named **hook_it**, and it consists of six apps:
+
+### 1. **home**  
+This app manages the homepage and general site navigation. It contains the following files and directories:  
+- `migrations/` - Handles database migrations.  
+- `templates/` - Contains HTML templates (`about.html`, `home.html`).  
+- `__init__.py` - Marks the directory as a Python package.  
+- `admin.py` - Registers models for the Django admin panel.  
+- `apps.py` - Configures the app settings.  
+- `models.py` - Database model(does not use any model) 
+- `tests.py` - Contains test cases for the app.  
+- `urls.py` - Defines URL routing for the app.  
+- `views.py` - Handles logic for rendering pages.  
+
+### 2. **patterns**  
+Responsible for pattern-related content and functionality.
+- `migrations/` - Handles database migrations.  
+- `templates/` - Contains HTML templates ( `add_pattern.html`, `confirm_delete.html`, `edit_pattern.html`, `edit_review.html`, `pattern_detail.html`, `pattern.html`).  
+- `__init__.py` - Marks the directory as a Python package.  
+- `admin.py` - Registers models for the Django admin panel.  
+- `apps.py` - Configures the app settings. 
+- `forms.py` - handles forms. 
+- `models.py` -  Database models(`Catogry`, `Pattern`, `Review`)
+- `tests.py` - Contains test cases for the app.  
+- `urls.py` - Defines URL routing for the app.  
+- `views.py` - Handles logic for rendering pages.
+- `widgets.py` - CustomClearableFileInput
+
+### 3. **contact_us**  
+Manages user inquiries and contact form submissions. 
+- `migrations/` - Handles database migrations.  
+- `templates/` - Contains HTML templates (`contact.html`).  
+- `__init__.py` - Marks the directory as a Python package.  
+- `admin.py` - Registers models for the Django admin panel.  
+- `apps.py` - Configures the app settings. 
+- `forms.py` - handles forms. 
+- `models.py` - Database models(`conatact`.)
+- `tests.py` - Contains test cases for the app.  
+- `urls.py` - Defines URL routing for the app.  
+- `views.py` - Handles logic for rendering pages.
+
+### 4. **bag**  
+Implements shopping cart functionality. 
+- `migrations/` - Handles database migrations.  
+- `templates/` - Contains HTML templates (`bag.html`).  
+- `__init__.py` - Marks the directory as a Python package.  
+- `admin.py` - Registers models for the Django admin panel.  
+- `apps.py` - Configures the app settings. 
+- `models.py` - Database moedls(does not use database model)
+- `tests.py` - Contains test cases for the app.  
+- `urls.py` - Defines URL routing for the app.  
+- `views.py` - Handles logic for rendering pages. 
+
+### 5. **checkout**  
+Handles order processing and payments.
+ - `migrations/` - Handles database migrations.  
+- `templates/` - Contains HTML templates (`checkout_success.html`, `checkout.html`).  
+- `__init__.py` - Marks the directory as a Python package.  
+- `admin.py` - Registers models for the Django admin panel.  
+- `apps.py` - Configures the app settings.
+- `form.py` - handels forms.
+- `models.py` - Database Models (`Order`, `OrderLineItem`) .
+- `tests.py` - Contains test cases for the app. 
+- `signals.py`- updates order total.
+- `urls.py` - Defines URL routing for the app.  
+- `views.py` - Handles logic for rendering pages.  
+- `webhook_handler.py` - Manages webhook events (e.g., payment processing).  
+- `webhooks.py` - Handles webhook integration (e.g., Stripe or PayPal events). 
+
+### 6. **profiles**  
+Manages user profiles and account-related data.
+ - `migrations/` - Handles database migrations.  
+- `templates/` - Contains HTML templates (`profile.html`).  
+- `__init__.py` - Marks the directory as a Python package.  
+- `admin.py` - Registers models for the Django admin panel.  
+- `apps.py` - Configures the app settings.
+- `form.py` - handes forms.
+- `models.py` - (`UserProfile`) 
+- `tests.py` - Contains test cases for the app. 
+- `signals.py`-  
+- `urls.py` - Defines URL routing for the app.  
+- `views.py` - Handles logic for rendering pages.  
 
 ## Site Pages
 
