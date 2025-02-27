@@ -870,6 +870,7 @@ You can fork this repository by using the following steps:
 | [DB Diagram](https://dbdiagram.io/) | Used for creating an ER diagram. |
 | [Mailchimp](https://mailchimp.com/?currency=EUR) | Platform used for email marketing and automation. |
 | [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) | entire site | Various code sections taken from the CI Boutique Ado Walkthrough Project |
+| [Chatgpt](https://chatgpt.com/) | An advanced AI tool used for learning and fixing the errors |
 
 
 
