@@ -928,6 +928,15 @@ Solution: After removing the SSL configuration from the settings, everything sta
 
 ![fixed-homepage](documents/screenshots/fiexed-home.png)
 
+## Value Error:
+
+Issue: Sorting was failing because one of the patterns had no image.
+
+![value-error](documents/screenshots/value-error.png)
+
+Solution: Added a default image URL to prevent errors when an image is missing.
+
+
 
 
 
