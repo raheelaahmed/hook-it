@@ -61,7 +61,6 @@ def all_patterns(request):
         'currency_symbol': currency_symbol,
         'search_term': query,
         'sort_by': sort_by,
-        'MEDIA_URL': settings.MEDIA_URL
     }
 
     return render(request, 'patterns/pattern.html', context)

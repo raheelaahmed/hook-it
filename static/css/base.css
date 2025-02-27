@@ -1,14 +1,9 @@
 
-/*.roboto-header-text {
-  font-family: "Roboto", serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-}*/
+/* css for all website excluding checkout and profile*/
+/*checkout and profile have seprate css files*/
 
 html, body {
-  height: 100%; /* Ensure full height of viewport */
+  height: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,15 +14,12 @@ body {
   color: #484747;
   font-family: "Roboto", serif;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  min-height: 100%; /* Ensure body takes the full height */
+  flex-direction: column; 
+  min-height: 100%; 
 }
 
-
-  
-
-  
-  .navbar {
+/*navbar*/
+.navbar {
     width: 100%;
     height: 80px;
     background-color:#e2cbcb;
@@ -102,7 +94,7 @@ body {
   font-weight: bold;
   font-size: 20px;
   border-radius: 50%;
-  text-decoration: none; /* Removes underline */
+  text-decoration: none; 
   border: none;
 
 
@@ -148,13 +140,11 @@ body {
 
       #pattern-heading h1{
         color: #4a4a4a;
-        font-weight: 700; /* Makes it bold */
-        font-size: 32px; /* Adjust size for prominence */
-        text-transform: uppercase; /* Makes text all uppercase */
-        letter-spacing: 2px; /* Spaced-out letters for elegance */
-        text-align: center; /* Centers the heading */
-    
-        /* Padding and Spacing */
+        font-weight: 700; 
+        font-size: 32px; 
+        text-transform: uppercase; 
+        letter-spacing: 2px; 
+        text-align: center; 
         padding: 15px;
         margin: 20px auto;
 
@@ -162,52 +152,52 @@ body {
 
     
   .pattern-item {
-    border: 2px solid #b1bebb; /* Light border around each pattern item */
-    border-radius: 8px; /* Rounded corners */
+    border: 2px solid #b1bebb; 
+    border-radius: 8px; 
     padding: 15px;
-    transition: all 0.3s ease; /* Smooth transition effect */
-    background-color: #ffffff; /* White background */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    transition: all 0.3s ease; 
+    background-color: #ffffff; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
 /* Hover effect for pattern item */
 .pattern-item:hover {
-    transform: translateY(-5px); /* Lift the item on hover */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
 }
 
 /* Styling for the pattern image */
 .pattern-item img {
-    max-height: 200px; /* Limit the height of the images */
-    object-fit: cover; /* Ensure images cover the space without stretching */
-    border-radius: 8px; /* Rounded corners on images */
-    margin-bottom: 15px; /* Space below the image */
+    max-height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    margin-bottom: 15px; 
 }
 
 /* Styling for the pattern name */
 .pattern-item h3 {
-    font-size: 1.2rem; /* Slightly larger font size for the pattern name */
-    font-weight: bold; /* Make the pattern name bold */
-    color: #333; /* Dark color for text */
-    margin-bottom: 10px; /* Space below the name */
-    transition: color 0.3s ease; /* Smooth color transition on hover */
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    color: #333; 
+    margin-bottom: 10px; 
+    transition: color 0.3s ease; 
 }
 
 .pattern-item h3:hover {
-    color: #007bff; /* Change color on hover */
+    color: #007bff; 
 }
 
 /* Styling for price and rating */
 .pattern-item p {
-    color: #555; /* Slightly lighter text for price */
+    color: #555; 
     font-size: 1rem;
-    margin-bottom: 10px; /* Space below price */
+    margin-bottom: 10px; 
 }
 
 /* Rating styling */
 .pattern-item small {
-    color: #888; /* Light gray color for rating text */
-    font-size: 0.9rem; /* Slightly smaller font size */
+    color: #888; 
+    font-size: 0.9rem; 
 }
 
 /* Pagination Controls */
@@ -223,16 +213,16 @@ body {
     text-decoration: none;
     border-radius: 5px;
     color: #fff;
-    background-color: #007bff; /* Blue background for pagination */
+    background-color: #007bff; 
     transition: background-color 0.3s ease;
 }
 
 .pagination-controls a:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3; 
 }
 
 .pagination-controls .disabled {
-    background-color: #ddd; /* Light gray color for disabled buttons */
+    background-color: #ddd; 
     color: #888;
 }
 
@@ -243,18 +233,15 @@ body {
 }
 
 #patterns select {
-  font-size: 14px;  /* Reduce the font size */
-  padding: 5px 10px;  /* Reduce the padding inside the select box */
-  height: 35px;  /* Adjust the height */
-  width: auto;  /* Set to 'auto' to let the width adjust to the content */
-  border-radius: 4px;  /* Optional: Rounded corners */
+  font-size: 14px;  
+  padding: 5px 10px;  
+  height: 35px;  
+  width: auto;  
+  border-radius: 4px;  
 }
 
 
-
-  
-  
-    /* pattern-detail */
+   /* pattern-detail */
   
   /* CSS for Pattern Detail Page */
   
@@ -285,97 +272,79 @@ body {
   
   #name-pattern-detail {
     color: #4a4a4a;
-    font-weight: 700; /* Makes it bold */
-    font-size: 28px; /* Adjust size for prominence */
-    text-transform: uppercase; /* Makes text all uppercase */
-    letter-spacing: 2px; /* Spaced-out letters for elegance */
-    text-align: center; /* Centers the heading */
-
-    /* Padding and Spacing */
+    font-weight: 700; 
+    font-size: 28px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    text-align: center; 
     padding: 15px;
     margin: 20px auto;
   }
 
   #difficulty {
-    color: #444; /* Dark gray for readability */
-    font-weight: 600; /* Slightly bold */
-    font-size: 22px; /* Adjust size for visibility */
-    text-transform: uppercase; /* Makes text stand out */
-    letter-spacing: 1px; /* Spaced-out letters for elegance */
-    text-align: center; /* Centers the heading */
-    
- 
-    
-    /* Adds a slight shadow for depth */
+    color: #333; 
+    font-weight: 600; 
+    font-size: 22px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    text-align: center; 
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-
-    /* Padding & Spacing */
     padding: 10px;
     margin: 15px auto;
   
   
 }
 #price{
-  color: #444; /* Dark gray for readability */
-  font-weight: 600; /* Slightly bold */
-  font-size: 22px; /* Adjust size for visibility */
-  text-transform: uppercase; /* Makes text stand out */
-  letter-spacing: 1px; /* Spaced-out letters for elegance */
-  text-align: center; /* Centers the heading */
-  
-
-  
-  /* Adds a slight shadow for depth */
+  color: #333; 
+  font-weight: 600; 
+  font-size: 22px; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  text-align: center; 
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-
-  /* Padding & Spacing */
   padding: 10px;
   margin: 15px auto;
  
 }
 
-
-
-  .description {
-    padding: 15px; /* Adds space inside the div */
-    margin: 10px 0; /* Adds space around the div */
-    font-size: 16px; /* Sets text size */
-    color: #333; /* Dark gray text */
-  
-    border-radius: 5px; /* Rounds the corners */
-    border: 1px solid #484747; /* Adds a light border */
-    line-height: 1.6; /* Improves readability */
+ .description {
+    padding: 15px; 
+    margin: 10px 0; 
+    font-size: 16px; 
+    color: #333; 
+    border-radius: 5px; 
+    border: 1px solid #484747; 
+    line-height: 1.6; 
 }
 
 #add-to-bag {
 
-  padding: 20px; /* Adds space inside the form */
-  border-radius: 10px; /* Rounded corners */
-  
-  width: 100%; /* Makes the form responsive */
-  max-width: 500px; /* Limits the width of the form */
-  margin: 20px auto; /* Centers the form */
+  padding: 20px; 
+  border-radius: 10px; 
+  width: 100%; 
+  max-width: 500px; 
+  margin: 20px auto; 
 }
 
 
 
 #add-to-bag .btn-outline-black {
-  border-color: #333; /* Black border for outline button */
-  color: #333; /* Black text color */
-  background-color: transparent; /* Transparent background */
-  transition: all 0.3s ease; /* Smooth transition */
+  border-color: #333; 
+  color: #333; 
+  background-color: transparent; 
+  transition: all 0.3s ease; 
 }
 
 #add-to-bag .btn-outline-black:hover {
-  background-color: #333; /* Black background on hover */
-  color: #fff; /* White text color on hover */
+  background-color: #333; 
+  color: #fff; 
 }
 
 #add-to-bag .btn-black {
-  background-color:#a7a0a4;/* Blue background for the submit button */
-  color: white; /* White text */
+  background-color:#a7a0a4;
+  color: white; 
   border: none;
-  transition: background-color 0.3s; /* Smooth hover transition */
+  transition: background-color 0.3s; 
 }
 
 #add-to-bag .btn-black:hover {
@@ -384,47 +353,47 @@ body {
 }
 
 #edit-pattern {
-  font-size: 20px; /* Sets a small font size */
-  color: #555; /* Sets a dark gray color for the text */
+  font-size: 20px; 
+  color: #555; 
 }
 #edit-pattern:hover {
 
-  font-size: 24px; /* Change the link color to dark blue on hover */
+  font-size: 24px; 
 }
 /* for review edit links*/
 #edit{
-  font-size: 18px; /* Sets a small font size */
-  color:dodgerblue; /* Sets a dark gray color for the text */
+  font-size: 18px; 
+  color:dodgerblue; 
 }
 #edit:hover {
   color: darkblue;
-  font-size: 20px; /* Change the link color to dark blue on hover */
+  font-size: 20px; 
 }
 
 /* css for delete review*/
 #delete{
-  font-size: 18px; /* Sets a small font size */
-  color:red; /* Sets a dark gray color for the text */
+  font-size: 18px; 
+  color:red; 
   border:none;
 }
 
 #delete:hover {
   color: darkred;
-  font-size: 20px; /* Change the link color to dark blue on hover */
+  font-size: 20px;
 
 }
 
   /* review */
   /* Styling the Review Form */
   .review-form {
-    border: 2px solid #b1bebb; /* Adds a solid border */
-    border-radius: 8px; /* Rounds the corners */
-    padding: 20px; /* Adds space inside the form */
-    background-color: #f9f9f9; /* Light background for contrast */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow to make it pop */
-    width: 100%; /* Ensures responsiveness */
-    max-width: 500px; /* Limits the form width */
-    margin: 20px auto; /* Centers the form */
+    border: 2px solid #b1bebb; 
+    border-radius: 8px; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 100%; 
+    max-width: 500px; 
+    margin: 20px auto; 
     
     
   }
@@ -440,7 +409,7 @@ body {
   /* Star Rating Styling */
   .stars {
     font-size: 1.5rem;
-    color: #ddd; /* Light grey for inactive stars */
+    color: #ddd; 
     cursor: pointer;
     display: flex;
     gap: 5px;
@@ -452,7 +421,7 @@ body {
   
   /* Active Star Color */
   .stars .active {
-    color: #f39c12; /* Gold for active stars */
+    color: #f39c12; 
   }
   
   /* Hover Effect for Stars */
@@ -474,11 +443,11 @@ body {
   }
   
   .review-form button:hover {
-    background-color: #484747; /* Darker shade on hover */
+    background-color: #484747; 
   }
   .stars {
     font-size: 1.5rem;
-    color: #ddd; /* Light grey for inactive stars */
+    color: #ddd; 
   }
 /* background div for edit review */
   #review{
@@ -491,20 +460,20 @@ body {
     text-align: center;
     padding:20px;
     color:#484747;
-    width: 100%; /* Ensures responsiveness */
-    max-width: 600px; /* Limits the form width */
+    width: 100%; 
+    max-width: 600px; 
 
   }
   /* edit review*/
   #edit-review {
-    border: 2px solid #b1bebb; /* Adds a solid border */
-    border-radius: 8px; /* Rounds the corners */
-    padding: 20px; /* Adds space inside the form */
-    background-color: #f9f9f9; /* Light background for contrast */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow to make it pop */
-    width: 100%; /* Ensures responsiveness */
-    max-width: 500px; /* Limits the form width */
-    margin: 20px auto; /* Centers the form */
+    border: 2px solid #b1bebb; 
+    border-radius: 8px; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 100%; 
+    max-width: 500px; 
+    margin: 20px auto; 
   }
 
   #edit-review button{
@@ -515,7 +484,7 @@ body {
   }
 
   #edit-review button:hover {
-    background-color: #484747; /* Darker shade on hover */
+    background-color: #484747; 
     
 }
   
@@ -543,52 +512,16 @@ body {
     height: 2px;
   }
   
-  .content {
-    flex: 1; /* Takes the available space and pushes footer down */
-}
 
-  
-  /* Footer */
-  
-  /* Footer Styles */
-  
-  footer {
-    background-color: #b1bebb;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    color: #6c757d;
-    padding: 20px;
-    border-top: 1px solid #eaeaea;
-    margin-top: auto; /* Ensures footer stays at the bottom */
-}
-
-  footer .footer-links {
-    list-style: none;
-    padding: 0;
-  }
-  footer .footer-links li {
-    display: inline;
-    margin: 0 10px;
-  }
-  footer .footer-links a {
-    color: #6c757d;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  footer .footer-links a:hover {
-    color: #000;
-  }
-  
-  
 /* contact-us */
 #id_email  {
-  border: 5px solid #b1bebb; /* Example border */
+  border: 5px solid #b1bebb; 
 }
 #id_subject  {
-  border: 5px solid #b1bebb; /* Example border */
+  border: 5px solid #b1bebb; 
 }
 #id_message  {
-  border: 5px solid#b1bebb; /* Example border */
+  border: 5px solid#b1bebb; 
 }
 #submit-form{
   background:#b1bebb ;
@@ -603,32 +536,26 @@ body {
 #contact {
   border: 2px solid #b1bebb;
   border-radius: 8px;
-  margin-top: 200px; /* Add space on top */
-  margin-bottom: 200px; /* Add space at the bottom */
+  margin-top: 200px; 
+  margin-bottom: 200px; 
   font-family: "Roboto", serif;
   background-color: #e2cbcb;
   text-align: center;
   padding: 20px;
   color: #484747;
-  width: 100%; /* Ensures responsiveness */
-  max-width: 600px; /* Limits the form width */
-  box-sizing: border-box; /* Prevents box from growing beyond max width */
+  width: 100%; 
+  max-width: 600px; 
+  box-sizing: border-box; 
 }
 
 #contact h1{
-  color: #444; /* Dark gray for readability */
-  font-weight: 600; /* Slightly bold */
-  font-size: 30px; /* Adjust size for visibility */
-  text-transform: uppercase; /* Makes text stand out */
-  letter-spacing: 1px; /* Spaced-out letters for elegance */
-  text-align: center; /* Centers the heading */
-  
-
-  
-  /* Adds a slight shadow for depth */
+  color: #444; 
+  font-weight: 600; 
+  font-size: 30px; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  text-align: center; 
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-
-  /* Padding & Spacing */
   padding: 10px;
   margin: 15px auto;
 }
@@ -693,25 +620,24 @@ body {
   margin-bottom:200px;
   font-family: "Roboto", serif;
   background-color: #e2cbcb;
- 
   padding:20px;
   color:#484747;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers content horizontally */
-  justify-content: center; /* Centers content vertically */
-  min-height: 80vh; /* Adjust the height */
-  text-align: center; /* Centers text inside */
+  align-items: center; 
+  justify-content: center; 
+  min-height: 80vh; 
+  text-align: center; 
 }
 #pattern-management .row {
   width: 100%;
-  max-width: 600px; /* Adjust based on your preference */
-  margin: 0 auto; /* Centers the row */
+  max-width: 600px; 
+  margin: 0 auto; 
 }
 
 /* Form Styling */
 #pattern-management form {
-  background: #f8f9fa; /* Light grey background */
+  background: #f8f9fa; 
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -720,27 +646,27 @@ body {
 #pattern-management form input,
 #pattern-management form textarea,
 #pattern-management form select {
-  border: 2px solid #b1bebb; /* Light gray border */
-  padding: 8px; /* Adds some spacing inside */
-  border-radius: 5px; /* Slightly rounded corners */
-  outline: none; /* Removes default focus outline */
-  transition: border-color 0.3s ease-in-out; /* Smooth effect */
-  font-size: 16px; /* Improves readability */
-  width: 100%; /* Makes form elements full-width */
+  border: 2px solid #b1bebb; 
+  padding: 8px; 
+  border-radius: 5px; 
+  outline: none; 
+  transition: border-color 0.3s ease-in-out; 
+  font-size: 16px; 
+  width: 100%; 
   
 }
 
 #pattern-management form textarea {
-  min-height: 100px; /* Adjust height */
-  resize: vertical; /* Allow vertical resizing */
+  min-height: 100px; 
+  resize: vertical; 
 }
 #pattern-management h2{
   color: #4a4a4a;
-  font-weight: 700; /* Makes it bold */
-  font-size: 28px; /* Adjust size for prominence */
-  text-transform: uppercase; /* Makes text all uppercase */
-  letter-spacing: 2px; /* Spaced-out letters for elegance */
-  text-align: center; /* Centers the heading */
+  font-weight: 700; 
+  font-size: 28px; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  text-align: center; 
 
   /* Padding and Spacing */
   padding: 15px;
@@ -749,10 +675,10 @@ body {
 
 #pattern-management h5{
   color: #4a4a4a;
-  font-weight: 700; /* Makes it bold */
-  font-size: 20px; /* Adjust size for prominence */
-  letter-spacing: 2px; /* Spaced-out letters for elegance */
-  text-align: center; /* Centers the heading */
+  font-weight: 700; 
+  font-size: 20px; 
+  letter-spacing: 2px; 
+  text-align: center; 
 
   /* Padding and Spacing */
   padding: 15px;
@@ -760,21 +686,21 @@ body {
 }
 
 #pattern-management a{
-  font-weight: 700; /* Makes it bold */
-  font-size: 20px; /* Adjust size for prominence */
+  font-weight: 700; 
+  font-size: 20px; 
   color: #4a4a4a;
 }
 #pattern-management button{
-  font-weight: 700; /* Makes it bold */
-  font-size: 20px; /* Adjust size for prominence */
+  font-weight: 700; 
+  font-size: 20px; 
   color: #4a4a4a;
 }
 #pattern-management a:hover {
-  color: #d9534f; /* Red shade on hover */
+  color: #d9534f; 
   text-decoration: underline;
 }
 #pattern-management button:hover {
-    background-color: #d9534f; /* Red shade */
+    background-color: #d9534f; 
     color: white;
 }
 
@@ -789,43 +715,43 @@ body {
   text-align: center;
   padding:20px;
   color:#484747;
-  width: 100%; /* Ensures responsiveness */
-  max-width: 600px; /* Limits the form width */
+  width: 100%; 
+  max-width: 600px; 
 }
 #allauth form input,
 #allauth form select,
 #allauth form textarea {
-    width: 100%; /* Make inputs take up the full width */
-    padding: 10px; /* Add padding inside inputs */
-    margin-bottom: 10px; /* Add space between inputs */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 4px; /* Rounded corners */
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
 }
 #allauth form {
-  margin: 0 auto; /* Center the form */
-  max-width: 500px; /* Set a maximum width for the form */
-  padding: 20px; /* Add some padding */
-  background-color: #f9f9f9; /* Set a background color */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add some shadow */
+  margin: 0 auto; 
+  max-width: 500px; 
+  padding: 20px; 
+  background-color: #f9f9f9; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 /* Style the submit button */
 #allauth form button,
 #allauth form .btn {
-    background-color: #007bff; /* Primary button color */
-    color: white; /* Text color */
-    border: none; /* Remove the default border */
-    padding: 10px 20px; /* Add padding inside the button */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    width: 100%; /* Make the button span full width */
-    font-size: 16px; /* Increase font size */
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    width: 100%; 
+    font-size: 16px; 
 }
 
 /* Add hover effect on the submit button */
 #allauth form button:hover,
 #allauth form .btn:hover {
-    background-color: #0056b3; /* Darken the button on hover */
+    background-color: #0056b3; 
 }
 
 
@@ -833,8 +759,8 @@ body {
 
 #mc_embed_signup {
   font: 14px Helvetica, Arial, sans-serif;
-  width: 400px; /* Make the form smaller */
-  margin: 0 auto; /* Centers the form horizontally */
+  width: 400px; 
+  margin: 0 auto; 
 }
 
 /* pricacy policy */
@@ -864,12 +790,12 @@ body {
   justify-content: center;
   align-items: center;
   height: auto;
-  max-width: 600px; /* Set a max width */
-  margin: 10% auto; /* Center it */
+  max-width: 600px; 
+  margin: 10% auto; 
   padding: 20px;
   text-align: center;
   background-color: #d1b2b2;
-  border-radius: 10px; /* Optional: Add rounded corners */
+  border-radius: 10px; 
 }
 
 .error-box {
@@ -898,7 +824,46 @@ body {
   background: #0056b3;
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
 }
+
+.content {
+  flex: 1; /* Takes the available space and pushes footer down */
+}
+
+
+/* Footer */
+
+/* Footer Styles */
+
+footer {
+  background-color: #b1bebb;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #6c757d;
+  padding: 20px;
+  border-top: 1px solid #eaeaea;
+  margin-top: auto; 
+}
+
+footer .footer-links {
+  list-style: none;
+  padding: 0;
+}
+footer .footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+footer .footer-links a {
+  color: #6c757d;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+footer .footer-links a:hover {
+  color: #000;
+}
+
+
 
 /* Responsive Design Adjustments */
 
@@ -931,14 +896,7 @@ body {
   }
   }
   
-  
-  
-   
-   
-    
-  
-    
-     /* Media-quries for medium Screens max-width 786px */
+   /* Media-quries for medium Screens max-width 786px */
     @media (max-width: 768px) {
        /* tagline heading */
       #content h1 {
@@ -1022,28 +980,21 @@ body {
     /*pagination pattern page */
 
     .pagination-controls {
-      flex-wrap: nowrap; /* Prevent wrapping */
-      overflow-x: auto; /* Allow horizontal scrolling if needed */
+      flex-wrap: nowrap; 
+      overflow-x: auto; 
       white-space: nowrap;
   }
 
   .pagination-controls a {
-      padding: 6px 10px; /* Further reduce padding */
-      font-size: 0.8rem; /* Make text smaller */
-      margin: 0 2px; /* Reduce margin */
+      padding: 6px 10px; 
+      font-size: 0.8rem; 
+      margin: 0 2px; 
   }
 
   .pagination-controls span {
       font-size: 0.8rem;
       margin: 0 3px;
   }
-
-  /* footer */
-
-  .footer-links {
-    flex-direction: column; /* Stack links vertically */
-    gap: 5px;
-}
 
       
     }
