@@ -1,3 +1,42 @@
+# Table of Contents
+
+- [Hook It](https://hook-it-85e92c23978c.herokuapp.com/)
+- [App Structure](#app-structure)
+- [UX](#ux)
+- [User Stories](#user-stories)
+- [Admin Stories](#sdmin-stories)
+- [Site Pages](#site-pages)
+- [User Features](#user-features)
+- [Future Features](#future-features)
+- [ Navbar](#navbar)
+- [Footer](#footer)
+- [Agile methodology](agile-methodology)
+- [Search Engine Optimization (SEO) & Social Media Marketing](#seach-engin-and-social-media)
+- [Sitemap](#sitemap)
+- [Robots](#robots)
+- [Tools & Technologies Used](#tools-and-technologies-used)
+- [Testing](#testing)
+- [Testing File](TESTING.md)
+- [Deployment](#deployment)
+- [ElephantSQL Database](#elephantsql-database)
+- [Amazon AWS](#amazone-aws)
+- [Stripe API](#stripe-api)
+- [Gmail API](#gmail-api)
+- [Heroku Deployment](#heroku-deployment)
+- [Local Deployment](#local-deployment)
+- [Cloning](#cloning)
+- [Forking](#forking)
+- [Media](#media)
+- [Acknowledgements](#acknowledgements)
+- [Credits](#credits)
+- [Content](#content)
+- [bugs and fixes](#bugs-and-fixes)
+
+
+
+
+
+
 # [Hook It](https://hook-it-85e92c23978c.herokuapp.com/)
 
 Hook It is an online platform that offers a wide range of crochet patterns for enthusiasts of all skill levels. Designed for individuals who love crocheting and are looking for creative patterns to bring their projects to life, the website features a variety of crochet designs, including hats, scarves, shawls, baby booties, blankets, amigurumi, and more.
@@ -77,7 +116,7 @@ If bag is empty they can see amout 0.00.
 * Admin can edit and delete user reviews using frontend as well.
 
 
-### Site Pages
+## Site Pages
 
 - **Home page**
 
@@ -182,11 +221,11 @@ This page contains the privacy policy for our app. A link to this page is availa
 
 
 
-# Error Pages Customization
+## Error Pages Customization
 
 In this project, we have customized error pages to provide a better user experience when something goes wrong. Below are the titles and messages used for various error pages:
 
-## 400 - Bad Request
+### 400 - Bad Request
 
 **Title**: `Bad Request`  
 **Message**:  
@@ -196,7 +235,7 @@ This error occurs when the server cannot process the request due to malformed sy
 
 ---
 
-## 403 - Forbidden
+### 403 - Forbidden
 
 **Title**: `Forbidden`  
 **Message**:  
@@ -206,7 +245,7 @@ The 403 error indicates that the user does not have permission to view the reque
 
 ---
 
-## 404 - Page Not Found
+### 404 - Page Not Found
 
 **Title**: `Oops! Page Not Found`  
 **Message**:  
@@ -219,7 +258,7 @@ This error occurs when the user attempts to access a page that doesn't exist. Us
 
 ---
 
-## 500 - Internal Server Error
+### 500 - Internal Server Error
 
 **Title**: `Server Error`  
 **Message**:  
@@ -468,7 +507,7 @@ Building a strong social media presence and linking it to the business website c
 
 ![facebook](documents/screenshots/facebook.png)
 
-### Sitemap
+### Sitemap:
 
 I've used [XML-Sitemaps](https://www.xml-sitemaps.com) to generate a sitemap.xml file.
 This was generated using my deployed site URL: https://hook-it-85e92c23978c.herokuapp.com/
@@ -476,7 +515,7 @@ This was generated using my deployed site URL: https://hook-it-85e92c23978c.hero
 After it finished crawling the entire site, it created a
 [sitemap.xml](sitemap.xml) which I've downloaded and included in the repository.
 
-### Robots
+### Robots:
 
 I've created the [robots.txt](robots.txt) file at the root-level.
 Inside, I've included the default settings:
@@ -494,7 +533,7 @@ Further links for future implementation:
 - [Testing the robots.txt file](https://support.google.com/webmasters/answer/6062598)
 
 
-## Tools & Technologies Used
+## Tools & Technologies Used:
 * HTML used for the main site content.
 * CSS used for the main site design and layout.
 * JavaScript used for user interaction on the site.
@@ -519,9 +558,8 @@ Further links for future implementation:
 ## Testing:
 [Testing](TESTING.md)
 
-#### Cloning:
 
-## Deployment
+## Deployment:
 
 The live deployed application can be found deployed on Heroku.
 
@@ -661,7 +699,7 @@ Once on the IAM page, follow these steps:
 	- `AWS_ACCESS_KEY_ID` = **Access key ID**
 	- `AWS_SECRET_ACCESS_KEY` = **Secret access key**
 
-#### Final AWS Setup
+#### Final AWS Setup:
 
 - If Heroku Config Vars has `DISABLE_COLLECTSTATIC` still, this can be removed now, so that AWS will handle the static files.
 - Back within **S3**, create a new folder called: `media` and `media/files`.
@@ -669,7 +707,7 @@ Once on the IAM page, follow these steps:
 - Under **Manage Public Permissions**, select **Grant public read access to this object(s)**.
 - No further settings are required, so click **Upload**.
 
-### Stripe API
+### Stripe API:
 
 This project uses [Stripe](https://stripe.com) to handle the ecommerce payments.
 
@@ -690,7 +728,7 @@ As a backup, in case users prematurely close the purchase-order page during paym
 - You'll have a new key here:
 	- `STRIPE_WH_SECRET` = Signing Secret (Wehbook) Key (starts with **wh**)
 
-### Gmail API
+### Gmail API:
 
 This project uses [Gmail](https://mail.google.com) to handle sending emails to users for account verification and purchase order confirmations.
 
@@ -712,7 +750,7 @@ Once you've created a Gmail (Google) account and logged-in, follow these series 
 	- `EMAIL_HOST_PASS` = user's 16-character API key
 	- `EMAIL_HOST_USER` = user's own personal Gmail email address
 
-### Heroku Deployment
+### Heroku Deployment:
 
 This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
@@ -769,7 +807,7 @@ Or:
 
 The project should now be connected and deployed to Heroku!
 
-### Local Deployment
+### Local Deployment:
 
 This project can be cloned or forked in order to make a local copy on your own system.
 
@@ -814,7 +852,7 @@ If you'd like to backup your database models, use the following command for each
 - `python3 manage.py dumpdata your-model > your-model.json`
 - *repeat this action for each model you wish to backup*
 
-#### Cloning
+#### Cloning:
 
 You can clone the repository by following these steps:
 
@@ -828,7 +866,7 @@ You can clone the repository by following these steps:
 7. Press Enter to create your local clone.
 
 
-#### Forking
+#### Forking:
 
 By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
 You can fork this repository by using the following steps:
@@ -847,9 +885,7 @@ You can fork this repository by using the following steps:
 | Google Images | Used images from Google Images. |
 | [Flaticon](https://www.flaticon.com) | Used logo from Flaticon. |
 
-### Acknowledgements
-
-
+### Acknowledgements:
 
 
 - I would like to thank my Family, for believing in me, and helping me to make this transition into software development.
@@ -860,7 +896,7 @@ You can fork this repository by using the following steps:
 
 
 
-## Credits
+## Credits:
 
 | Resource | Description |
 |----------|-------------|
