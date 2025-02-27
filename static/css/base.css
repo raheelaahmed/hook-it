@@ -49,10 +49,7 @@ body {
     margin-right: 12px;   
   }
   
-  
-  
-  
-  .navbar-collapse{
+   .navbar-collapse{
       background-color: #e2cbcb;
   }
   
@@ -72,13 +69,7 @@ body {
   font-family: "Roboto", sans-serif;
   margin-top:300px;
   margin-bottom:200px;
-
-
- 
-
 }
-
-
 
 /* Styling for the main tagline */
 #content h1 {
@@ -143,9 +134,7 @@ body {
         
       }
   
-   
-  
-      /* css for patterns page */
+    /* css for patterns page */
   
       #patterns{
         margin-top:200px;
@@ -172,14 +161,7 @@ body {
       }
 
     
-  
-
-  
-
-
-
-
-.pattern-item {
+  .pattern-item {
     border: 2px solid #b1bebb; /* Light border around each pattern item */
     border-radius: 8px; /* Rounded corners */
     padding: 15px;
@@ -561,6 +543,10 @@ body {
     height: 2px;
   }
   
+  .content {
+    flex: 1; /* Takes the available space and pushes footer down */
+}
+
   
   /* Footer */
   
@@ -574,9 +560,6 @@ body {
     padding: 20px;
     border-top: 1px solid #eaeaea;
     margin-top: auto; /* Ensures footer stays at the bottom */
-}
-  .content {
-    flex: 1; /* Takes the available space and pushes footer down */
 }
 
   footer .footer-links {
@@ -917,21 +900,7 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-
-
-
-  
-  
-  
-  
-  
-   
-           
-  
-    
-  
-    
-    /* Responsive Design Adjustments */
+/* Responsive Design Adjustments */
 
   
     @media (max-width: 1024px) {
@@ -1050,6 +1019,32 @@ body {
         max-height: 75%;  
     }
   
+    /*pagination pattern page */
+
+    .pagination-controls {
+      flex-wrap: nowrap; /* Prevent wrapping */
+      overflow-x: auto; /* Allow horizontal scrolling if needed */
+      white-space: nowrap;
+  }
+
+  .pagination-controls a {
+      padding: 6px 10px; /* Further reduce padding */
+      font-size: 0.8rem; /* Make text smaller */
+      margin: 0 2px; /* Reduce margin */
+  }
+
+  .pagination-controls span {
+      font-size: 0.8rem;
+      margin: 0 3px;
+  }
+
+  /* footer */
+
+  .footer-links {
+    flex-direction: column; /* Stack links vertically */
+    gap: 5px;
+}
+
       
     }
     

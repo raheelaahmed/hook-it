@@ -15,8 +15,6 @@
 
                <select name="sort_by" class="form-control" onchange="this.form.submit()">
                 <option value="sorting"  {% if not sort_by %}selected{% endif %}>Sort By</option>
-                <option value="date_created_asc" {% if sort_by == 'date_created_asc' %}selected{% endif %}>Oldest</option>
-                <option value="date_created_desc" {% if sort_by == 'date_created_desc' %}selected{% endif %}>Newest</option>
                 <option value="price_asc" {% if sort_by == 'price_asc' %}selected{% endif %}>Price Low to High</option>
                 <option value="price_desc" {% if sort_by == 'price_desc' %}selected{% endif %}>Price High to Low</option>
                 <option value="name_asc" {% if sort_by == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
