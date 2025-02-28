@@ -996,6 +996,11 @@ footer .footer-links a:hover {
       margin: 0 3px;
   }
 
+
+#mc_embed_signup {
+  width: 100%; 
+}
+
       
     }
     
