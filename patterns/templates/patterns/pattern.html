@@ -34,7 +34,7 @@
                     <div class="pattern-item text-center">
                         
                         {% if pattern.image %}
-                        <a href="{{ pattern.image.url }}" target="_blank">
+                        <a href="{% url 'pattern-detail' pattern.id %}">
                             <img src="{{ pattern.image.url }}" alt="{{ pattern.name }}" class="img-fluid mb-3" />
                         </a>
                     {% else %}
