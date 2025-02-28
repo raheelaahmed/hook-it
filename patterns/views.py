@@ -172,7 +172,8 @@ def add_pattern(request):
     if request.method == 'POST':
         form = PatternForm(request.POST, request.FILES)
         if form.is_valid():
-            pattern = form.save()
+            pattern = form.save(commit=False)  # Get instance but don't save yet
+            pattern.save()
             messages.success(request, 'Successfully added pattern!')
             return redirect('pattern-detail', pattern_id=pattern.id)
         else:

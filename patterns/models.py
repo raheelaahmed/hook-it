@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django_ckeditor_5.fields import CKEditor5Field
 from django.contrib.auth.models import User
+from django_resized import ResizedImageField
 
 
 class Category(models.Model):
@@ -11,7 +12,6 @@ class Category(models.Model):
         return self.name
 
 
-# Pattern model
 class Pattern(models.Model):
     DIFFICULTY_LEVEL = (
         ('Beginner', 'Beginner'),
@@ -34,7 +34,7 @@ class Pattern(models.Model):
     name = models.CharField(max_length=254)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     date_created = models.DateTimeField(default=timezone.now)
-    image = models.ImageField(null=True, blank=True)
+    image = ResizedImageField(size=[800, 800], quality=85, upload_to="patterns/", force_format="JPEG", null=True, blank=True)
     pattern = models.FileField(upload_to='media/files', null=True, blank=True)
     rating = models.DecimalField(
         max_digits=6,
@@ -49,6 +49,8 @@ class Pattern(models.Model):
 
 
 # Review model
+
+
 class Review(models.Model):
     pattern = models.ForeignKey(
         'Pattern',

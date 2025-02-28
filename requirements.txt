@@ -15,6 +15,7 @@ django-ckeditor-5==0.2.15
 django-countries==7.6.1
 django-crispy-forms==2.3
 django-js-asset==3.0.1
+django-resized==1.0.3
 django-storages==1.14.4
 gunicorn==23.0.0
 idna==3.10

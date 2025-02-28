@@ -975,7 +975,7 @@ You can fork this repository by using the following steps:
 
 
 - I would like to thank my Family, for believing in me, and helping me to make this transition into software development.
-- I would like to thank my Code Institute mentor `cans` for their support throughout the development of this project.
+- I would like to thank my Code Institute mentor [Can Sücüllü](https://www.linkedin.com/in/cansucullu/) for their support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
 - I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
 
