@@ -11,16 +11,16 @@
 - [Future Features](#future-features)
 - [ Navbar](#navbar)
 - [Footer](#footer)
-- [Agile methodology](agile-methodology)
-- [Search Engine Optimization (SEO) & Social Media Marketing](#seach-engin-and-social-media)
+- [Agile methodology](#agile-methodology)
+- [Search Engine Optimization and Social Media Marketing](#search-engine-optimization-and-social-media-marketing)
 - [Sitemap](#sitemap)
 - [Robots](#robots)
-- [Tools & Technologies Used](#tools-and-technologies-used)
+- [Tools and Technologies Used](#tools-and-technologies-used)
 - [Testing](#testing)
 - [Testing File](TESTING.md)
 - [Deployment](#deployment)
 - [ElephantSQL Database](#elephantsql-database)
-- [Amazon AWS](#amazone-aws)
+- [Amazon AWS](#amazon-aws)
 - [Stripe API](#stripe-api)
 - [Gmail API](#gmail-api)
 - [Heroku Deployment](#heroku-deployment)
@@ -255,7 +255,7 @@ This page is also designed for the administration. An Edit button is available o
 
 ![edit-pattern](documents/screenshots/edit-pattern-screenshot.png)
 
-- **Confirm Delette Page** 
+- **Confirm Delete Page** 
 
 This page is designed to confirm the user's intention to delete the pattern, ensuring that the deletion is intentional and not accidental.
 
@@ -577,7 +577,7 @@ We can easily drag and drop issues into the appropriate columns based on their c
 You can find project link here [Project](https://github.com/users/raheelaahmed/projects/7/views/3)
 
 
-## Search Engine Optimization (SEO) & Social Media Marketing:
+## Search Engine Optimization and Social Media Marketing:
 
 I have optimized my website for search engines by verifying it with Google Search Console, using Google verification meta tags.
 
@@ -619,7 +619,7 @@ Further links for future implementation:
 - [Testing the robots.txt file](https://support.google.com/webmasters/answer/6062598)
 
 
-## Tools & Technologies Used:
+## Tools and Technologies Used:
 * HTML used for the main site content.
 * CSS used for the main site design and layout.
 * JavaScript used for user interaction on the site.
