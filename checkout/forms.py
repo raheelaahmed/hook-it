@@ -8,6 +8,9 @@ class OrderForm(forms.ModelForm):
         model = Order
         fields = ('full_name', 'email', 'phone_number', 'postcode', 'town_or_city', 'street_address1',
                   'street_address2', 'county', 'country')
+        labels = {
+            'country': 'Country', 
+        }
 
     def __init__(self, *args, **kwargs):
         """
@@ -35,7 +38,8 @@ class OrderForm(forms.ModelForm):
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-            self.fields[field].label = False
+            if field != 'country':
+                self.fields[field].label = False 
 
         # Add CSS classes to the form and its container
         self.helper = FormHelper()

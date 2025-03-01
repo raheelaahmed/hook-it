@@ -40,7 +40,7 @@
                                 <tr>
                                     <td class="p-3 w-25">
                                     
-                                        <img class="img-fluid rounded" src="{{ item.pattern.image.url }}">
+                                        <img class="img-fluid rounded" src="{{ item.pattern.image.url }}" alt="{{ item.pattern.name }}">
                                     
                                     </td>
                                     <td class="py-3">
@@ -64,8 +64,8 @@
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right" id="shopping-bag">
-                                    <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
-                                    <h4 class="mt-4"><strong>Total: ${{ total|floatformat:2 }}</strong></h4>
+                                    <p>Bag Total: ${{ total|floatformat:2 }}</p>
+                                    <p class="mt-4"><strong>Total: ${{ total|floatformat:2 }}</strong></p>
                                 </td>
                             </tr>
                             <tr>

@@ -854,15 +854,15 @@ background-color: #89bcb0;
 }
 
 .shop-now-button {
-  background: #007bff;
-  color: white;
+  background: #b1bebb;
+  color: #4a4a4a;
   transition: all 0.3s ease;
   border-radius: 8px;
   padding: 12px 20px;
 }
 
 .shop-now-button:hover {
-  background: #0056b3;
+  background: #80a8d0;
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 

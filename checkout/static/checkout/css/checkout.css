@@ -160,7 +160,6 @@ form {
 
 .download-section h3 {
   font-size: 1.8em;
-  color: #004085;
   margin-bottom: 15px;
 }
 
@@ -180,8 +179,8 @@ form {
 
 /* Download Button */
 .btn-download {
-  background-color: #28a745;
-  color: #fff;
+  background-color: #b1bebb;
+  color: #4a4a4a;
   padding: 8px 15px;
   border-radius: 5px;
   text-decoration: none;
@@ -190,7 +189,7 @@ form {
 }
 
 .btn-download:hover {
-  background-color: #218838;
+  background-color: #80e8d0;
 }
 
 /* Next Steps */
@@ -207,11 +206,12 @@ form {
 }
 
 .next-steps .btn-secondary {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #b1bebb;
+  color: #4a4a4a;
 }
 
 .next-steps .btn-secondary:hover {
-  background-color: #0056b3;
+  background-color: #80e8d0;
 }
+
 
