@@ -60,9 +60,9 @@
             </form>
 
             {% if request.user.is_superuser %}
-            <small class="ml-3" id="edit-pattern">
-                <a href="{% url 'edit_pattern' pattern.id %}">Edit</a> | 
-                <a class="text-danger" href="{% url 'delete_pattern' pattern.id %}">Delete</a>
+            <small class="ml-3">
+                <a  id="edit-pattern" href="{% url 'edit_pattern' pattern.id %}">Edit</a> | 
+                <a  id="delete-pattern" href="{% url 'delete_pattern' pattern.id %}">Delete</a>
             </small>
             {% endif %}
 

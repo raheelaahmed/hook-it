@@ -342,44 +342,62 @@ body {
 }
 
 #add-to-bag .btn-black {
-  background-color: #a7a0a4;
-  color: white; 
+  background-color: #b1bebb;
+  color: #484747; 
   border: none;
   transition: background-color 0.3s; 
 }
 
 #add-to-bag .btn-black:hover {
-  background-color: #484747;
+  background-color: #89bcb0;
  
 }
 
 #edit-pattern {
-  font-size: 20px; 
-  color: #555; 
+  font-size: 18px;  
+  color:#484747;
+  background-color: #b1bebb;
+  padding:10px; 
 }
 #edit-pattern:hover {
-
-  font-size: 24px; 
+  font-size: 20px; 
+background-color: #89bcb0;
 }
+
+#delete-pattern{
+  font-size: 18px; 
+  background-color:#eaa3a3; 
+  color:#484747;
+  border:none;
+  padding:10px;
+}
+#delete-pattern:hover{
+  background-color: #e94c4c;
+  font-size: 20px;
+}
+
 /* for review edit links*/
 #edit{
   font-size: 18px; 
-  color:dodgerblue; 
+  color:#484747;
+  background-color: #b1bebb; 
 }
 #edit:hover {
-  color: darkblue;
+  color: #89bcb0;
   font-size: 20px; 
+  color:#484747;
 }
 
 /* css for delete review*/
 #delete{
   font-size: 18px; 
-  color:red; 
+  background-color:#eaa3a3; 
+  color:#484747;
   border:none;
 }
 
 #delete:hover {
-  color: darkred;
+  background-color: #e94c4c;
   font-size: 20px;
 
 }
@@ -436,15 +454,15 @@ body {
   }
   
   .review-form button{
-    background-color:#a7a0a4;
+    background-color:#b1bebb;
     padding: 10px 20px;
     border-radius: 5px;
-    color:#fefefe;
+    color:#484747;
     cursor: pointer;
   }
   
   .review-form button:hover {
-    background-color: #484747; 
+    background-color: #89bcb0; 
   }
   .stars {
     font-size: 1.5rem;
@@ -739,8 +757,8 @@ body {
 /* Style the submit button */
 #allauth form button,
 #allauth form .btn {
-    background-color: #007bff; 
-    color: white; 
+    background-color: #b1bebb; 
+    color: #4a4a4a; 
     border: none; 
     padding: 10px 20px; 
     border-radius: 4px; 
@@ -748,11 +766,13 @@ body {
     width: 100%; 
     font-size: 16px; 
 }
-
+#allauth a{
+  color:#484747 ;
+}
 /* Add hover effect on the submit button */
 #allauth form button:hover,
 #allauth form .btn:hover {
-    background-color: #0056b3; 
+    background-color: #89bcb0; 
 }
 
 
