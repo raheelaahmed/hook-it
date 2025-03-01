@@ -213,18 +213,18 @@ body {
     margin: 0 5px;
     text-decoration: none;
     border-radius: 5px;
-    color: #fff;
-    background-color: #007bff; 
+    color: #484747;
+    background-color: #b1bebb; 
     transition: background-color 0.3s ease;
 }
 
 .pagination-controls a:hover {
-    background-color: #0056b3; 
+    background-color: #89bcb0; 
 }
 
 .pagination-controls .disabled {
-    background-color: #ddd; 
-    color: #888;
+  background-color: #e9f0ee; 
+    color:#000000;
 }
 
 .pagination-controls span {
@@ -352,7 +352,27 @@ body {
   background-color: #89bcb0;
  
 }
+/*  edit and delete buttons for pattern page*/
+.edit-pattern {
+  font-size: 18px;  
+  color:#484747;
+  
+}
+.edit-pattern:hover {
+  font-size: 20px; 
+background-color: #89bcb0;
+}
 
+.delete-pattern{
+  font-size: 18px; 
+  color:#484747;
+  border:none;
+}
+.delete-pattern:hover{
+  background-color: #e94c4c;
+  font-size: 20px;
+}
+/*  edit and delete buttons for pattern detail page*/
 #edit-pattern {
   font-size: 18px;  
   color:#484747;

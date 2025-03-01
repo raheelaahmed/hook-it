@@ -12,15 +12,14 @@
     <div class="container" id="patterns">
         <div class="sort-options mb-3">
             <form method="get">
-               <label for="'sort_by">Sort By:</label>
-               <select name="sort_by" class="form-control" onchange="this.form.submit()">
-                <option value="sorting"  {% if not sort_by %}selected{% endif %}>Sort By</option>
-                <option value="price_asc" {% if sort_by == 'price_asc' %}selected{% endif %}>Price Low to High</option>
-                <option value="price_desc" {% if sort_by == 'price_desc' %}selected{% endif %}>Price High to Low</option>
-                <option value="name_asc" {% if sort_by == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                <option value="name_desc" {% if sort_by == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-            </select>
-                
+                <label for="sort_by">Sort By:</label>
+                <select name="sort_by" id="sort_by" class="form-control" onchange="this.form.submit()">
+                    <option value="sorting" {% if not sort_by %}selected{% endif %}>Sort By</option>
+                    <option value="price_asc" {% if sort_by == 'price_asc' %}selected{% endif %}>Price Low to High</option>
+                    <option value="price_desc" {% if sort_by == 'price_desc' %}selected{% endif %}>Price High to Low</option>
+                    <option value="name_asc" {% if sort_by == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                    <option value="name_desc" {% if sort_by == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                </select>
             </form>
         </div>
         
@@ -59,8 +58,8 @@
                     </div>
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
-                        <a href="{% url 'edit_pattern' pattern.id %}">Edit</a> | 
-                        <a class="text-danger" href="{% url 'delete_pattern' pattern.id %}">Delete</a>
+                        <a  class="edit-pattern" href="{% url 'edit_pattern' pattern.id %}">Edit</a> | 
+                        <a class="delete-pattern" href="{% url 'delete_pattern' pattern.id %}">Delete</a>
                     </small>
                 {% endif %}
                 </div>
