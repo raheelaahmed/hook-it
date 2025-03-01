@@ -284,7 +284,7 @@ This is the Checkout page, where users can complete their purchase using the Str
 This is the Checkout Success page, confirming that your order has been completed. A confirmation email with order details has been sent to you. The page displays your order summary along with a download link for your purchased pattern. Additionally, a "Check Out Our Latest Deals!" button is provided, allowing you to return to the patterns page and continue shopping.
 
 
-![checkout-success](documents/screenshots/chekout-success-screenshot.png)
+![checkout-success](documents/screenshots/checkout-success-screenshot.png)
 
 
 - **Order Confirmation Email**
@@ -340,7 +340,7 @@ The 403 error indicates that the user does not have permission to view the reque
 This error occurs when the user attempts to access a page that doesn't exist. Users are given the option to return to the shop or homepage to continue their browsing.
 
 
-![error](documents/screenshots/error.png)
+![error](documents/screenshots/error-404.png)
 
 ---
 
