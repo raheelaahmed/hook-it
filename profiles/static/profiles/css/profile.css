@@ -34,14 +34,16 @@
 }
 
 .order-history a {
-    color: #007bff;
+    background-color: #b1bebb;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.2s ease;
+    color:#4a4a4a;
+    padding: 10px;
 }
 
 .order-history a:hover {
-    color: #0056b3;
+    background-color: #80e8d0;
 }
 
 /* Items List */
