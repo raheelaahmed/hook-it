@@ -26,18 +26,18 @@
             <h1 class="display-4 mb-3 custom-header" id="name-pattern-detail">{{ pattern.name }}</h1>
 
             <div class="mb-3">
-                <h4 id="difficulty">Difficulty Level: <span>{{ pattern.difficulty }}</span></h4>
+                <h2 id="difficulty">Difficulty Level: <span>{{ pattern.difficulty }}</span></h2>
             </div>
 
             <div class="mb-3">
-                <h4 id="price">Price: <span>{{ currency_symbol }}{{ pattern.price }}</span></h4>
+                <h2 id="price">Price: <span>{{ currency_symbol }}{{ pattern.price }}</span></h2>
             </div>
 
           
 
 
             <div class="mb-4 description" >
-                <h5>Description:</h5>
+                <h3>Description:</h3>
                 <div id="pattern-description" style="text-align: left;">{{ pattern.description|safe }}</div>
             </div>
             <form  action="{% url 'add_to_bag' pattern.id %}" method="POST" id="add-to-bag">

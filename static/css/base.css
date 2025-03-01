@@ -37,9 +37,10 @@ body {
   }
   
   .navbar-logo {
-    height: 40px;         
-    margin-right: 12px;   
-  }
+    width: 50px;
+    height: 50px;
+    object-fit: contain; /* Ensures proper scaling */
+}
   
    .navbar-collapse{
       background-color: #e2cbcb;
@@ -175,7 +176,7 @@ body {
 }
 
 /* Styling for the pattern name */
-.pattern-item h3 {
+.pattern-item h2 {
     font-size: 1.2rem; 
     font-weight: bold; 
     color: #333; 
@@ -183,7 +184,7 @@ body {
     transition: color 0.3s ease; 
 }
 
-.pattern-item h3:hover {
+.pattern-item h2:hover {
     color: #007bff; 
 }
 
@@ -341,7 +342,7 @@ body {
 }
 
 #add-to-bag .btn-black {
-  background-color:#a7a0a4;
+  background-color: #a7a0a4;
   color: white; 
   border: none;
   transition: background-color 0.3s; 
@@ -837,10 +838,10 @@ body {
 /* Footer Styles */
 
 footer {
-  background-color: #b1bebb;
+  background-color: #b1bebb;  
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  color: #6c757d;
+  color: #2C2C2C ; 
   padding: 20px;
   border-top: 1px solid #eaeaea;
   margin-top: auto; 
@@ -850,17 +851,21 @@ footer .footer-links {
   list-style: none;
   padding: 0;
 }
+
 footer .footer-links li {
-  display: inline;
+  padding: 12px 16px;
+  display: inline-block;
   margin: 0 10px;
 }
+
 footer .footer-links a {
-  color: #6c757d;
+  color: #333333;  /* Darker text for links */
   text-decoration: none;
   transition: color 0.3s;
 }
+
 footer .footer-links a:hover {
-  color: #000;
+  color: #000000;  /* Darker hover state */
 }
 
 
