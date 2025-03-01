@@ -6,7 +6,9 @@
 {% load account socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
-
+{% block extra_title %}
+   Sign-In
+{% endblock %}
 {% block content %}
 <div class="container" id="allauth">
 <h1>{% trans "Sign In" %}</h1>
