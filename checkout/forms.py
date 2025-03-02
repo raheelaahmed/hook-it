@@ -6,10 +6,17 @@ from crispy_forms.helper import FormHelper
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ('full_name', 'email', 'phone_number', 'postcode', 'town_or_city', 'street_address1',
-                  'street_address2', 'county', 'country')
+        fields = ('full_name',
+                  'email',
+                  'phone_number',
+                  'postcode',
+                  'town_or_city',
+                  'street_address1',
+                  'street_address2',
+                  'county',
+                  'country')
         labels = {
-            'country': 'Country', 
+            'country': 'Country',
         }
 
     def __init__(self, *args, **kwargs):
@@ -39,7 +46,7 @@ class OrderForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             if field != 'country':
-                self.fields[field].label = False 
+                self.fields[field].label = False
 
         # Add CSS classes to the form and its container
         self.helper = FormHelper()

@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Category, Pattern, Review
 from django_ckeditor_5.widgets import CKEditor5Widget
-from django_ckeditor_5.fields import CKEditor5Field
 from django import forms
 
 
@@ -24,7 +23,8 @@ class PatternAdminForm(forms.ModelForm):
 
 class PatternAdmin(admin.ModelAdmin):
     form = PatternAdminForm
-    list_display = ('name', 'price', 'category', 'difficulty', 'rating', 'date_created')
+    list_display = ('name', 'price', 'category',
+                    'difficulty', 'rating', 'date_created')
     search_fields = ('name', 'category__name')
     list_filter = ('category', 'difficulty', 'date_created')
 

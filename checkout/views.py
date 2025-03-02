@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse
+from django.shortcuts import get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -68,7 +69,8 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['items_by_size'].items():
+                        for size, quantity in item_data[
+                                'items_by_size'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 pattern=pattern,
@@ -77,22 +79,26 @@ def checkout(request):
                             order_line_item.save()
                 except Pattern.DoesNotExist:
                     messages.error(request, (
-                        "One of the patterns in your bag wasn't found in our database. "
-                        "Please call us for assistance!")
-                    )
+                     "One of the patterns in your bag" /
+                     "wasn't found in our database. "
+                     "Please call us for assistance!"
+                     )
+                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                            args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request, "There's nothing in your" /
+                           "bag at the moment")
             return redirect(reverse('patterns'))
 
         current_bag = bag_contents(request)
@@ -104,7 +110,8 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # Attempt to prefill the form with any info the
+        # user maintains in their profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -168,12 +175,18 @@ def checkout_success(request, order_number):
                 user_profile_form.save()
 
     # Notify the user about the successful order
-    messages.success(request, f'Order successfully processed! Your order number is {order_number}. A confirmation email will be sent to {order.email}.')
+    messages.success(
+        request,
+        f'Order successfully processed! '
+        f'Your order number is {order_number}. '
+        f'A confirmation email will be sent to {order.email}.'
+    )
 
     # Retrieve all order line items for this order
     order_line_items = OrderLineItem.objects.filter(order=order)
 
-    # Generate a list of patterns (and their download links) from the order line items
+    # Generate a list of patterns (and their download links)
+    # from the order line items
     patterns_with_download = []
     for item in order_line_items:
         pattern = item.pattern
@@ -185,7 +198,7 @@ def checkout_success(request, order_number):
         else:
             patterns_with_download.append({
                 'pattern_name': pattern.name,
-                'pattern_url': None  # No download link if the file doesn't exist
+                'pattern_url': None
             })
 
     # Clear the shopping bag after successful checkout

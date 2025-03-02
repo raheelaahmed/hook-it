@@ -14,7 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from .views import handler404, handler500, handler400, handler403
+# from .views import handler404, handler500, handler400, handler403
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -29,11 +29,11 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profiles/', include('profiles.urls')),
     path('contact_us/', include('contact_us.urls')),
-    path('ckeditor5/', include('django_ckeditor_5.urls')),  # This includes the home app URLs
+    path('ckeditor5/', include('django_ckeditor_5.urls')),
     # This includes the patterns app URLs
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = 'hook_it.views.handler404'
-handler400 = "hook_it.views.handler400"
-handler403 = "hook_it.views.handler403"
-handler500 = "hook_it.views.handler500"
+# handler404 = 'hook_it.views.handler404'
+# handler400 = "hook_it.views.handler400"
+# handler403 = "hook_it.views.handler403"
+# handler500 = "hook_it.views.handler500""""

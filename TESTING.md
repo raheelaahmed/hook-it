@@ -65,22 +65,22 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | apps.py | ![screenshot](documents/python-testing/apps.bag.png) | Pass: No Errors |
 | contexts.py | ![screenshot](documents/python-testing/context.bag.png) | Pass: No Errors |
 | urls.py |![screenshot](documents/python-testing/urls.bag.png) | Pass: No Errors |
-| views.py |  ![screenshot](documents/python-testing/views.bag.png) | E501(line too long)|
-| tests.py |  ![screenshot](documents/python-testing/test_bag.png) | E501(line too long)|
-
+| views.py |  ![screenshot](documents/python-testing/views.bag.png) |Pass: No Errors |
+| tests.py |  ![screenshot](documents/python-testing/test_bag.png) | Pass: No Errors|
+ur
 ### Checkout App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
 | admin.py | ![screenshot](documents/python-testing/admin.checkout.png) | Pass: No Errors |
 | apps.py | ![screenshot](documents/python-testing/apps.checkout.png) | Pass: No Errors |
-| forms.py | ![screenshot](documents/python-testing/forms.checkout.png) | line too long |
-| models.py | ![screenshot](documents/python-testing/models.checkout.png) | line too long, no newline at the end.|
-| signals.py | ![screenshot](documents/python-testing/signals.checkout.png) | no new line |
-| urls.py |![screenshot](documents/python-testing/urls.checkout.png) | line too long |
-| views.py |![screenshot](documents/python-testing/views.checkout.png) | Pline too long |
-| webhook_handler.py |![screenshot](documents/python-testing/wh-handler.checkout.png) | line too long, no new line |
-| webhooks.py |  ![screenshot](documents/python-testing/wh.checkout.png) | line too long |
-| tests.py |  ![screenshot](documents/python-testing/test_checkout.png) | line too long |
+| forms.py | ![screenshot](documents/python-testing/forms.checkout.png) | Pass: NO Errors |
+| models.py | ![screenshot](documents/python-testing/models.checkout.png) | Pass : No Errors|
+| signals.py | ![screenshot](documents/python-testing/signals.checkout.png) | Pass : No Errors|
+| urls.py |![screenshot](documents/python-testing/urls.checkout.png) |Pass : No Error |
+| views.py |![screenshot](documents/python-testing/views.checkout.png) |Pass : No Errors|
+| webhook_handler.py |![screenshot](documents/python-testing/webhooks.checkout.png) | Pass : No Errors |
+| webhooks.py |  ![screenshot](documents/python-testing/wh.checkout.png) |Pass : No Errors |
+| tests.py |  ![screenshot](documents/python-testing/test_checkout.png) |Pass : No Errors |
 
 
 ### Hook_It App
@@ -88,19 +88,19 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | --- | --- | --- | --- |
 | asgi.py | ![screenshot](documents/python-testing/asgi.hookit.png) | Pass: No Errors |
 | settings.py |  ![screenshot](documents/python-testing/setting.hookit.png) | line too long |
-| urls.py |  ![screenshot](documents/python-testing/urls.hookit.png) | line too long |
+| urls.py |  ![screenshot](documents/python-testing/urls.hoookit.png) |Pass : No Errors |
 | views.py |  ![screenshot](documents/python-testing/views.hookit.png) | Pass: No Errors |
 | wsgi.py | ![screenshot](documents/python-testing/wsgi.hookit.png) | Pass: No Errors |
 
 ### Contact App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py |  ![screenshot](documents/python-testing/admin.contact.png) | line too long |
+| admin.py |  ![screenshot](documents/python-testing/admin.contact.png) |Pass : No Errors|
 | apps.py | ![screenshot](documents/python-testing/apps.contact.png) | Pass: No Errors |
 | models.py | ![screenshot](documents/python-testing/model.contact.png) | Pass: No Errors |
 | urls.py |  ![screenshot](documents/python-testing/urls.contact.png) | Pass: No Errors |
-| views.py | ![screenshot](documents/python-testing/views.contact.png) | line too long |
-| tests.py | ![screenshot](documents/python-testing/test_contactus.png) | line too long |
+| views.py | ![screenshot](documents/python-testing/views.contact.png) |Pass : No Errors |
+| tests.py | ![screenshot](documents/python-testing/test-contactus.png) |Pass : No Errors |
 
 
 
@@ -109,31 +109,31 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | --- |  --- | --- |
 | apps.py |![screenshot](documents/python-testing/app.home.png) | Pass: No Errors |
 | urls.py |  ![screenshot](documents/python-testing/urls.home.png) | Pass: No Errors |
-| views.py |  ![screenshot](documents/python-testing/views.home.png) | line too long |
+| views.py |  ![screenshot](documents/python-testing/views.home.png) |Pass : No Errors |
 | tests.py |![screenshot](documents/python-testing/test_home.png) | Pass: No Errors |
 
 
 ### Patterns App
 | File |  Screenshot | Notes |
 | --- | --- | --- |
-| admin.py | ![screenshot](documents/python-testing/admin.pattern.png) |line too long |
+| admin.py | ![screenshot](documents/python-testing/admin.patterns.png) |Pass : No Errors|
 | apps.py | ![screenshot](documents/python-testing/apps.pattern.png) | Pass: No Errors |
-| forms.py |  ![screenshot](documents/python-testing/forms.pattern.png) | line too long |
+| forms.py |  ![screenshot](documents/python-testing/forms.pattern.png) |Pass : No Errors |
 | models.py |  ![screenshot](documents/python-testing/models.patterns.png) | Pass: No Errors |
 | urls.py |  ![screenshot](documents/python-testing/urls.pattern.png) | Pass: No Errors |
-| views.py |  ![screenshot](documents/python-testing/views.patterns.png) | line too long|
-| tests.py |  ![screenshot](documents/python-testing/test_pattern.png) | line too long|
+| views.py |  ![screenshot](documents/python-testing/views.patterns.png) |Pass : No errors|
+| tests.py |  ![screenshot](documents/python-testing/test_patterns.png) |Pass : No Errors|
 
 ### Profiles App
 | File |  Screenshot | Notes |
 | --- | --- | --- |
 | admin.py |  ![screenshot](documents/python-testing/admin-profile.png) | Pass: No Errors |
-| apps.py |  ![screenshot](documents/python-testing/apps-profile.png) | line too long |
-| forms.py | ![screenshot](documents/python-testing/form-profile.png) | line too long|
-| models.py |  ![screenshot](documents/python-testing/models-profile.png) | line too long |
-| urls.py |  ![screenshot](documents/python-testing/views-profile.png) | line too long|
-| views.py |  ![screenshot](documents/python-testing/views-profile.png) | line too long |
-| tests.py |  ![screenshot](documents/python-testing/test_profiles.png) | line too long |
+| apps.py |  ![screenshot](documents/python-testing/apps-profile.png) | Pass : No Errors |
+| forms.py | ![screenshot](documents/python-testing/forms-profile.png) | Pass : No Errors|
+| models.py |  ![screenshot](documents/python-testing/models-profile.png) | Pass : No Errors |
+| urls.py |  ![screenshot](documents/python-testing/views-profile.png) | Pass : No Errors|
+| views.py |  ![screenshot](documents/python-testing/views-profile.png) | Pass : No Errors|
+| tests.py |  ![screenshot](documents/python-testing/test_profile.png) |Pass : No Errors |
 
 ### Root Level Files
 | File | Screenshot | Notes |

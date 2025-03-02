@@ -8,7 +8,8 @@ class ContactViewTest(TestCase):
     """"Testing contact us"""
 
     def test_contact_view_post_valid_data(self):
-        """Test that a valid form submission sends the email and shows a success message."""
+        """Test that a valid form submission sends
+        the email and shows a success message."""
         # Define the valid form data
         form_data = {
             'subject': 'Test Subject',
@@ -33,7 +34,8 @@ class ContactViewTest(TestCase):
         self.assertIn("Your message has been sent successfully!", messages)
 
     def test_contact_view_get(self):
-        """Test that the contact form is displayed correctly for GET requests."""
+        """Test that the contact form
+        is displayed correctly for GET requests."""
         response = self.client.get(reverse('contact'))
 
         # Check if the response is 200 OK

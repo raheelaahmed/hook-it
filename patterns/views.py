@@ -43,13 +43,17 @@ def all_patterns(request):
             messages.error(request, "You didn't enter any search criteria!")
             return redirect('patterns')
 
-        queries = Q(name__icontains=query) | Q(description__icontains=query) | \
-            Q(category__name__icontains=query) | Q(difficulty__icontains=query)
+        queries = (
+            Q(name__icontains=query) |
+            Q(description__icontains=query) |
+            Q(category__name__icontains=query) |
+            Q(difficulty__icontains=query))
 
         patterns = patterns.filter(queries)
 
         if not patterns.exists():
-            messages.error(request, "No patterns found for your search criteria.")
+            messages.error(request,
+                           "No patterns found for your search criteria.")
 
     # Pagination
     paginator = Paginator(patterns, 9)  # Show 9 patterns per page
@@ -99,7 +103,9 @@ def add_review(request, pattern_id):
             if not (1 <= rating <= 5):
                 raise ValueError("Rating must be between 1 and 5.")
         except ValueError:
-            messages.error(request, "Invalid rating value. It must be between 1 and 5.")
+            messages.error(
+                           request,
+                           "Invalid rating value. It must be between 1 and 5.")
             return redirect('pattern-detail', pattern_id=pattern.id)
 
         Review.objects.create(
@@ -119,7 +125,8 @@ def edit_review(request, review_id):
     review = get_object_or_404(Review, id=review_id)
 
     if review.user != request.user and not request.user.is_superuser:
-        messages.error(request, "You do not have permission to edit this review.")
+        messages.error(request,
+                       "You do not have permission to edit this review.")
         return redirect('pattern-detail', pattern_id=review.pattern.id)
 
     if request.method == 'POST':
@@ -135,7 +142,9 @@ def edit_review(request, review_id):
             if not (1 <= rating <= 5):
                 raise ValueError("Rating must be between 1 and 5.")
         except ValueError:
-            messages.error(request, "Invalid rating value. It must be between 1 and 5.")
+            messages.error(
+                           request,
+                           "Invalid rating value. It must be between 1 and 5.")
             return redirect('edit-review', review_id=review.id)
 
         review.rating = rating
@@ -154,7 +163,8 @@ def delete_review(request, pattern_id, review_id):
     review = get_object_or_404(Review, id=review_id, pattern_id=pattern_id)
 
     if review.user != request.user and not request.user.is_superuser:
-        messages.error(request, 'You do not have permission to delete this review.')
+        messages.error(request,
+                       'You do not have permission to delete this review.')
         return redirect('pattern-detail', pattern_id=pattern_id)
 
     review.delete()
@@ -172,12 +182,15 @@ def add_pattern(request):
     if request.method == 'POST':
         form = PatternForm(request.POST, request.FILES)
         if form.is_valid():
-            pattern = form.save(commit=False)  # Get instance but don't save yet
+            pattern = form.save(commit=False)
             pattern.save()
             messages.success(request, 'Successfully added pattern!')
             return redirect('pattern-detail', pattern_id=pattern.id)
         else:
-            messages.error(request, 'Failed to add pattern. Please ensure the form is valid.')
+            messages.error(
+                           request,
+                           'Failed to add pattern.'
+                           'Please ensure the form is valid.')
     else:
         form = PatternForm()
 
@@ -203,7 +216,10 @@ def edit_pattern(request, pattern_id):
             messages.success(request, 'Successfully updated pattern!')
             return redirect('pattern-detail', pattern_id=pattern.id)
         else:
-            messages.error(request, 'Failed to update pattern. Please ensure the form is valid.')
+            messages.error(
+                           request,
+                           'Failed to update pattern.'
+                           'Please ensure the form is valid.')
     else:
         form = PatternForm(instance=pattern)
         messages.info(request, f'You are editing {pattern.name}')
@@ -224,10 +240,12 @@ def delete_pattern(request, pattern_id):
 
     pattern = get_object_or_404(Pattern, pk=pattern_id)
 
-    if request.method == 'POST':  # If the form is submitted to confirm the deletion
+    if request.method == 'POST':
         pattern.delete()
         messages.success(request, 'Pattern deleted!')
         return redirect(reverse('patterns'))
 
     # If it's a GET request, show the confirmation page
-    return render(request, 'patterns/confirm_delete.html', {'pattern': pattern})
+    return render(request, 'patterns/confirm_delete.html', {
+        'pattern': pattern
+    })

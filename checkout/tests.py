@@ -32,7 +32,7 @@ class CheckoutTestCase(TestCase):
 
     def test_checkout_page_loads(self):
         """Test if the checkout page loads correctly."""
-        response = self.client.get(reverse('checkout'))  # Check the checkout URL
+        response = self.client.get(reverse('checkout'))
         self.assertEqual(response.status_code, 200)
 
 
@@ -102,4 +102,4 @@ class OrderFormTest(TestCase):
             'country': 'CA',
         }
         form = OrderForm(data=form_data)
-        self.assertTrue(form.is_valid())  # Form should be valid even with optional fields missing
+        self.assertTrue(form.is_valid())

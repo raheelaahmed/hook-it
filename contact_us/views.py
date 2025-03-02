@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.contrib import messages
-from django.conf import settings
 
 
 def contact_view(request):
@@ -26,7 +25,8 @@ def contact_view(request):
 
             form.save()
 
-            messages.success(request, "Your message has been sent successfully!")
+            messages.success(request,
+                             "Your message has been sent successfully!")
 
             return redirect('contact')
 
