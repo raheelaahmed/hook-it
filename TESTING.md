@@ -87,7 +87,7 @@ ur
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
 | asgi.py | ![screenshot](documents/python-testing/asgi.hookit.png) | Pass: No Errors |
-| settings.py |  ![screenshot](documents/python-testing/setting.hookit.png) | line too long |
+| settings.py |  ![screenshot](documents/python-testing/setting.hookit.png) |  Pass: No Errors  |
 | urls.py |  ![screenshot](documents/python-testing/urls.hoookit.png) |Pass : No Errors |
 | views.py |  ![screenshot](documents/python-testing/views.hookit.png) | Pass: No Errors |
 | wsgi.py | ![screenshot](documents/python-testing/wsgi.hookit.png) | Pass: No Errors |
@@ -432,7 +432,7 @@ Solution: Added a default image URL to prevent errors when an image is missing.
 
 ## Unsolved Errors and Bugs:
  
- ![webhook](documents/screenshots/except value error.png)
+ ![webhook](documents/screenshots/except-valu-error.png)
 
 
 
