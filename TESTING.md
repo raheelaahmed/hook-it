@@ -118,9 +118,9 @@ ur
 | --- | --- | --- |
 | admin.py | ![screenshot](documents/python-testing/admin.patterns.png) |Pass : No Errors|
 | apps.py | ![screenshot](documents/python-testing/apps.pattern.png) | Pass: No Errors |
-| forms.py |  ![screenshot](documents/python-testing/forms.pattern.png) |Pass : No Errors |
+| forms.py |  ![screenshot](documents/python-testing/forms.patterns.png) |Pass : No Errors |
 | models.py |  ![screenshot](documents/python-testing/models.patterns.png) | Pass: No Errors |
-| urls.py |  ![screenshot](documents/python-testing/urls.pattern.png) | Pass: No Errors |
+| urls.py |  ![screenshot](documents/python-testing/urls.patterns.png) | Pass: No Errors |
 | views.py |  ![screenshot](documents/python-testing/views.patterns.png) |Pass : No errors|
 | tests.py |  ![screenshot](documents/python-testing/test_patterns.png) |Pass : No Errors|
 
