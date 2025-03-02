@@ -371,4 +371,79 @@ Defensive programming was manually tested with the below user acceptance testing
 | `profiles/views.py` | 36 | 2 | 94% | 22, 58 |
 | **TOTAL** | **1105** | **296** | **73%** | - |
 
+# bugs and fixes:
+
+foreign key error in serch term
+
+![foriegn-key-error](documents/screenshots/foriegn-key-error.png)
+
+solution:
+
+Since category is a foreign key, we can't filter it with icontains directly as if it were a CharField. we need to filter based on a field within the related Category model, like category__name__icontains.
+
+
+## Error redirect error:
+
+Redirect error for clicking add to bag button.
+
+![Redirect-error](documents/screenshots/redirect.png)
+
+Solution:
+
+Import Redirect from django shortcuts.
+
+## Cispy_form error:
+
+Crispy_form error :
+
+![crispy](documents/screenshots/crispy-form.png)
+
+Solution:
+
+added 'crispy_bootstrap4' in installed apps to fix it.
+
+
+## stripe card input field disabled:
+
+Issue: On the checkout page, the payment card input field was disabled due to an insecure form connection.
+
+Solution: I resolved this issue by clearing the browser history and cache, which allowed the form to reload securely.
+
+
+## problem with media files:
+
+Issue: I was unable to view media files, such as the logo, background, and other images, on my app.
+
+![Home-page-with-bug](documents/screenshots/bug-home.png)
+
+
+Solution: After removing the SSL configuration from the settings, everything started working properly.
+
+![fixed-homepage](documents/screenshots/fiexed-home.png)
+
+## Value Error:
+
+Issue: Sorting was failing because one of the patterns had no image.
+
+![value-error](documents/screenshots/value-error.png)
+
+Solution: Added a default image URL to prevent errors when an image is missing.
+
+
+## Unsolved Errors and Bugs:
+ 
+ ![webhook](documents/screenshots/except value error.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
