@@ -172,31 +172,31 @@ On all pages, Lighthouse is flagging a warning 'Issues were logged in the Issues
 
 | Page | Desktop | Notes |
 | --- |  --- | --- |
-| 404 | ![screenshot](documents/lighthouse-audit/error404.png) | pass |
-| about |![screenshot](documents/lighthouse-audit/about.png) | pass |
-| add-patern |  ![screenshot](documents/lighthouse-audit/add-a-pattern.png) | pass |
-| bag | ![screenshot](documents/lighthouse-audit/add-a-pattern.png) | pass |
-| checkout | ![screenshot](documents/lighthouse-audit/checkout.png) | pass |
-| checkout-success |  ![screenshot](documents/lighthouse-audit/checkout-success.png) | pass |
-| contact |  ![screenshot](documents/lighthouse-audit/contact-us.png) | pass |
-| patterns | ![screenshot](documents/lighthouse-audit/patterns.png) | pass|
-| edit-pattern |  ![screenshot](documents/lighthouse-audit/edit-pattern.png) | pass |
-| confirm-delete |  ![screenshot](documents/lighthouse-audit/confirm-delete.png) | pass |
-| home |  ![screenshot](documents/lighthouse-audit/home.png) |pass|
-| sign-in |  ![screenshot](documents/lighthouse-audit/sign-in.png) | pass |
-| pattern-detail |  ![screenshot](documents/lighthouse-audit/pattern-detail.png) | pass|
-| profile | ![screenshot](documents/lighthouse-audit/profile.png) |pass|
-| sign-up | ![screenshot](documents/lighthouse-audit/sign-up.png) |pass |
-| sign-out | ![screenshot](documents/lighthouse-audit/signout.png) | pass |
+| 404 | ![screenshot](documents/lighthouse-audit/error404.png) |warnings in Diagnostics|
+| about |![screenshot](documents/lighthouse-audit/about.png) | warnings in Diagnostics |
+| add-patern |  ![screenshot](documents/lighthouse-audit/add-a-pattern.png) | warnings in Diagnostics |
+| bag | ![screenshot](documents/lighthouse-audit/bag.png) |warnings in Diagnostics |
+| checkout | ![screenshot](documents/lighthouse-audit/checkout.png) | warnings in Diagnostics |
+| checkout-success |  ![screenshot](documents/lighthouse-audit/checkout-success.png) | warnings in Diagnostics |
+| contact |  ![screenshot](documents/lighthouse-audit/contact-us.png) | warnings in Diagnostics |
+| patterns | ![screenshot](documents/lighthouse-audit/patterns.png) | warnings in Diagnostics|
+| edit-pattern |  ![screenshot](documents/lighthouse-audit/edit-pattern.png) | warnings in Diagnostics |
+| confirm-delete |  ![screenshot](documents/lighthouse-audit/confirm-delete.png) | warnings in Diagnostics |
+| home |  ![screenshot](documents/lighthouse-audit/home.png) |warnings in Diagnostics|
+| sign-in |  ![screenshot](documents/lighthouse-audit/sign-in.png) | warnings in Diagnostics |
+| pattern-detail |  ![screenshot](documents/lighthouse-audit/pattern-detail.png) | warnings in Diagnostics|
+| profile | ![screenshot](documents/lighthouse-audit/profile.png) |warnings in Diagnostics|
+| sign-up | ![screenshot](documents/lighthouse-audit/sign-up.png) |warnings in Diagnostics |
+| sign-out | ![screenshot](documents/lighthouse-audit/signout.png) | warnings in Diagnostics |
 
 ## Defensive Programming
 
 Defensive programming was manually tested with the below user acceptance testing:
 
-| Page | User Action | Expected Result | Pass/Fail | Comments |
+| Page | User Action | Expected Result | Pass/Fail 
 | --- | --- | --- | --- | --- |
 | Nav links | | | | |
-| | Click on site name in navbar | Redirection to Home page | Pass | |
+| | Click on site name in navbar | Redirection to Home page | Pass |
 | | Click on About Us link in navbar | Redirection to About page | Pass | |
 | | Click on Patterns link in navbar | Redirection to Patterns page | Pass | |
 | | Click on Contact link in navbar | Redirection to Contact page | Pass | |
