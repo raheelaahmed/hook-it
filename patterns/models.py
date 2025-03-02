@@ -34,7 +34,14 @@ class Pattern(models.Model):
     name = models.CharField(max_length=254)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     date_created = models.DateTimeField(default=timezone.now)
-    image = ResizedImageField(size=[800, 800], quality=85, upload_to="patterns/", force_format="JPEG", null=True, blank=True)
+    image = ResizedImageField(
+        size=[800, 800],
+        quality=85,
+        upload_to="patterns/",
+        force_format="JPEG",
+        null=True,
+        blank=True,
+    )
     pattern = models.FileField(upload_to='media/files', null=True, blank=True)
     rating = models.DecimalField(
         max_digits=6,
