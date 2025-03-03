@@ -239,7 +239,7 @@ The Contact Us page allows users to reach out to the administration for any issu
 
 The profile page displays a user's biodata, which can be updated using the provided form. It also includes the user's order history, allowing them to view purchased patterns by clicking on the order number. By selecting an order number, users can revisit the checkout success page and access the download link for their purchased pattern.
 
-![Profile](documents/screenshots/profile-screenshot.png)
+![Profile](documents/screenshots/profile.png)
 
 - **Pattern management page**
 
@@ -439,7 +439,7 @@ Toast displays following messages:
 * Warning messages.
 
 
-![message-success](documents/screenshots/add-to-bag-success.png)
+![message-success](documents/screenshots/add-to-bad-success.png)
 
 
 ![warning-messages](documents/screenshots/info-messages.png)
