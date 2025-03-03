@@ -291,7 +291,7 @@ This is the Checkout Success page, confirming that your order has been completed
 The user will receive a confirmation email containing the details of their order, including the order summary and payment confirmation.
 
 
-![email](documents/screenshots/email-confirmatioon.png)
+![email](documents/screenshots/email-confirmation.png)
 
 
 - **Privacy Policy**
