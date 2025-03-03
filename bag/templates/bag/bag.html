@@ -64,7 +64,7 @@
                                         </a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.pattern.price | calc_subtotal:item.quantity }}</p>
+                                        <p class="my-0">{{ currency_symbol }}{{ item.pattern.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
