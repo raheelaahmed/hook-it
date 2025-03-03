@@ -530,6 +530,11 @@ background-color: #89bcb0;
    #shopping-bag {
     color: #484747 !important;
   }
+
+  .remove-item{
+    background-color:#d9534f ;
+    color:#484747;
+  }
   
   /* ------------------------------- bootstrap toasts */
   
@@ -617,7 +622,6 @@ background-color: #89bcb0;
 
 #confirm-delete h2 {
   font-size: 20px;
-  color: red;
   margin-bottom: 15px;
 }
 
@@ -638,17 +642,17 @@ background-color: #89bcb0;
 }
 
 #confirm-delete .btn-danger {
-  background-color: red;
-  color: white;
+  background-color: #eaa3a3;
+  color: #484747;
 }
 
 #confirm-delete .btn-danger:hover {
-  background-color: darkred;
+  background-color: #e94c4c;
 }
 
 #confirm-delete .btn-secondary {
-  background-color: gray;
-  color: white;
+  background-color: #b1bebb;
+  color: #484747;
 }
 
 #confirm-delete .btn-secondary:hover {
@@ -739,10 +743,9 @@ background-color: #89bcb0;
 }
 #pattern-management a:hover {
   color: #d9534f; 
-  text-decoration: underline;
 }
 #pattern-management button:hover {
-    background-color: #d9534f; 
+    background-color: #db2d27; 
     color: white;
 }
 

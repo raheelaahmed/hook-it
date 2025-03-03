@@ -35,6 +35,7 @@ def cache_checkout_data(request):
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+    currency_symbol = "€"
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
@@ -140,7 +141,8 @@ def checkout(request):
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
-        'MEDIA_URL': settings.MEDIA_URL
+        'MEDIA_URL': settings.MEDIA_URL,
+        'currency_symbol': currency_symbol,
     }
 
     return render(request, template, context)
@@ -150,6 +152,8 @@ def checkout_success(request, order_number):
     """
     Handle successful checkouts and display the download link for the pattern
     """
+
+    currency_symbol = "€"
     # Retrieve the order by order number
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
@@ -210,7 +214,8 @@ def checkout_success(request, order_number):
     context = {
         'order': order,
         'patterns_with_download': patterns_with_download,
-        'MEDIA_URL': settings.MEDIA_URL
+        'MEDIA_URL': settings.MEDIA_URL,
+        'currency_symbol': currency_symbol,
     }
 
     return render(request, template, context)

@@ -60,7 +60,7 @@
                                         <p class="my-0">{{ item.quantity }}</p>
                                     </td>
                                     <td>
-                                        <p class="my-0">${{ item.pattern.price | calc_subtotal:item.quantity }}</p>
+                                        <p class="my-0">{{ currency_symbol }}{{ item.pattern.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -73,7 +73,7 @@
                         <p class="my-0">Order Total:</p>
                     </div>
                     <div class="col-3">
-                        <p class="my-0">${{ total | floatformat:2 }}</p>
+                        <p class="my-0">{{ currency_symbol }}{{ total | floatformat:2 }}</p>
                     </div>
                 </div>
             </div>

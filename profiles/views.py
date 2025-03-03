@@ -10,6 +10,7 @@ from django.conf import settings
 @login_required
 def profile(request):
     """ Display the user's profile. """
+    currency_symbol = "€"
     profile = get_object_or_404(UserProfile, user=request.user)
     orders = profile.orders.all()
     if request.method == 'POST':
@@ -31,12 +32,14 @@ def profile(request):
         'orders': orders,
         'on_profile_page': True,
         'MEDIA_URL': settings.MEDIA_URL,
+        'currency_symbol': currency_symbol,
     }
 
     return render(request, template, context)
 
 
 def order_history(request, order_number):
+    currency_symbol = "€"
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(
@@ -70,6 +73,7 @@ def order_history(request, order_number):
         'order': order,
         'from_profile': True,
         'patterns_with_download': patterns_with_download,
+        'currency_symbol': currency_symbol,
     }
 
     return render(request, template, context)

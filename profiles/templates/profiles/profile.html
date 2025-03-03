@@ -69,7 +69,7 @@
                                             {% endfor %}
                                         </ul>
                                     </td>
-                                    <td>${{ order.order_total }}</td>
+                                    <td>{{ currency_symbol }}{{ order.order_total }}</td>
                                 </tr>
                             {% endfor %}
                         </tbody>
