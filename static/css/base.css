@@ -353,6 +353,7 @@ body {
 .edit-pattern {
   font-size: 18px;  
   color:#484747;
+  text-decoration: none;
   
 }
 .edit-pattern:hover {
@@ -364,6 +365,7 @@ background-color: #89bcb0;
   font-size: 18px; 
   color:#484747;
   border:none;
+  text-decoration: none;
 }
 .delete-pattern:hover{
   background-color: #e94c4c;
@@ -375,6 +377,7 @@ background-color: #89bcb0;
   color:#484747;
   background-color: #b1bebb;
   padding:10px; 
+  text-decoration: none;
 }
 #edit-pattern:hover {
   font-size: 20px; 
@@ -387,6 +390,7 @@ background-color: #89bcb0;
   color:#484747;
   border:none;
   padding:10px;
+  text-decoration: none;
 }
 #delete-pattern:hover{
   background-color: #e94c4c;
@@ -400,7 +404,7 @@ background-color: #89bcb0;
   background-color: #b1bebb; 
 }
 #edit:hover {
-  color: #89bcb0;
+  background-color: #89bcb0;
   font-size: 20px; 
   color:#484747;
 }
@@ -918,6 +922,7 @@ footer .footer-links a {
 footer .footer-links a:hover {
   color: #000000;  /* Darker hover state */
 }
+
 
 
 

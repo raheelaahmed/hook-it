@@ -193,96 +193,97 @@ On all pages, Lighthouse is flagging a warning 'Issues were logged in the Issues
 
 Defensive programming was manually tested with the below user acceptance testing:
 
-| Page | User Action | Expected Result | Pass/Fail 
-| --- | --- | --- | --- | --- |
-| Nav links | | | | |
-| | Click on site name in navbar | Redirection to Home page | Pass |
-| | Click on About Us link in navbar | Redirection to About page | Pass | |
-| | Click on Patterns link in navbar | Redirection to Patterns page | Pass | |
-| | Click on Contact link in navbar | Redirection to Contact page | Pass | |
-| | Click on Search link in navbar | Search box dropdown, with input to search on Pattern page | Pass | |
-| | Click on Register link in navbar | Redirection to Register page | Pass | |
-| | Click on Login link in navbar | Redirection to Login page | Pass | |
-| | Click on Bag link in navbar | Redirection to Bag page | Pass | |
-| | Click on Profile link in navbar | Redirection to User Profile page | Pass | |
-| | Click on Logout link in navbar | Redirection to Logout page | Pass | |
-| | Click on Pattern Management link in navbar | Redirection to Add Pattern page | Pass | |
-| | Click on Home link in navbar | Redirection to Home Page | Pass | |
-| Footer | | | | |
-| | Click on About Us link in footer | Redirection to About page | Pass | |
-| | Click on Contact Us link in footer | Redirection to Contact page | Pass | |
-| | Click on Privacy policy link in footer | Redirection to Privacy pocliy page | Pass | |
-| | Click on 'Subscribe to our mailing list' button in footer | subscribtion essage | Pass | |
-| Register | | | | |
-| | Enter valid email address (twice) | Field will only accept email address format | Pass | |
-| | Enter valid password (twice) | Field will only accept password format | Pass | |
-| | Click on Sign Up button | Redirects user to blank Login page | Pass |
-| | Click on Back To Login button | Redirects user to Login page | Pass |
-| Log In | | | | |
-| | Enter valid username/email | Field will accept username or email format | Pass | |
-| | Enter valid password | Field will only accept password format | Pass | |
-| | Click Login button | Log user in, Redirects to home page | Pass | |
-| Log Out | | | | |
-| | Click Logout button | Logs out user, Redirects user to home page | Pass |
-| Profile | | | | |
-| | Click on the Update Information button | Inputted information is saved | Pass | |
-| | Click on Order History links | Redirects to user order confirmation/checkout success page | Pass | |
-| Site Navigations - Logged Out User | | | | |
-| | Navigate to any login required URL | Redirect to login page, redirect back after login | Pass | |
-| Pattern | | | | |
-| | Click on Patterrn title | Redirect to clicked pattern details page | Pass | |
-| | Click on sorting dropdown options | Sort patterns by selected criteria | Pass | |
-| Patterns - Admin Only| | | | |
-| | Click on an edit button | Redirect to edit pattern page for that pattern | Pass | |
-| | Click on a delete button | directs to confirm delete page | Pass | |
-| Pattern Details | | | | |
-| | Click on 'Keep Shopping' button | Redirect to pattern page | Pass | |
-| | Click on 'Add To Bag' button | Adds pattern to bag, bag message displayed | Pass | |
-| | Click on 'submit Review' button | posts Review, success message displayed | Pass | |
-| Pattern Details - Admin Only | | | | |
-| | Click on Edit button | Redirect to edit pattern page for that pattern | Pass | |
-| |  Click on delete button | directs to confirm-delete page| Pass | |
-| |  Click on edit button for reviews|Redirect to edit review page for that review | Pass | |
-| |  Click on delete button | delete the review | Pass | |
-| Contact | | | | |
-| | Email input | Required, accepts only email format | Pass | |
-| | Subject input | Required, user given a list of options | Pass | |
-| | Message input | Required | Pass | |
-| | Click on 'Submit' button |Success message | Pass | |
-| Add New Pattern - Admin Only | | | | |
-| | Category Input | Not required, select from options | Pass | |
-| | Difficulty Input | Not required, select from options | Pass | |
-| | Name Input | Required | Pass | |
-| | Price Input | Required, Numbers only | Pass | |
-| | Date-Created | auto fill | Pass | |
-| | Image | required | Pass | |
-| | pattern URL |  required | Pass | |
-| | Description Input | Required | Pass | |
-| | Click on 'Cancel' button | Redirect to Pattern page | Pass | |
-| | Click on 'Update Pattern' button | Save changes, redirect to pattern details page | Pass | |
-| Delete Pattern - Admin Only | | | | |
-| | Delete button | deletes the pattern | Pass | |
-| Bag | | | | |
-| | Click on 'Remove' link | Remove item from bag | Pass | |
-| | Click on 'Keep Shopping' button | Redirect to Patterns page | Pass | |
-| | Click on 'Secure Checkout' button | Redirect to Checkout page | Pass | |
-| Checkout | | | | |
-| | Full Name Input | Required | Pass | |
-| | Email Input | Required, autofill if saved | Pass | |
-| | Phone Number Input | Required, autofill if saved | Pass | |
-| | Street Address 1 Input | Required, autofill if saved | Pass | |
-| | Street Address 2 Input | Not required, autofill if saved | Pass | |
-| | Town Or City Input | Required, autofill if saved | Pass | |
-| | County Input | Not required, autofill if saved | Pass | |
-| | Postal Code Input | Not required, autofill if saved | Pass | |
-| | Country Input | Required, autofill if saved, select from options | Pass | |
-| | Stripe Card Details | Required, validates on input | Pass | |
-| | Check 'save delivery info.' box | Saves information to user profile | Pass | |
-| | Click on 'Adjust Bag' button | Redirect to Bag page | Pass | |
-| | Click on 'Complete Order' button | Complete Checkout with given information, redirect to order confirmation page if valid | Pass | |
-| Newsletter - Subscribe | | | | |
-| | Email Input | Required | Pass | |
-| | Click on 'Subscribe' button | Subscribes user| Pass | |
+| Page                          | User Action                                                        | Expected Result                                               | Pass/Fail |
+|-------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------|-----------|
+| **Nav links**                  |                                                                    |                                                               |           |
+|                               | Click on site name in navbar                                        | Redirection to Home page                                       | Pass      |
+|                               | Click on About Us link in navbar                                    | Redirection to About page                                      | Pass      |
+|                               | Click on Patterns link in navbar                                   | Redirection to Patterns page                                   | Pass      |
+|                               | Click on Contact link in navbar                                    | Redirection to Contact page                                    | Pass      |
+|                               | Click on Search link in navbar                                     | Search box dropdown, with input to search on Pattern page     | Pass      |
+|                               | Click on Register link in navbar                                   | Redirection to Register page                                   | Pass      |
+|                               | Click on Login link in navbar                                      | Redirection to Login page                                      | Pass      |
+|                               | Click on Bag link in navbar                                        | Redirection to Bag page                                        | Pass      |
+|                               | Click on Profile link in navbar                                    | Redirection to User Profile page                               | Pass      |
+|                               | Click on Logout link in navbar                                     | Redirection to Logout page                                     | Pass      |
+|                               | Click on Pattern Management link in navbar                         | Redirection to Add Pattern page                                | Pass      |
+|                               | Click on Home link in navbar                                       | Redirection to Home Page                                       | Pass      |
+| **Footer**                     |                                                                    |                                                               |           |
+|                               | Click on About Us link in footer                                    | Redirection to About page                                      | Pass      |
+|                               | Click on Contact Us link in footer                                  | Redirection to Contact page                                    | Pass      |
+|                               | Click on Privacy policy link in footer                              | Redirection to Privacy policy page                              | Pass      |
+|                               | Click on 'Subscribe to our mailing list' button in footer           | Subscription message                                           | Pass      |
+| **Register**                   |                                                                    |                                                               |           |
+|                               | Enter valid email address (twice)                                   | Field will only accept email address format                   | Pass      |
+|                               | Enter valid password (twice)                                        | Field will only accept password format                        | Pass      |
+|                               | Click on Sign Up button                                             | Redirects user to blank Login page                             | Pass      |
+|                               | Click on Back To Login button                                       | Redirects user to Login page                                   | Pass      |
+| **Log In**                      |                                                                    |                                                               |           |
+|                               | Enter valid username/email                                          | Field will accept username or email format                    | Pass      |
+|                               | Enter valid password                                               | Field will only accept password format                        | Pass      |
+|                               | Click Login button                                                 | Logs user in, redirects to home page                           | Pass      |
+| **Log Out**                     |                                                                    |                                                               |           |
+|                               | Click Logout button                                                | Logs out user, redirects user to home page                     | Pass      |
+| **Profile**                     |                                                                    |                                                               |           |
+|                               | Click on the Update Information button                              | Inputted information is saved                                  | Pass      |
+|                               | Click on Order History links                                        | Redirects to user order confirmation/checkout success page     | Pass      |
+| **Site Navigations - Logged Out User** |                                                           |                                                               |           |
+|                               | Navigate to any login required URL                                  | Redirect to login page, redirect back after login              | Pass      |
+| **Pattern**                     |                                                                    |                                                               |           |
+|                               | Click on Pattern title                                              | Redirect to clicked pattern details page                       | Pass      |
+|                               | Click on sorting dropdown options                                  | Sort patterns by selected criteria                             | Pass      |
+| **Patterns - Admin Only**       |                                                                    |                                                               |           |
+|                               | Click on an edit button                                             | Redirect to edit pattern page for that pattern                 | Pass      |
+|                               | Click on a delete button                                           | Redirects to confirm delete page                               | Pass      |
+| **Pattern Details**             |                                                                    |                                                               |           |
+|                               | Click on 'Keep Shopping' button                                    | Redirect to pattern page                                       | Pass      |
+|                               | Click on 'Add To Bag' button                                       | Adds pattern to bag, bag message displayed                     | Pass      |
+|                               | Click on 'Submit Review' button                                    | Posts Review, success message displayed                        | Pass      |
+| **Pattern Details - Admin Only** |                                                                   |                                                               |           |
+|                               | Click on Edit button                                               | Redirect to edit pattern page for that pattern                 | Pass      |
+|                               | Click on delete button                                             | Redirects to confirm-delete page                               | Pass      |
+|                               | Click on edit button for reviews                                   | Redirect to edit review page for that review                   | Pass      |
+|                               | Click on delete button for reviews                                 | Delete the review                                              | Pass      |
+| **Contact**                     |                                                                    |                                                               |           |
+|                               | Email input                                                        | Required, accepts only email format                            | Pass      |
+|                               | Subject input                                                      | Required, user given a list of options                         | Pass      |
+|                               | Message input                                                      | Required                                                      | Pass      |
+|                               | Click on 'Submit' button                                           | Success message                                                | Pass      |
+| **Add New Pattern - Admin Only** |                                                                   |                                                               |           |
+|                               | Category Input                                                     | Not required, select from options                              | Pass      |
+|                               | Difficulty Input                                                   | Not required, select from options                              | Pass      |
+|                               | Name Input                                                         | Required                                                      | Pass      |
+|                               | Price Input                                                        | Required, Numbers only                                         | Pass      |
+|                               | Date-Created                                                       | Auto fill                                                      | Pass      |
+|                               | Image                                                              | Required                                                      | Pass      |
+|                               | Pattern URL                                                        | Required                                                      | Pass      |
+|                               | Description Input                                                  | Required                                                      | Pass      |
+|                               | Click on 'Cancel' button                                            | Redirect to Pattern page                                       | Pass      |
+|                               | Click on 'Update Pattern' button                                   | Save changes, redirect to pattern details page                 | Pass      |
+| **Delete Pattern - Admin Only** |                                                                   |                                                               |           |
+|                               | Delete button                                                      | Deletes the pattern                                            | Pass      |
+| **Bag**                         |                                                                    |                                                               |           |
+|                               | Click on 'Remove' link                                             | Remove item from bag                                           | Pass      |
+|                               | Click on 'Keep Shopping' button                                    | Redirect to Patterns page                                      | Pass      |
+|                               | Click on 'Secure Checkout' button                                  | Redirect to Checkout page                                      | Pass      |
+| **Checkout**                    |                                                                    |                                                               |           |
+|                               | Full Name Input                                                    | Required                                                      | Pass      |
+|                               | Email Input                                                         | Required, autofill if saved                                     | Pass      |
+|                               | Phone Number Input                                                 | Required, autofill if saved                                     | Pass      |
+|                               | Street Address 1 Input                                             | Required, autofill if saved                                     | Pass      |
+|                               | Street Address 2 Input                                             | Not required, autofill if saved                                 | Pass      |
+|                               | Town Or City Input                                                 | Required, autofill if saved                                     | Pass      |
+|                               | County Input                                                       | Not required, autofill if saved                                 | Pass      |
+|                               | Postal Code Input                                                  | Not required, autofill if saved                                 | Pass      |
+|                               | Country Input                                                      | Required, autofill if saved, select from options               | Pass      |
+|                               | Stripe Card Details                                                | Required, validates on input                                   | Pass      |
+|                               | Check 'Save delivery info.' box                                    | Saves information to user profile                              | Pass      |
+|                               | Click on 'Adjust Bag' button                                       | Redirect to Bag page                                           | Pass      |
+|                               | Click on 'Complete Order' button                                   | Complete Checkout with given information, redirect to order confirmation page if valid | Pass      |
+| **Newsletter - Subscribe**      |                                                                    |                                                               |           |
+|                               | Email Input                                                        | Required                                                      | Pass      |
+|                               | Click on 'Subscribe' button                                        | Subscribes user                                                | Pass      |
+
 
 
 ## Automated Testing Coverage Report:
