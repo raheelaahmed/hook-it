@@ -176,13 +176,24 @@ body {
 .pattern-item h2 {
     font-size: 1.2rem; 
     font-weight: bold; 
-    color: #333; 
+    color: #484747; 
     margin-bottom: 10px; 
     transition: color 0.3s ease; 
+    text-decoration: none;
+    border: none; /* Ensures no borders are causing the effect */
+    outline: none; /* Ensures no outline is causing visual effects */
 }
 
 .pattern-item h2:hover {
-    color: #007bff; 
+    color: #89bcb0; 
+}
+.pattern-item a {
+  text-decoration: none; /* Remove underline from the link */
+  color: inherit; /* Make the link inherit the text color of the h2 */
+}
+
+.pattern-item a:hover {
+  text-decoration: none; /* Ensure no underline on hover */
 }
 
 /* Styling for price and rating */
