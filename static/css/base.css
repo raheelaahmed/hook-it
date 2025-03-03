@@ -532,8 +532,13 @@ background-color: #89bcb0;
   }
 
   .remove-item{
-    background-color:#d9534f ;
+    background-color:#eaa3a3;
     color:#484747;
+    border:none;
+  }
+  .remove-item:hover{
+    background-color:#e94c4c;
+    color:#fff;
   }
   
   /* ------------------------------- bootstrap toasts */
